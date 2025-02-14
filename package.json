@@ -1,0 +1,10 @@
+{
+  "name": "vue-dir",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "docs:dev": "pnpm --filter docs dev",
+    "play:dev": "pnpm --filter play dev",
+    "build:core": "pnpm --filter core build"
+  }
+}
