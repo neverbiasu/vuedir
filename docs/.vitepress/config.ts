@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 import { resolve } from "path";
 
 export default defineConfig({
+  base: "/vuedir/",
   title: "CP-VueDir",
   description: "Vue 3 指令集合",
   vite: {
