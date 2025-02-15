@@ -1,0 +1,13 @@
+{
+  "name": "@vuedir/monorepo",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "pnpm --filter docs dev",
+    "play:dev": "pnpm --filter play dev",
+    "build:core": "pnpm --filter core build",
+    "dev": "pnpm run build:core && pnpm -r --parallel run dev"
+  }
+}
