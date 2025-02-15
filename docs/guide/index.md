@@ -2,14 +2,14 @@
 
 ## 介绍
 
-VueDir 是一个轻量级的 Vue 3 指令集合，旨在提供一系列实用的自定义指令，帮助开发者更高效地构建 Vue 应用。
+CP-VueDir 是一个轻量级的 Vue 3 指令集合，旨在提供一系列实用的自定义指令，帮助开发者更高效地构建 Vue 应用。
 
 ## 安装
 
 使用 pnpm 安装（推荐）：
 
 ```bash
-pnpm add @vuedir/core
+pnpm add @cp-vuedir/core
 ```
 
 ## 使用
@@ -18,14 +18,14 @@ pnpm add @vuedir/core
 
 ```ts
 import { createApp } from "vue";
-import VueDir from "@vuedir/core";
+import VueDir from "@cp-vuedir/core";
 
 const app = createApp(App);
 app.use(VueDir);
 app.mount("#app");
 ```
 
-## 可用指令
+## 使用示例
 
 ### v-focus
 

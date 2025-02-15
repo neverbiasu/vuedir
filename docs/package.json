@@ -1,5 +1,5 @@
 {
-  "name": "@vuedir/docs",
+  "name": "@cp-vuedir/docs",
   "type": "module",
   "version": "0.0.1",
   "private": true,
@@ -9,7 +9,7 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "@vuedir/core": "workspace:*",
+    "@cp-vuedir/core": "workspace:*",
     "vue": "^3.3.0"
   },
   "devDependencies": {
