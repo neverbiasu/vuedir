@@ -28,7 +28,7 @@ importers:
 
   docs:
     dependencies:
-      '@vuedir/core':
+      '@cp-vuedir/core':
         specifier: workspace:*
         version: link:../core
       vue:
@@ -44,7 +44,7 @@ importers:
 
   play:
     dependencies:
-      '@vuedir/core':
+      '@cp-vuedir/core':
         specifier: workspace:*
         version: link:../core
       vue:

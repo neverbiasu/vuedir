@@ -1,45 +1,45 @@
 # 📡 VueDir
 
-[English](./README.en.md) | 简体中文
+English | [简体中文](./README.zh.md)
 
-VueDir 是一个轻量级的 Vue 3 指令集合，旨在提供一系列实用的自定义指令，帮助开发者更高效地构建 Vue 应用。
+VueDir is a lightweight collection of Vue 3 directives designed to provide a set of practical custom directives that help developers build Vue applications more efficiently.
 
-## ✨ 特性
+## ✨ Features
 
-- 🎯 **聚焦指令**: 提供 v-focus 指令，实现自动聚焦功能
-- 🎨 **轻量级**: 按需引入，不会增加额外的包体积
-- 🔧 **易于使用**: 简单的 API 设计，快速上手
-- 📦 **TypeScript**: 使用 TypeScript 编写，提供完整的类型支持
+- 🎯 **Focus Directive**: Provides v-focus directive for automatic focus functionality
+- 🎨 **Lightweight**: Import on demand, no extra bundle size
+- 🔧 **Easy to Use**: Simple API design for quick adoption
+- 📦 **TypeScript**: Written in TypeScript with complete type support
 
-## 📦 安装
+## 📦 Installation
 
-使用 pnpm 安装（推荐）：
+Install with pnpm (recommended):
 
 ```bash
-pnpm add @vuedir/core
+pnpm add @cp-vuedir/core
 ```
 
-## 🚀 使用
+## 🚀 Usage
 
-在你的 Vue 应用中注册 VueDir：
+Register VueDir in your Vue application:
 
 ```ts
 import { createApp } from "vue";
-import VueDir from "@vuedir/core";
+import VueDir from "@cp-vuedir/core";
 
 const app = createApp(App);
 app.use(VueDir);
 app.mount("#app");
 ```
 
-## 📖 文档
+## 📖 Documentation
 
-访问我们的[官方文档](https://vuedir.codepaintstudio.com)获取更多信息。
+Visit our [official documentation](https://vuedir.codepaintstudio.com) for more information.
 
-## 🤝 贡献
+## 🤝 Contributing
 
-我们欢迎任何形式的贡献！请查看我们的[贡献指南](./CONTRIBUTING.md)了解如何参与。
+We welcome all forms of contributions! Please check our [Contributing Guide](./CONTRIBUTING.md) to learn how to get involved.
 
-## 📄 开源协议
+## 📄 License
 
-VueDir 是基于 MIT 协议的开源软件。查看 [MIT License](https://github.com/CodePaintStudio/vuedir/blob/main/LICENSE) 文件了解更多详情。
+VueDir is open-source software licensed under the MIT License. See the [MIT License](https://github.com/CodePaintStudio/codepaint/blob/main/LICENSE) file for more details.

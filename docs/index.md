@@ -1,7 +1,7 @@
 ---
 layout: home
 hero:
-  name: VueDir
+  name: CP-VueDir
   text: Vue 3 指令集合
   tagline: 简单、易用、高效的 Vue 3 指令库
   actions:
@@ -13,8 +13,8 @@ hero:
       link: /directives/
 features:
   - icon: 🎯
-    title: 聚焦指令
-    details: v-focus 指令让你轻松实现输入框自动获取焦点
+    title: 更多指令
+    details: 持续提供更多的指令，满足不同的需求
   - icon: 🚀
     title: 轻量级
     details: 零依赖，按需引入，不影响打包体积

@@ -1,6 +1,6 @@
 # 📡 VueDir
 
-English | [简体中文](./README.md)
+English | [简体中文](./README.zh.md)
 
 VueDir is a lightweight collection of Vue 3 directives designed to provide a set of practical custom directives that help developers build Vue applications more efficiently.
 
@@ -16,7 +16,7 @@ VueDir is a lightweight collection of Vue 3 directives designed to provide a set
 Install with pnpm (recommended):
 
 ```bash
-pnpm add @vuedir/core
+pnpm add @cp-vuedir/core
 ```
 
 ## 🚀 Usage
@@ -25,7 +25,7 @@ Register VueDir in your Vue application:
 
 ```ts
 import { createApp } from "vue";
-import VueDir from "@vuedir/core";
+import VueDir from "@cp-vuedir/core";
 
 const app = createApp(App);
 app.use(VueDir);
@@ -42,4 +42,4 @@ We welcome all forms of contributions! Please check our [Contributing Guide](./C
 
 ## 📄 License
 
-VueDir is open-source software licensed under the MIT License. See the [MIT License](https://github.com/CodePaintStudio/vuedir/blob/main/LICENSE) file for more details.
+VueDir is open-source software licensed under the MIT License. See the [MIT License](https://github.com/CodePaintStudio/codepaint/blob/main/LICENSE) file for more details.

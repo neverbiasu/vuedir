@@ -12,6 +12,12 @@
 </template>
 ```
 
-## 即将推出
+### [v-copy](/directives/copy)
 
-我们正在开发更多实用的指令，敬请期待！
+点击复制指令，用于实现点击元素复制文本内容的功能。
+
+```vue
+<template>
+  <div v-copy="text">{{ text }}</div>
+</template>
+```

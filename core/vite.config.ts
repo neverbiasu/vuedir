@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
+import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   build: {
@@ -18,5 +19,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [dts()],
+  plugins: [vue(), dts()],
 });

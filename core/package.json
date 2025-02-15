@@ -1,8 +1,27 @@
 {
-  "name": "@vuedir/core",
+  "name": "@cp-vuedir/core",
   "type": "module",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.2",
+  "description": "A lightweight collection of Vue 3 directives for building efficient applications",
+  "keywords": [
+    "vue",
+    "directives",
+    "vue3",
+    "typescript",
+    "focus"
+  ],
+  "author": "CodePaintStudio",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodePaintStudio/vuedir.git"
+  },
+  "bugs": {
+    "url": "git+https://github.com/CodePaintStudio/vuedir/issues"
+  },
+  "files": [
+    "dist"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
