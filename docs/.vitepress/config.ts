@@ -5,6 +5,7 @@ export default defineConfig({
   base: "/vuedir/",
   title: "CP-VueDir",
   description: "Vue 3 指令集合",
+  lastUpdated: true,
   vite: {
     resolve: {
       alias: {
@@ -13,6 +14,11 @@ export default defineConfig({
     },
   },
   themeConfig: {
+    lastUpdatedText: "最后更新时间",
+    editLink: {
+      pattern: "https://github.com/CodePaintStudio/vuedir/edit/main/docs/:path",
+      text: "在 GitHub 上编辑此页",
+    },
     search: {
       provider: "local",
       options: {
@@ -54,6 +60,7 @@ export default defineConfig({
           items: [
             { text: "v-focus", link: "/directives/focus" },
             { text: "v-copy", link: "/directives/copy" },
+            { text: "v-highlight", link: "/directives/highlight" },
           ],
         },
       ],
