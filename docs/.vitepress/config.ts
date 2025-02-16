@@ -22,10 +22,12 @@ export default defineConfig({
   themeConfig: {
     logo: "/logo.jpg",
     lastUpdatedText: "最后更新时间",
-    editLink: {
-      pattern: "https://github.com/CodePaintStudio/vuedir/edit/main/docs/:path",
-      text: "在 GitHub 上编辑此页",
-    },
+    socialLinks: [
+      {
+        icon: "github",
+        link: "https://github.com/CodePaintStudio/vuedir/tree/main",
+      },
+    ],
     search: {
       provider: "local",
       options: {
@@ -47,9 +49,8 @@ export default defineConfig({
       },
     },
     nav: [
-      { text: "指南", link: "/guide/" },
-      { text: "指令", link: "/directives/" },
-      { text: "Github", link: "https://github.com/CodePaintStudio/vuedir" },
+      { text: "开始指南", link: "/guide/" },
+      { text: "查看指令", link: "/directives/" },
     ],
     sidebar: {
       "/guide/": [
@@ -58,6 +59,7 @@ export default defineConfig({
           items: [
             { text: "快速开始", link: "/guide/" },
             { text: "贡献指南", link: "/guide/contributing" },
+            { text: "开发指南", link: "/guide/development" },
           ],
         },
       ],
@@ -68,6 +70,7 @@ export default defineConfig({
             { text: "v-focus", link: "/directives/focus" },
             { text: "v-copy", link: "/directives/copy" },
             { text: "v-highlight", link: "/directives/highlight" },
+            { text: "v-longpress", link: "/directives/longpress" },
           ],
         },
       ],

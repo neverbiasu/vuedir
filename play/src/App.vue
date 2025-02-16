@@ -3,11 +3,35 @@ import { ref } from "vue";
 
 const message = ref("");
 const copyText = ref("点击复制这段文本");
+
+const handleLongPress = () => {
+  alert("长按事件触发了！");
+};
+
+const handleCustomLongPress = () => {
+  alert("自定义时长的长按事件触发了！");
+};
 </script>
 
 <template>
   <div class="container">
     <h1>VueDir Playground</h1>
+    <div class="demo-section">
+      <h2>v-longpress 指令演示</h2>
+      <p>默认长按时间为2秒</p>
+      <button v-longpress="{ event: handleLongPress }" class="demo-button">
+        按住我2秒
+      </button>
+
+      <p>自定义长按时间为1秒</p>
+      <button
+        v-longpress="{ event: handleCustomLongPress, delay: 1000 }"
+        class="demo-button"
+      >
+        按住我1秒
+      </button>
+    </div>
+
     <div class="demo-section">
       <h2>v-highlight 指令演示</h2>
       <div class="highlight-examples">
@@ -64,6 +88,21 @@ input {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+.demo-button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.demo-button:hover {
+  background-color: #45a049;
 }
 
 .highlight-item {

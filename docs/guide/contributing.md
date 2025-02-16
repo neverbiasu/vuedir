@@ -2,7 +2,7 @@
 
 感谢你考虑为 CP-VueDir 做出贡献！在提交你的贡献之前，请花点时间阅读以下指南。
 
-## 📝 代码规范
+## 代码规范
 
 ### 提交规范
 
@@ -18,7 +18,7 @@ test: add v-focus unit tests
 chore: update dependencies
 ```
 
-## 🔍 提交 PR
+## 提交 PR
 
 1. 确保你的代码通过了所有测试
 2. 更新相关的文档
@@ -37,15 +37,7 @@ git push origin feat/your-feature
    - 提供相关的截图（如果适用）
    - 标注是否需要更新文档
 
-## 📋 开发清单
-
-- [ ] 代码符合项目规范
-- [ ] 添加/更新测试用例
-- [ ] 更新相关文档
-- [ ] 本地测试通过
-- [ ] 提交信息符合规范
-
-## 📝 报告问题
+## 报告问题
 
 报告问题时，请包含：
 
@@ -56,6 +48,17 @@ git push origin feat/your-feature
 5. 相关的错误信息
 6. 运行环境信息
 
-## 🎉 致谢
+## 致谢
 
-再次感谢你的贡献！你的参与对于改进 CP-VueDir 项目非常重要。
+在此，非常感谢以下贡献者们：
+
+<table>
+  <tbody>
+    <tr><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/minorcell" title="minorcell"><img src="https://avatars.githubusercontent.com/u/120795714?v=4" width="100px;" alt="minorcell" style="border-radius: 9999px;" /></a></td>
+    </tr>
+  </tbody>
+</table>
+
+::: tip
+贡献者信息更新来自 [Hub-io](https://hub-io-mcells-projects.vercel.app/)，若没有及时更新你可以在 [Issues](https://github.com/CodePaintStudio/vuedir/issues) 中提交反馈
+:::

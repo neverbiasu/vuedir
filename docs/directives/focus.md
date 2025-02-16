@@ -1,49 +1,14 @@
 # v-focus 指令
 
+## 介绍
+
+`v-focus` 指令用于自动将元素聚焦到页面上。
+
 <script setup>
 import FocusDemo from '../.vitepress/components/vFocus/FocusDemo.vue';
-import ApiTable from '../.vitepress/components/ApiTable.vue';
-
-const directiveData = [{
-  name: 'value',
-  description: '是否启用自动聚焦',
-  type: 'boolean',
-  required: false,
-  default: 'true'
-}];
-
-const lifecycleData = [{
-  name: 'mounted',
-  description: '元素被挂载时自动聚焦',
-  type: 'hook',
-  required: true,
-  default: '-'
-}, {
-  name: 'updated',
-  description: '元素更新时自动聚焦',
-  type: 'hook',
-  required: true,
-  default: '-'
-}];
-
-const eventData = [{
-  name: 'focus',
-  description: '元素获得焦点时触发',
-  type: 'event',
-  required: false,
-  default: '-'
-}, {
-  name: 'blur',
-  description: '元素失去焦点时触发',
-  type: 'event',
-  required: false,
-  default: '-'
-}];
 </script>
 
-## 基础用法
-
-<FocusDemo />
+## 使用方法
 
 ```vue
 <script setup lang="ts">
@@ -65,18 +30,7 @@ const message = ref("");
 </template>
 ```
 
-## API
-
-### 生命周期
-
-<ApiTable :data="lifecycleData" />
-
-## 功能说明
-
-- 支持在元素挂载时自动聚焦
-- 支持在元素更新时自动聚焦
-- 适用于表单输入框、模态框等场景
-- 支持动态控制是否启用聚焦功能
+<FocusDemo />
 
 ### 注意事项
 
