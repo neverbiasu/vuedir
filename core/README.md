@@ -1,5 +1,15 @@
 # 📡 VueDir
 
+<p align="center">
+  <img width="180" src="../docs/public/logo.jpg" alt="VueDir logo">
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/@cp-vuedir/core"><img src="https://img.shields.io/npm/v/@cp-vuedir/core.svg" alt="Version"></a>
+  <a href="https://www.npmjs.com/package/@cp-vuedir/core"><img src="https://img.shields.io/npm/dm/@cp-vuedir/core.svg" alt="Downloads"></a>
+  <a href="https://github.com/CodePaintStudio/vuedir/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@cp-vuedir/core.svg" alt="License"></a>
+</p>
+
 English | [简体中文](./README.zh.md)
 
 VueDir is a lightweight collection of Vue 3 directives designed to provide a set of practical custom directives that help developers build Vue applications more efficiently.
@@ -34,7 +44,7 @@ app.mount("#app");
 
 ## 📖 Documentation
 
-Visit our [official documentation](https://vuedir.codepaintstudio.com) for more information.
+Visit our [official documentation](https://codepaintstudio.github.io/vuedir/) for more information.
 
 ## 🤝 Contributing
 

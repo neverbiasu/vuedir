@@ -4,7 +4,7 @@
 
 ```vue
 <template>
-  <div v-copy="text">{{ text }}</div>
+  <div v-copy>{{ text }}</div>
 </template>
 ```
 

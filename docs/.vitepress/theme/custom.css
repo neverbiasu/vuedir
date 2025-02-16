@@ -1,0 +1,106 @@
+:root {
+  --vp-c-brand: #4b2b7c;
+  --vp-c-brand-light: #5d3798;
+  --vp-c-brand-lighter: #6f44b4;
+  --vp-c-brand-dark: #392160;
+  --vp-c-brand-darker: #271544;
+
+  --vp-c-sponsor: #dd5336;
+  --vp-c-sponsor-light: #e4654a;
+  --vp-c-sponsor-lighter: #eb775e;
+  --vp-c-sponsor-dark: #c44a30;
+  --vp-c-sponsor-darker: #ab412a;
+
+  --vp-nav-bg-color: rgba(255, 255, 255, 0.95);
+  --vp-sidebar-bg-color: var(--vp-c-bg);
+
+  --vp-c-text-1: #213547;
+  --vp-c-text-2: #394e63;
+  --vp-c-text-3: #8091a5;
+
+  --vp-code-line-highlight-color: rgba(75, 43, 124, 0.1);
+}
+
+.dark {
+  --vp-nav-bg-color: rgba(36, 36, 36, 0.95);
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #ebebef;
+  --vp-c-text-3: #8091a5;
+}
+
+.VPNav {
+  background-color: var(--vp-nav-bg-color);
+  backdrop-filter: blur(8px);
+}
+
+.VPSidebar {
+  background-color: var(--vp-sidebar-bg-color);
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+.VPLink {
+  color: var(--vp-c-text-1);
+  transition: color 0.25s;
+}
+
+.VPLink:hover {
+  color: var(--vp-c-brand);
+}
+
+.VPDoc a {
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.VPDoc a:hover {
+  color: var(--vp-c-brand-light);
+}
+
+.VPFeatures {
+  animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.VPFeature {
+  transition: transform 0.7s ease-in-out;
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-bg-soft);
+}
+
+.VPFeature:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 5px 10px rgba(75, 43, 124, 0.1);
+}
+
+.VPButton.brand {
+  border-color: var(--vp-c-brand-light);
+  color: var(--vp-c-brand-lighter);
+}
+
+.VPButton.brand:hover {
+  border-color: var(--vp-c-brand-lighter);
+  color: var(--vp-c-brand-lighter);
+  background-color: var(--vp-c-brand-dark);
+}
+
+.VPButton.sponsor {
+  border-color: var(--vp-c-sponsor-light);
+  color: var(--vp-c-sponsor-lighter);
+}
+
+.VPButton.sponsor:hover {
+  border-color: var(--vp-c-sponsor-lighter);
+  color: var(--vp-c-sponsor-lighter);
+  background-color: var(--vp-c-sponsor-dark);
+}
