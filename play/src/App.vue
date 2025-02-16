@@ -9,22 +9,22 @@ const copyText = ref("点击复制这段文本");
   <div class="container">
     <h1>VueDir Playground</h1>
     <div class="demo-section">
-      <h2>v-focus 指令演示</h2>
-      <input
-        v-focus
-        v-model="message"
-        type="text"
-        placeholder="这个输入框将自动获得焦点"
-      />
-      <p>当前输入内容: {{ message }}</p>
-    </div>
-
-    <div class="demo-section">
-      <h2>v-copy 指令演示</h2>
-      <div v-copy="copyText" class="copy-text" title="点击复制">
-        {{ copyText }}
+      <h2>v-highlight 指令演示</h2>
+      <div class="highlight-examples">
+        <div v-highlight="'#ff0000'" class="highlight-item">简单红色背景</div>
+        <div
+          v-highlight="{ bgColor: '#ffff00', textColor: '#000000' }"
+          class="highlight-item"
+        >
+          黄色背景黑色文字
+        </div>
+        <div
+          v-highlight="{ bgColor: 'rgba(0, 0, 255, 0.5)', auto: true }"
+          class="highlight-item"
+        >
+          半透明蓝色背景自动文字颜色
+        </div>
       </div>
-      <p>点击上方文本即可复制内容</p>
     </div>
   </div>
 </template>
@@ -48,33 +48,27 @@ input {
   width: 100%;
   padding: 0.5rem;
   margin: 1rem 0;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 4px;
-}
-
-h1 {
-  color: #2c3e50;
-  text-align: center;
-}
-
-h2 {
-  color: #42b883;
-  margin-bottom: 1rem;
 }
 
 .copy-text {
   padding: 1rem;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #f5f5f5;
   border-radius: 4px;
-  margin: 1rem 0;
-  text-align: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  user-select: all;
 }
 
-.copy-text:hover {
-  background-color: #f0f0f0;
-  border-color: #42b883;
+.highlight-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.highlight-item {
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
 }
 </style>
