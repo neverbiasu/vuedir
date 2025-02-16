@@ -1,5 +1,15 @@
 # 📡 VueDir
 
+<p align="center">
+  <img width="180" src="../docs/public/logo.jpg" alt="VueDir logo">
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/@cp-vuedir/core"><img src="https://img.shields.io/npm/v/@cp-vuedir/core.svg" alt="版本"></a>
+  <a href="https://www.npmjs.com/package/@cp-vuedir/core"><img src="https://img.shields.io/npm/dm/@cp-vuedir/core.svg" alt="下载量"></a>
+  <a href="https://github.com/CodePaintStudio/vuedir/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@cp-vuedir/core.svg" alt="开源协议"></a>
+</p>
+
 [English](./README.md) | 简体中文
 
 VueDir 是一个轻量级的 Vue 3 指令集合，旨在提供一系列实用的自定义指令，帮助开发者更高效地构建 Vue 应用。
@@ -34,7 +44,7 @@ app.mount("#app");
 
 ## 📖 文档
 
-访问我们的[官方文档](https://vuedir.codepaintstudio.com)获取更多信息。
+访问我们的[官方文档](https://codepaintstudio.github.io/vuedir/)获取更多信息。
 
 ## 🤝 贡献
 

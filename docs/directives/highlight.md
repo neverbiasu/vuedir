@@ -8,8 +8,6 @@
 </template>
 ```
 
-<HightlightDemo/>
-
 ## 扩展用法
 
 ### 字符串颜色值
@@ -37,6 +35,8 @@
   </div>
 </template>
 ```
+
+<HightlightDemo/>
 
 ## API
 

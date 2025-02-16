@@ -1,11 +1,17 @@
 import { defineConfig } from "vitepress";
 import { resolve } from "path";
 
+// https://vitepress.dev/reference/site-config
+
 export default defineConfig({
   base: "/vuedir/",
   title: "CP-VueDir",
   description: "Vue 3 指令集合",
   lastUpdated: true,
+  head: [
+    ["link", { rel: "icon", href: "/vuedir/logo.jpg" }],
+    ["meta", { name: "theme-color", content: "#3eaf7c" }],
+  ],
   vite: {
     resolve: {
       alias: {
@@ -14,6 +20,7 @@ export default defineConfig({
     },
   },
   themeConfig: {
+    logo: "/logo.jpg",
     lastUpdatedText: "最后更新时间",
     editLink: {
       pattern: "https://github.com/CodePaintStudio/vuedir/edit/main/docs/:path",
