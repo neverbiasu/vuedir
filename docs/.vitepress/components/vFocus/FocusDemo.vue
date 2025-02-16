@@ -1,12 +1,6 @@
 <script setup lang="ts">
-import { ref, getCurrentInstance } from "vue";
+import { ref } from "vue";
 import { vFocus } from "@cp-vuedir/core";
-
-// 注册指令
-const vueApp = getCurrentInstance();
-if (vueApp) {
-  vueApp.appContext.app.directive("focus", vFocus);
-}
 
 const message = ref("");
 </script>
@@ -27,30 +21,31 @@ const message = ref("");
 <style scoped>
 .demo-container {
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--vp-c-divider-light);
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: var(--vp-c-bg-soft);
 }
 
 .demo-input {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
-  border: 1px solid #ddd;
-  color: #333;
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-1);
   border-radius: 4px;
   font-size: 1rem;
+  background-color: var(--vp-c-bg);
 }
 
 .demo-input:focus {
   outline: none;
-  border-color: #4caf50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 0 5px var(--vp-c-brand-light);
 }
 
 .demo-text {
   margin: 0;
-  color: #666;
+  color: var(--vp-c-text-2);
   font-size: 0.9rem;
 }
 </style>

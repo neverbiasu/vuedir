@@ -23,31 +23,31 @@ const text = ref("点击复制这段文本");
 <style scoped>
 .demo-container {
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--vp-c-divider-light);
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: var(--vp-c-bg-soft);
 }
 
 .copy-text {
   padding: 1rem;
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #ddd;
+  background-color: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  border: 1px solid var(--vp-c-divider);
   border-radius: 4px;
   margin-bottom: 1rem;
   text-align: center;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .copy-text:hover {
-  background-color: #f0f0f0;
-  border-color: #4caf50;
+  background-color: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-brand);
 }
 
 .demo-tip {
   margin: 0;
-  color: #666;
+  color: var(--vp-c-text-2);
   font-size: 0.9rem;
-  text-align: center;
 }
 </style>

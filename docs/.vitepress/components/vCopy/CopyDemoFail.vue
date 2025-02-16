@@ -16,16 +16,16 @@ const disabledText = ref("这是一段无法复制的文本");
 <style scoped>
 .demo-container {
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--vp-c-divider-light);
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: var(--vp-c-bg-soft);
 }
 
 .copy-text {
   padding: 1rem;
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #ddd;
+  background-color: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  border: 1px solid var(--vp-c-divider);
   border-radius: 4px;
   margin-bottom: 1rem;
   text-align: center;
@@ -34,14 +34,14 @@ const disabledText = ref("这是一段无法复制的文本");
 }
 
 .copy-text:hover {
-  background-color: #f0f0f0;
-  border-color: #ff4d4f;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  background-color: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-danger);
+  box-shadow: 0 0 10px var(--vp-c-danger-dimm);
 }
 
 .demo-tip {
   margin: 0;
-  color: #666;
+  color: var(--vp-c-text-2);
   font-size: 0.9rem;
 }
 </style>

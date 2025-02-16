@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// Props 定义保持不变
+// Props definition remains unchanged
 interface Props {
   data: {
     name: string;
@@ -32,7 +32,16 @@ defineProps<Props>();
           <td>
             <code>{{ item.type }}</code>
           </td>
-          <td>{{ item.required ? "是" : "否" }}</td>
+          <td>
+            <span
+              :class="[
+                'required-badge',
+                item.required ? 'required' : 'optional',
+              ]"
+            >
+              {{ item.required ? "必选" : "可选" }}
+            </span>
+          </td>
           <td class="default-column">
             <span>{{ item.default || "-" }}</span>
           </td>
@@ -43,76 +52,90 @@ defineProps<Props>();
 </template>
 
 <style scoped>
-.api-table {
-  width: 100%;
-  margin: 0;
-  background: transparent;
-}
-
 .api-table table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-size: 0.95rem;
-  table-layout: fixed; /* 确保列宽均匀分布 */
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .api-table th,
 .api-table td {
   text-align: left;
-  padding: 1rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  border: none;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--vp-c-divider);
 }
 
 .api-table th {
-  font-weight: 500;
-  color: #1a1a1a;
-  background-color: #f9fafb;
-}
-
-.api-table tr:last-child td {
-  border-bottom: none;
-}
-
-.api-table code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.9em;
-  background-color: #f3f4f6;
-  padding: 0.2em 0.4em;
-  border-radius: 4px;
-  color: #374151;
-}
-
-.api-table .name-column {
-  font-weight: 500;
-  color: #1a1a1a;
-  width: 15%; /* 属性名列宽 */
-}
-
-.api-table td:nth-child(2) {
-  width: 40%; /* 说明列宽 */
-}
-
-.api-table td:nth-child(3) {
-  width: 20%; /* 类型列宽 */
-}
-
-.api-table td:nth-child(4) {
-  width: 10%; /* 是否必选列宽 */
-}
-
-.api-table td:nth-child(5) {
-  width: 15%; /* 默认值列宽 */
-}
-
-.api-table .default-column {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  background-color: var(--vp-c-bg-soft);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
 }
 
 .api-table tbody tr:hover {
-  background-color: #f9fafb;
+  background-color: var(--vp-c-bg-soft);
+}
+
+.api-table code {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.8125rem;
+  background-color: var(--vp-c-bg-soft);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  color: var(--vp-c-text-1);
+}
+
+.api-table .name-column {
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.required-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.required-badge.required {
+  background-color: var(--vp-c-red-dimm-2);
+  color: var(--vp-c-red-1);
+}
+
+.required-badge.optional {
+  background-color: var(--vp-c-blue-dimm-2);
+  color: var(--vp-c-blue-1);
+}
+
+.api-table .default-column {
+  font-family: var(--vp-font-family-mono);
+  color: var(--vp-c-text-2);
+}
+
+@media (max-width: 640px) {
+  .api-table {
+    font-size: 0.75rem;
+  }
+
+  .api-table th,
+  .api-table td {
+    padding: 0.5rem;
+  }
+
+  .api-table code {
+    font-size: 0.6875rem;
+  }
+
+  .required-badge {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.375rem;
+  }
 }
 </style>

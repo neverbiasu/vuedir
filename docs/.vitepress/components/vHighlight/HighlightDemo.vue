@@ -1,61 +1,37 @@
 <script setup lang="ts">
 import { vHighlight } from "@cp-vuedir/core";
-
-const basicExample = "rgb(241,115,19)";
-const customTextExample = {
-  bgColor: "#8FCC21",
-  textColor: "#ffffff",
-};
-const autoTextExample = {
-  bgColor: "#447DFC",
-  auto: true,
-};
 </script>
 
 <template>
-  <div class="demo-container">
-    <div class="demo-section">
-      <h3>基础用法</h3>
-      <p v-highlight="basicExample">简单的红色背景高亮效果</p>
+  <div class="highlight-examples">
+    <div v-highlight="'#ff0000'" class="highlight-item">简单红色背景</div>
+    <div
+      v-highlight="{ bgColor: '#ffff00', textColor: '#000000' }"
+      class="highlight-item"
+    >
+      黄色背景黑色文字
     </div>
-
-    <div class="demo-section">
-      <h3>自定义文字颜色</h3>
-      <p v-highlight="customTextExample">红色背景白色文字效果</p>
-    </div>
-
-    <div class="demo-section">
-      <h3>自动文字颜色</h3>
-      <p v-highlight="autoTextExample">黄色背景自动计算文字颜色效果</p>
+    <div
+      v-highlight="{ bgColor: 'rgba(0, 0, 255, 0.5)', auto: true }"
+      class="highlight-item"
+    >
+      半透明蓝色背景自动文字颜色
     </div>
   </div>
 </template>
 
 <style scoped>
-.demo-container {
+.highlight-examples {
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-
-.demo-section {
-  margin-bottom: 1.5rem;
-}
-
-.demo-section:last-child {
-  margin-bottom: 0;
-}
-
-.demo-section h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  color: #666;
-}
-
-.demo-section div[v-highlight] {
+.highlight-item {
   padding: 1rem;
   border-radius: 4px;
-  margin-top: 0.5rem;
-  padding: 2px;
+  text-align: center;
 }
 </style>

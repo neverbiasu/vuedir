@@ -2,21 +2,48 @@
 
 如果你想参与开发或在本地运行这个项目，只需要执行以下步骤：
 
-## 本地开发
-
 1. 克隆项目并安装依赖：
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/CodePaintStudio/vuedir
 cd vuedir
+```
+
+2. 安装依赖：
+
+::: code-group
+
+```bash [pnpm]
 pnpm install
 ```
 
-2. 启动开发环境：
+```bash [npm]
+npm install
+```
 
-```bash
+```bash [yarn]
+yarn install
+```
+
+:::
+
+3. 启动开发环境：
+
+::: code-group
+
+```bash [pnpm]
 pnpm dev
 ```
+
+```bash [npm]
+npm run dev
+```
+
+```bash [yarn]
+yarn dev
+```
+
+:::
 
 这个命令会同时启动以下服务：
 

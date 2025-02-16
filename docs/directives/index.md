@@ -7,17 +7,22 @@ const directives = ref([
   {
     name: 'v-copy',
     description: '一键复制文本内容，支持动态文本和复制状态反馈',
-    link: '/directives/copy'
+    link: '/vuedir/directives/copy'
   },
   {
     name: 'v-focus',
     description: '自动聚焦表单元素，提升表单交互体验',
-    link: '/directives/focus'
+    link: '/vuedir/directives/copy'
   },
   {
     name: 'v-highlight',
     description: '灵活的文本高亮效果，支持多种颜色格式和自动对比度',
-    link: '/directives/highlight'
+    link: '/vuedir/directives/copy'
+  },
+  {
+    name: "v-longpress",
+    description: "长按事件功能，支持自定义长按时间",
+    link: "/vuedir/directives/longpress"
   }
 ]);
 </script>
