@@ -99,7 +99,7 @@ const copyApi = [
 ];
 </script>
 
-## 参数说明
+## API
 
 <ApiTable :data="copyApi"/>
 

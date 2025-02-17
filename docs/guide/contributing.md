@@ -1,8 +1,20 @@
 # 贡献指南
 
-感谢你考虑为 CP-VueDir 做出贡献！在提交你的贡献之前，请花点时间阅读以下指南。
+感谢你考虑为 VueDir 做出贡献！在提交你的贡献之前，请花点时间阅读以下指南。
 
-## 代码规范
+## 📝 代码规范
+
+### 命名规范
+
+- 文件名：使用 kebab-case（例如：`v-focus.ts`）
+- 组件名：使用 PascalCase（例如：`VFocus`）
+- 变量名：使用 camelCase（例如：`focusElement`）
+
+### TypeScript
+
+- 所有的新代码都应该使用 TypeScript 编写
+- 确保添加适当的类型注解
+- 避免使用 `any` 类型
 
 ### 提交规范
 
@@ -18,7 +30,7 @@ test: add v-focus unit tests
 chore: update dependencies
 ```
 
-## 提交 PR
+## 🔍 提交 PR
 
 1. 确保你的代码通过了所有测试
 2. 更新相关的文档
@@ -37,7 +49,24 @@ git push origin feat/your-feature
    - 提供相关的截图（如果适用）
    - 标注是否需要更新文档
 
-## 报告问题
+## 📋 开发清单
+
+- [ ] 代码符合项目规范
+- [ ] 添加/更新测试用例
+- [ ] 更新相关文档
+- [ ] 本地测试通过
+- [ ] 提交信息符合规范
+
+## 🤝 行为准则
+
+请确保你的行为符合我们的行为准则：
+
+1. 尊重每一位贡献者
+2. 接受建设性的批评
+3. 关注问题本身
+4. 保持专业和包容的交流氛围
+
+## 📝 报告问题
 
 报告问题时，请包含：
 
@@ -48,17 +77,18 @@ git push origin feat/your-feature
 5. 相关的错误信息
 6. 运行环境信息
 
-## 致谢
-
-在此，非常感谢以下贡献者们：
+## 🎉 致谢
 
 <table>
   <tbody>
     <tr><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/minorcell" title="minorcell"><img src="https://avatars.githubusercontent.com/u/120795714?v=4" width="100px;" alt="minorcell" style="border-radius: 9999px;" /></a></td>
     </tr>
+
   </tbody>
 </table>
 
-::: tip
-贡献者信息更新来自 [Hub-io](https://hub-io-mcells-projects.vercel.app/)，若没有及时更新你可以在 [Issues](https://github.com/CodePaintStudio/vuedir/issues) 中提交反馈
+::: info 注意
+数据更新来自 [Hub-io](https://hub-io-mcells-projects.vercel.app/)，可能存在延迟。
 :::
+
+再次感谢你的贡献！你的参与对于改进 VueDir 项目非常重要。

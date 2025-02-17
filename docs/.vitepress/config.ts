@@ -49,28 +49,47 @@ export default defineConfig({
       },
     },
     nav: [
-      { text: "开始指南", link: "/guide/" },
-      { text: "查看指令", link: "/directives/" },
+      { text: "开始", link: "/guide/" },
+      { text: "指令集", link: "/directives/" },
     ],
     sidebar: {
       "/guide/": [
         {
-          text: "指南",
+          text: "快速开始",
+          items: [{ text: "安装", link: "/guide/" }],
+        },
+        {
+          text: "开发者指南",
           items: [
-            { text: "快速开始", link: "/guide/" },
-            { text: "贡献指南", link: "/guide/contributing" },
-            { text: "开发指南", link: "/guide/development" },
+            { text: "启动", link: "/guide/run" },
+            { text: "贡献", link: "/guide/contributing" },
           ],
         },
       ],
       "/directives/": [
         {
-          text: "指令",
+          text: "CP-VueDir 指令集",
           items: [
-            { text: "v-focus", link: "/directives/focus" },
-            { text: "v-copy", link: "/directives/copy" },
-            { text: "v-highlight", link: "/directives/highlight" },
-            { text: "v-longpress", link: "/directives/longpress" },
+            { text: "指令集预览", link: "/directives/" },
+            {
+              text: "交互类",
+              items: [
+                { text: "v-copy", link: "/directives/copy" },
+                { text: "v-longpress", link: "/directives/longpress" },
+                { text: "v-doubleClick", link: "/directives/doubleclick" },
+              ],
+            },
+            {
+              text: "视觉类",
+              items: [
+                { text: "v-highlight", link: "/directives/highlight" },
+                { text: "v-spare", link: "/directives/spare" },
+              ],
+            },
+            {
+              text: "表单类",
+              items: [{ text: "v-focus", link: "/directives/focus" }],
+            },
           ],
         },
       ],
