@@ -12,12 +12,12 @@ const directives = ref([
   {
     name: 'v-focus',
     description: '自动聚焦表单元素，提升表单交互体验',
-    link: '/vuedir/directives/copy'
+    link: '/vuedir/directives/focus'
   },
   {
     name: 'v-highlight',
     description: '灵活的文本高亮效果，支持多种颜色格式和自动对比度',
-    link: '/vuedir/directives/copy'
+    link: '/vuedir/directives/highlight'
   },
   {
     name: "v-longpress",
