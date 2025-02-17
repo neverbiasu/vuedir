@@ -46,14 +46,18 @@ const handleLongPress = () => {
 
 <LongPressWithDelay />
 
-## 参数说明
+## API
 
 <ApiTable :data="props"/>
 
 ## 注意事项
 
-1. event 参数为必填项，必须是一个有效的函数
-2. delay 参数可选，必须是一个有效的数字（毫秒）
+::: warning 关于两个参数
+
+- `event` 参数为必填项，必须是一个有效的函数
+- `delay` 参数可选，必须是一个有效的数字（毫秒）
+
+:::
 
 <script setup>
 import LongPressDemo from '../.vitepress/components/vLongpress/LongPressDemo.vue'

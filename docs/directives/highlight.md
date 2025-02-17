@@ -72,7 +72,15 @@
 
 <HightlightDemo/>
 
-## 参数说明
+## API
+
+### 字符串类型
+
+<ApiTable :data="directiveData" />
+
+### 配置对象类型
+
+<ApiTable :data="optionsData" />
 
 <script setup>
 import HightlightDemo from '../.vitepress/components/vHighlight/HighlightDemo.vue';
@@ -103,11 +111,3 @@ const optionsData = [{
   default: 'false'
 }];
 </script>
-
-### 字符串类型
-
-<ApiTable :data="directiveData" />
-
-### 配置对象类型
-
-<ApiTable :data="optionsData" />

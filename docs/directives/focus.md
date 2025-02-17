@@ -34,5 +34,14 @@ const message = ref("");
 
 ### 注意事项
 
-- 仅适用于可获得焦点的元素（如 input、textarea 等）
+::: warning 注意
+
+- 仅适用于可获得焦点的元素（如 `input`、`textarea` 等）
+
+:::
+
+::: danger 警告
+
 - 在同一页面中同时只能有一个元素获得焦点
+
+:::

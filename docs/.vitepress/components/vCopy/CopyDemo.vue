@@ -1,22 +1,16 @@
 <script setup lang="ts">
-import { ref, getCurrentInstance } from "vue";
+import { ref } from "vue";
 import { vCopy } from "@cp-vuedir/core";
 
-// 注册指令
-const vueApp = getCurrentInstance();
-if (vueApp) {
-  vueApp.appContext.app.directive("copy", vCopy);
-}
-
-const text = ref("点击复制这段文本");
+const text = ref("这是一段可以直接复制的文本内容");
 </script>
 
 <template>
   <div class="demo-container">
-    <div v-copy="text" class="copy-text" title="点击复制">
+    <div v-copy class="copy-text" title="点击复制">
       {{ text }}
     </div>
-    <p class="demo-tip">点击上方文本即可复制内容</p>
+    <p class="demo-tip">点击上方文本区域即可复制文本内容（隐式复制）</p>
   </div>
 </template>
 
