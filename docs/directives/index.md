@@ -39,6 +39,12 @@ const directives = ref([
     description: '双击事件处理，提供更丰富的交互方式',
     link: '/vuedir/directives/doubleclick',
     category: '交互类'
+  },
+  {
+    name: 'v-countup',
+    description: '数字滚动动画效果，支持指定目标数值或使用元素内容作为目标值',
+    link: '/vuedir/directives/countup',
+    category: '视觉类'
   }
 ]);
 

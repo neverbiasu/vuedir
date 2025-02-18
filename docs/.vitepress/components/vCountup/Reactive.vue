@@ -1,0 +1,45 @@
+<template>
+  <div class="demo-block">
+    <span v-countup="count"></span>
+    <button @click="updateCount">更新数值</button>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const count = ref(2000)
+const updateCount = () => {
+  count.value = Math.floor(Math.random() * 5000)
+}
+</script>
+
+<style scoped>
+.demo-block {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.demo-block span {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.demo-block button {
+  padding: 8px 16px;
+  background-color: #3eaf7c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.demo-block button:hover {
+  background-color: #2c8f5d;
+}
+</style>

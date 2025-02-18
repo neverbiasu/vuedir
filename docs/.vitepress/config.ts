@@ -22,6 +22,10 @@ export default defineConfig({
   themeConfig: {
     logo: "/logo.jpg",
     lastUpdatedText: "最后更新时间",
+    editLink: {
+      pattern: "https://github.com/CodePaintStudio/vuedir/edit/main/docs/:path",
+      text: "在 GitHub 上编辑此页"
+    },
     socialLinks: [
       {
         icon: "github",
@@ -84,6 +88,7 @@ export default defineConfig({
               items: [
                 { text: "v-highlight", link: "/directives/highlight" },
                 { text: "v-spare", link: "/directives/spare" },
+                { text: "v-countup", link: "/directives/countup" },
               ],
             },
             {
