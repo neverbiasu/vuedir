@@ -5,8 +5,17 @@ import { vHighlight } from "./directives/vHighlight";
 import { vLongpress } from "./directives/vLongpress";
 import { vDoubleClick } from "./directives/vDoubleClick";
 import { vSpare } from "./directives/vSpare";
+import { vCountup } from "./directives/vCountup";
 
-export { vFocus, vCopy, vHighlight, vLongpress, vDoubleClick, vSpare };
+export {
+  vFocus,
+  vCopy,
+  vHighlight,
+  vLongpress,
+  vDoubleClick,
+  vSpare,
+  vCountup,
+};
 
 export interface CPVueDirPlugin {
   install(app: App): void;
@@ -20,6 +29,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("longpress", vLongpress);
     app.directive("doubleclick", vDoubleClick);
     app.directive("spare", vSpare);
+    app.directive("countup", vCountup);
   },
 };
 

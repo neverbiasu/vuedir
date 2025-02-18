@@ -84,6 +84,7 @@ export default defineConfig({
               items: [
                 { text: "v-highlight", link: "/directives/highlight" },
                 { text: "v-spare", link: "/directives/spare" },
+                { text: "v-countup", link: "/directives/countup" },
               ],
             },
             {
