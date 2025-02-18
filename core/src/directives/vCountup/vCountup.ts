@@ -23,7 +23,7 @@ const defaultOptions = {
   startVal: 0, // 初始值
 };
 
-const vCountup: ObjectDirective<CountupHTMLElement, CountupBinding> = {
+export const vCountup: ObjectDirective<CountupHTMLElement, CountupBinding> = {
   mounted(el: CountupHTMLElement, binding: DirectiveBinding<CountupBinding>) {
     let endValue: number = 0;
 
@@ -130,5 +130,3 @@ function createCountupInstance(
 
   return { start, update, reset };
 }
-
-export default vCountup;

@@ -22,6 +22,10 @@ export default defineConfig({
   themeConfig: {
     logo: "/logo.jpg",
     lastUpdatedText: "最后更新时间",
+    editLink: {
+      pattern: "https://github.com/CodePaintStudio/vuedir/edit/main/docs/:path",
+      text: "在 GitHub 上编辑此页"
+    },
     socialLinks: [
       {
         icon: "github",

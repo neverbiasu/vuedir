@@ -1,4 +1,1 @@
-import vCountup from './vCountup';
-
-export { vCountup };
-export default vCountup;
+export { vCountup } from "./vCountup";

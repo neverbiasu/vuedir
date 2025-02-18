@@ -1,10 +1,1 @@
-import type { Directive } from "vue";
-
-export const vFocus: Directive = {
-  mounted(el) {
-    el.focus();
-  },
-  updated(el) {
-    el.focus();
-  },
-};
+export { vFocus } from "./vFocus";
