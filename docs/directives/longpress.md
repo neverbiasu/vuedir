@@ -10,19 +10,11 @@ v-longpress 指令用于实现长按事件功能。当用户按住元素达到�
 
 传入`event`参数，当用户长按元素达到指定时间（默认时间为 2 秒）后，会触发回调函数：
 
-```vue
-<template>
-  <button v-longpress="{ event: handleLongPress }">按住我2秒</button>
-</template>
-
-<script setup>
-const handleLongPress = () => {
-  alert("长按事件触发了！");
-};
-</script>
-```
-
 <LongPressDemo/>
+
+::: details 查看代码
+<<< @/.vitepress/components/vLongpress/LongPressDemo.vue
+:::
 
 ### 自定义延时
 
@@ -30,21 +22,11 @@ const handleLongPress = () => {
 
 设置 1 秒长按时间：
 
-```vue
-<template>
-  <button v-longpress="{ event: handleLongPress, delay: 1000 }">
-    按住我3秒
-  </button>
-</template>
-
-<script setup>
-const handleLongPress = () => {
-  alert("长按事件触发了！");
-};
-</script>
-```
-
 <LongPressWithDelay />
+
+::: details 查看代码
+<<< @/.vitepress/components/vLongpress/LongPressWithDelayDemo.vue
+:::
 
 ## API
 

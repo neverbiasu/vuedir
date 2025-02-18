@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
-const message = ref("");
-const copyText = ref("点击复制这段文本");
+import { vLongpress, vHighlight } from "@cp-vuedir/core";
 
 const handleLongPress = () => {
   alert("长按事件触发了！");

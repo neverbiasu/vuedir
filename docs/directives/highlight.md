@@ -47,30 +47,11 @@
 
 2. 对象配置方式
 
-```vue
-<template>
-  <!-- 字符串类型参数 -->
-  <div v-highlight="'#ff0000'" class="highlight-item">简单红色背景</div>
-
-  <!-- 对象类型参数 —— 传入指定文本颜色 -->
-  <div
-    v-highlight="{ bgColor: '#ffff00', textColor: '#000000' }"
-    class="highlight-item"
-  >
-    黄色背景黑色文字
-  </div>
-
-  <!-- 对象类型参数 —— 自动匹配高亮背景下文字颜色 -->
-  <div
-    v-highlight="{ bgColor: 'rgba(0, 0, 255, 0.5)', auto: true }"
-    class="highlight-item"
-  >
-    半透明蓝色背景自动文字颜色
-  </div>
-</template>
-```
-
 <HightlightDemo/>
+
+::: details 查看代码
+<<< @/.vitepress/components/vHighlight/HighlightDemo.vue
+:::
 
 ## API
 
@@ -81,6 +62,14 @@
 ### 配置对象类型
 
 <ApiTable :data="optionsData" />
+
+## 注意事项
+
+::: warning 注意
+
+- 如果同时传入`textColor`和`auto='true'`时，则`textColor`将被忽略。
+
+:::
 
 <script setup>
 import HightlightDemo from '../.vitepress/components/vHighlight/HighlightDemo.vue';

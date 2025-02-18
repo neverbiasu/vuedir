@@ -36,53 +36,23 @@ const copyText = ref("这是将被复制的内容");
 
 ### 隐式复制示例
 
-```vue
-<script setup lang="ts">
-import { ref } from "vue";
-import { vCopy } from "@cp-vuedir/core";
-
-const text = ref("这是一段可以直接复制的文本内容");
-</script>
-
-<template>
-  <div class="demo-container">
-    <div v-copy class="copy-text" title="点击复制">
-      {{ text }}
-    </div>
-    <p class="demo-tip">点击上方文本区域即可复制文本内容（隐式复制）</p>
-  </div>
-</template>
-```
-
 点击文本区域，将直接复制元素文本内容。
 
 <CopyDemo />
+
+::: details 查看代码
+<<< @/.vitepress/components/vCopy/CopyDemo.vue
+:::
 
 ### 显式复制示例
 
 点击按钮，将复制指定的文本内容，而不是元素的文本内容。
 
-```vue
-<script setup lang="ts">
-import { ref } from "vue";
-import { vCopy } from "@cp-vuedir/core";
-
-const buttonText = ref("点击复制");
-const copyText = ref("这是将被复制的内容");
-</script>
-
-<template>
-  <div class="demo-container">
-    <div class="content-display">预设文本内容：{{ copyText }}</div>
-    <button v-copy="copyText" class="copy-button" title="点击复制">
-      {{ buttonText }}
-    </button>
-    <p class="demo-tip">点击按钮复制预设的文本内容（显式复制）</p>
-  </div>
-</template>
-```
-
 <CopyDemoTo />
+
+::: details 查看代码
+<<< @/.vitepress/components/vCopy/CopyDemoTo.vue
+:::
 
 <script setup>
 import CopyDemo from '../.vitepress/components/vCopy/CopyDemo.vue';

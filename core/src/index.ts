@@ -6,6 +6,7 @@ import { vLongpress } from "./directives/vLongpress";
 import { vDoubleClick } from "./directives/vDoubleClick";
 import { vSpare } from "./directives/vSpare";
 import { vCountup } from "./directives/vCountup";
+import { vLazyload } from "./directives/vLazyload";
 
 export {
   vFocus,
@@ -15,6 +16,7 @@ export {
   vDoubleClick,
   vSpare,
   vCountup,
+  vLazyload,
 };
 
 export interface CPVueDirPlugin {
@@ -30,6 +32,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("doubleclick", vDoubleClick);
     app.directive("spare", vSpare);
     app.directive("countup", vCountup);
+    app.directive("lazyload", vLazyload);
   },
 };
 

@@ -30,17 +30,13 @@ v-countup 指令用于创建数字滚动动画效果，支持指定目标数值�
 
 当不指定 value 时，会使用元素的文本内容作为目标值。
 
-```vue
-<template>
-  <div class="demo-block">
-    <span v-countup>1000</span>
-  </div>
-</template>
-```
-
 <div class="demo-container">
   <Basic />
 </div>
+
+::: details 查看代码
+<<< @/.vitepress/components/vCountup/Basic.vue
+:::
 
 ::: warning 注意
 
@@ -50,51 +46,23 @@ v-countup 指令用于创建数字滚动动画效果，支持指定目标数值�
 
 ### 响应式用法
 
-```vue
-<template>
-  <div class="demo-block">
-    <span v-countup="count"></span>
-    <button @click="updateCount">更新数值</button>
-  </div>
-</template>
-
-<script setup>
-import { ref } from "vue";
-
-const count = ref(2000);
-const updateCount = () => {
-  count.value = Math.floor(Math.random() * 5000);
-};
-</script>
-```
-
 <div class="demo-container">
   <Reactive />
 </div>
 
+::: details 查看代码
+<<< @/.vitepress/components/vCountup/Reactive.vue
+:::
+
 ### 修饰符用法
-
-```vue
-<template>
-  <div class="demo-block">
-    <!-- 持续时间修饰符 -->
-    <span v-countup.duration-3>1000</span>
-
-    <!-- 小数位数修饰符 -->
-    <span v-countup.decimals-2>1500.50</span>
-
-    <!-- 起始值修饰符 -->
-    <span v-countup.startVal-100>1000</span>
-
-    <!-- 组合使用修饰符 -->
-    <span v-countup.duration-3.decimals-2.startVal-100>1500.50</span>
-  </div>
-</template>
-```
 
 <div class="demo-container">
   <Modifiers />
 </div>
+
+::: details 查看代码
+<<< @/.vitepress/components/vCountup/Modifiers.vue
+:::
 
 ## API
 
@@ -151,10 +119,10 @@ const modifierProps = [
 
 ::: warning 注意
 
-1. 当不指定 value 时，会使用元素的文本内容作为目标值，请确保内容为有效的数字。
-2. 支持响应式数据绑定，当绑定值发生变化时会自动更新动画。
-3. 动画使用 requestAnimationFrame 实现，保证了较好的性能和流畅度。
-4. 如果目标值不是有效的数字，指令将不会执行动画并在控制台输出警告。
+- 当不指定 value 时，会使用元素的文本内容作为目标值，请确保内容为有效的数字。
+- 支持响应式数据绑定，当绑定值发生变化时会自动更新动画。
+- 动画使用 requestAnimationFrame 实现，保证了较好的性能和流畅度。
+- 如果目标值不是有效的数字，指令将不会执行动画并在控制台输出警告。
 
 :::
 

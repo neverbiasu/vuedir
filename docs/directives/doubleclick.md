@@ -4,26 +4,11 @@
 
 ## 使用方法
 
-```vue
-<template>
-  <div v-double-click="handleDoubleClick" class="double-click-box">
-    双击计数：{{ count }}
-  </div>
-</template>
-
-<script setup lang="ts">
-import { ref } from "vue";
-import { vDoubleClick } from "@cp-vuedir/core";
-
-const count = ref(0);
-
-const handleDoubleClick = () => {
-  count.value++;
-};
-</script>
-```
-
 <DoubleDemo />
+
+::: details 查看代码
+<<< @/.vitepress/components/vDoubleClick/DoubleDemo.vue
+:::
 
 ## API
 
