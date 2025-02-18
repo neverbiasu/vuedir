@@ -24,7 +24,7 @@ export default defineConfig({
     lastUpdatedText: "最后更新时间",
     editLink: {
       pattern: "https://github.com/CodePaintStudio/vuedir/edit/main/docs/:path",
-      text: "在 GitHub 上编辑此页"
+      text: "在 GitHub 上编辑此页",
     },
     socialLinks: [
       {
@@ -89,6 +89,7 @@ export default defineConfig({
                 { text: "v-highlight", link: "/directives/highlight" },
                 { text: "v-spare", link: "/directives/spare" },
                 { text: "v-countup", link: "/directives/countup" },
+                { text: "v-lazyload", link: "/directives/lazyload" },
               ],
             },
             {

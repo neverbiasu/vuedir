@@ -45,6 +45,12 @@ const directives = ref([
     description: '数字滚动动画效果，支持指定目标数值或使用元素内容作为目标值',
     link: '/vuedir/directives/countup',
     category: '视觉类'
+  },
+  {
+    name: 'v-lazyload',
+    description: '图片懒加载功能，支持自定义加载时机',
+    link: '/vuedir/directives/lazyload',
+    category: '视觉类'
   }
 ]);
 
