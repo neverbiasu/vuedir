@@ -1,0 +1,1 @@
+export { vThrottle } from "./vThrottle";

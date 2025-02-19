@@ -1,9 +1,4 @@
-import type { Directive } from "vue";
-
-interface VLongpressOptions {
-  event: () => void;
-  delay?: number;
-}
+import type { Directive, DirectiveBinding } from "vue";
 
 interface VLongpressHTMLElement extends HTMLElement {
   __vLongpressTimer?: NodeJS.Timeout;
@@ -12,14 +7,29 @@ interface VLongpressHTMLElement extends HTMLElement {
   __vLongpressMouseupHandler?: (e: MouseEvent) => void;
 }
 
-export const vLongpress: Directive<HTMLElement, VLongpressOptions> = {
-  mounted(el: VLongpressHTMLElement, binding) {
-    if (typeof binding.value !== "object" || !binding.value.event) {
-      console.error("v-longpress指令需要一个包含event函数的对象参数");
-      return;
-    }
+function parseModifiers(binding: DirectiveBinding): {
+  event: () => void;
+  delay: number;
+} {
+  let event: () => void;
+  let delay = 2000;
 
-    const { event, delay = 2000 } = binding.value;
+  if (typeof binding.value === "object" && binding.value.event) {
+    event = binding.value.event;
+    delay = binding.value.delay || delay;
+  } else if (typeof binding.value === "function") {
+    event = binding.value;
+  } else {
+    console.error("v-longpress指令需要一个函数或包含event函数的对象参数");
+    return { event: () => {}, delay };
+  }
+
+  return { event, delay };
+}
+
+export const vLongpress: Directive<HTMLElement> = {
+  mounted(el: VLongpressHTMLElement, binding) {
+    const { event, delay } = parseModifiers(binding);
 
     el.__vLongpressHandler = () => {
       event();

@@ -88,6 +88,8 @@ export default defineConfig({
                 { text: "v-copy", link: "/directives/copy" },
                 { text: "v-longpress", link: "/directives/longpress" },
                 { text: "v-doubleClick", link: "/directives/doubleclick" },
+                { text: "v-debounce", link: "/directives/debounce" },
+                { text: "v-throttle", link: "/directives/throttle" },
               ],
             },
             {

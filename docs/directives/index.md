@@ -23,6 +23,18 @@ const directives = ref([
     category: '表单类'
   },
   {
+    name: "v-debounce",
+    description: "防抖函数，用于减少事件触发频率",
+    link: "/vuedir/directives/debounce",
+    category: '交互类'
+  },
+  {
+    name: "v-throttle",
+    description: "节流函数，用于控制事件触发频率",
+    link: "/vuedir/directives/throttle",
+    category: '交互类'
+  },
+  {
     name: 'v-highlight',
     description: '灵活的文本高亮效果，支持多种颜色格式和自动对比度',
     link: '/vuedir/directives/highlight',

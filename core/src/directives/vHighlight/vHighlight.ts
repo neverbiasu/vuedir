@@ -28,12 +28,33 @@ const calculateContrastColor = (bgColor: string): string => {
   return brightness >= 128 ? "#000000" : "#ffffff";
 };
 
+const parseModifiers = (modifiers: Record<string, boolean>): Partial<HighlightOptions> => {
+  const options: Partial<HighlightOptions> = {};
+  
+  for (const key in modifiers) {
+    const [property, value] = key.split('-');
+    switch (property) {
+      case 'bgColor':
+        options.bgColor = value;
+        break;
+      case 'textColor':
+        options.textColor = value;
+        break;
+      case 'auto':
+        options.auto = value === 'true';
+        break;
+    }
+  }
+  
+  return options;
+};
+
 export const vHighlight: Directive<HTMLElement, string | HighlightOptions> = {
   mounted(el, binding) {
-    const options =
-      typeof binding.value === "string"
-        ? { bgColor: binding.value }
-        : binding.value;
+    const modifierOptions = parseModifiers(binding.modifiers);
+    const valueOptions = typeof binding.value === 'string' ? { bgColor: binding.value } : binding.value;
+    const options = { ...valueOptions, ...modifierOptions };
+    
     if (!options || !options.bgColor) return;
 
     if (!isValidColor(options.bgColor)) {
@@ -60,13 +81,13 @@ export const vHighlight: Directive<HTMLElement, string | HighlightOptions> = {
   },
 
   updated(el, binding) {
-    const options =
-      typeof binding.value === "string"
-        ? { bgColor: binding.value }
-        : binding.value;
+    const modifierOptions = parseModifiers(binding.modifiers);
+    const valueOptions = typeof binding.value === 'string' ? { bgColor: binding.value } : binding.value;
+    const options = { ...valueOptions, ...modifierOptions };
+    
     if (!options || !options.bgColor) {
-      el.style.backgroundColor = "";
-      el.style.color = "";
+      el.style.backgroundColor = '';
+      el.style.color = '';
       return;
     }
 

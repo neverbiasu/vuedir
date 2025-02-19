@@ -53,6 +53,16 @@
 <<< @/.vitepress/components/vHighlight/HighlightDemo.vue
 :::
 
+### 链式调用
+
+通过对象配置方式，可以组合使用多个参数，实现更灵活的高亮效果：
+
+<Modifiers />
+
+::: details 查看代码
+<<< @/.vitepress/components/vHighlight/Modifiers.vue
+:::
+
 ## API
 
 ### 字符串类型
@@ -73,6 +83,7 @@
 
 <script setup>
 import HightlightDemo from '../.vitepress/components/vHighlight/HighlightDemo.vue';
+import Modifiers from '../.vitepress/components/vHighlight/Modifiers.vue';
 import ApiTable from '../.vitepress/components/ApiTable.vue';
 
 const directiveData = [{
