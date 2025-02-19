@@ -7,6 +7,7 @@ import { vDoubleClick } from "./directives/vDoubleClick";
 import { vSpare } from "./directives/vSpare";
 import { vCountup } from "./directives/vCountup";
 import { vLazyload } from "./directives/vLazyload";
+import { vPwdvisible } from "./directives/vPwdvisible";
 
 export {
   vFocus,
@@ -17,6 +18,7 @@ export {
   vSpare,
   vCountup,
   vLazyload,
+  vPwdvisible,
 };
 
 export interface CPVueDirPlugin {
@@ -33,6 +35,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("spare", vSpare);
     app.directive("countup", vCountup);
     app.directive("lazyload", vLazyload);
+    app.directive("pwdvisible", vPwdvisible);
   },
 };
 

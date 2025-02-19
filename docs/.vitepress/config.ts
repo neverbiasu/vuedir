@@ -31,6 +31,10 @@ export default defineConfig({
         icon: "github",
         link: "https://github.com/CodePaintStudio/vuedir/tree/main",
       },
+      {
+        icon: "npm",
+        link: "https://www.npmjs.com/package/@cp-vuedir/core",
+      },
     ],
     search: {
       provider: "local",
@@ -94,7 +98,10 @@ export default defineConfig({
             },
             {
               text: "表单类",
-              items: [{ text: "v-focus", link: "/directives/focus" }],
+              items: [
+                { text: "v-focus", link: "/directives/focus" },
+                { text: "v-pwdvisible", link: "/directives/pwdvisible" },
+              ],
             },
           ],
         },

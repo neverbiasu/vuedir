@@ -17,6 +17,12 @@ const directives = ref([
     category: '表单类'
   },
   {
+    name: "v-pwdvisible",
+    description: "密码可见性切换功能",
+    link: "/vuedir/directives/pwdvisible",
+    category: '表单类'
+  },
+  {
     name: 'v-highlight',
     description: '灵活的文本高亮效果，支持多种颜色格式和自动对比度',
     link: '/vuedir/directives/highlight',
