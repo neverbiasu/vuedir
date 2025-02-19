@@ -88,6 +88,7 @@ export default defineConfig({
                 { text: "v-copy", link: "/directives/copy" },
                 { text: "v-longpress", link: "/directives/longpress" },
                 { text: "v-doubleClick", link: "/directives/doubleclick" },
+                { text: "v-threeClick", link: "/directives/threeclick" },
                 { text: "v-debounce", link: "/directives/debounce" },
                 { text: "v-throttle", link: "/directives/throttle" },
               ],
@@ -99,6 +100,7 @@ export default defineConfig({
                 { text: "v-spare", link: "/directives/spare" },
                 { text: "v-countup", link: "/directives/countup" },
                 { text: "v-lazyload", link: "/directives/lazyload" },
+                { text: "v-watermarker", link: "/directives/watermarker" },
               ],
             },
             {

@@ -1,12 +1,7 @@
-import type { Directive } from "vue";
-
-interface VCopyHTMLElement extends HTMLElement {
-  __vCopy?: (event: MouseEvent) => Promise<void>;
-  __vCopyIcon?: HTMLElement;
-}
-
 import { COPY_ICON } from "../../icons/copyIcon";
 import { SUCCESS_ICON } from "../../icons/successIcon";
+import type { VCopyHTMLElement } from "./type";
+import type { Directive } from "vue";
 
 export const vCopy: Directive = {
   mounted(el: VCopyHTMLElement) {

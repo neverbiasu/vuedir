@@ -11,6 +11,8 @@ import { vPwdvisible } from "./directives/vPwdvisible";
 import { vDebounce } from "./directives/vDebounce";
 import { vThrottle } from "./directives/vThrottle";
 import { vClearable } from "./directives/vClearable";
+import { vWatermarker } from "./directives/vWatermarker";
+import { vThreeClick } from "./directives/vThreeClick";
 
 export {
   vFocus,
@@ -25,6 +27,8 @@ export {
   vDebounce,
   vThrottle,
   vClearable,
+  vWatermarker,
+  vThreeClick,
 };
 
 export interface CPVueDirPlugin {
@@ -45,6 +49,8 @@ const VueDir: CPVueDirPlugin = {
     app.directive("debounce", vDebounce);
     app.directive("throttle", vThrottle);
     app.directive("clearable", vClearable);
+    app.directive("watermarker", vWatermarker);
+    app.directive("threeclick", vThreeClick);
   },
 };
 

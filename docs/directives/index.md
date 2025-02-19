@@ -47,6 +47,12 @@ const directives = ref([
     category: '视觉类'
   },
   {
+    name: 'v-watermarker',
+    description: '为元素添加水印效果，支持自定义水印文本和样式',
+    link: '/vuedir/directives/watermarker',
+    category: '视觉类'
+  },
+  {
     name: 'v-longpress',
     description: '长按事件功能，支持自定义长按时间',
     link: '/vuedir/directives/longpress',
@@ -63,6 +69,12 @@ const directives = ref([
     description: '双击事件处理，提供更丰富的交互方式',
     link: '/vuedir/directives/doubleclick',
     category: '交互类'
+  },
+  {
+    name: 'v-threeclick',
+    description: '三击事件处理，支持自定义三击时间',
+    link: '/vuedir/directives/threeclick',
+    category: '交互类' 
   },
   {
     name: 'v-countup',
