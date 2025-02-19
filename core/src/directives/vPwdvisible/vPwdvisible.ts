@@ -7,6 +7,9 @@ interface VPwdvisibleHTMLElement extends HTMLInputElement {
   };
 }
 
+import { OPEN_EYE_ICON } from "../../icons/openEyeIcon";
+import { CLOSED_EYE_ICON } from "../../icons/closedEyeIcon";
+
 const createEyeIcon = (visible: boolean = false): HTMLElement => {
   const icon = document.createElement("div");
   icon.style.position = "absolute";
@@ -16,24 +19,9 @@ const createEyeIcon = (visible: boolean = false): HTMLElement => {
   icon.style.cursor = "pointer";
   icon.style.width = "20px";
   icon.style.height = "20px";
-  icon.innerHTML = visible ? getOpenEyeSvg() : getClosedEyeSvg();
+  icon.innerHTML = visible ? OPEN_EYE_ICON : CLOSED_EYE_ICON;
   return icon;
 };
-
-const getOpenEyeSvg = (): string => `
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/>
-    <circle cx="12" cy="12" r="3"/>
-  </svg>
-`;
-
-const getClosedEyeSvg = (): string => `
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M2 2l20 20"/>
-    <path d="M6.71 6.71C3.93 8.86 2 12 2 12s3-7 10-7c1.04 0 2.04.15 2.97.42"/>
-    <path d="M17.29 17.29C20.07 15.14 22 12 22 12s-3 7-10 7c-1.04 0-2.04-.15-2.97-.42"/>
-  </svg>
-`;
 
 export const vPwdvisible: Directive = {
   mounted(el: VPwdvisibleHTMLElement) {
@@ -55,7 +43,7 @@ export const vPwdvisible: Directive = {
     const toggleVisibility = () => {
       const isVisible = el.type === "text";
       el.type = isVisible ? "password" : "text";
-      eyeIcon.innerHTML = isVisible ? getClosedEyeSvg() : getOpenEyeSvg();
+      eyeIcon.innerHTML = isVisible ? CLOSED_EYE_ICON : OPEN_EYE_ICON;
     };
 
     eyeIcon.addEventListener("click", toggleVisibility);

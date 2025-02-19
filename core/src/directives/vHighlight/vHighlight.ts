@@ -65,6 +65,9 @@ export const vHighlight: Directive<HTMLElement, string | HighlightOptions> = {
     }
 
     el.style.transition = "all 0.3s ease";
+    el.style.display = "inline";
+    el.style.padding = "0.2em 0.4em";
+    el.style.borderRadius = "0.2em";
     el.style.backgroundColor = options.bgColor;
 
     if (options.auto) {
