@@ -15,16 +15,16 @@ hero:
       text: 查看指令集
       link: /directives/
 features:
-  - title: 超丰富指令集
-    details: 持续提供更多的指令，满足不同的需求，短期目标100+
+  - title: 足够丰富
+    details: 短期目标100+，只要你想任何操作都可以指令化！
   - title: 足够轻量级
-    details: 小巧的体积，完整包体积仅十几kb，完全影响你的项目性能
+    details: 小巧的体积，完整包体积仅十几kb，完全不影响你的项目性能
   - title: 足够简单易用
     details: 简单的 API，一个指令搞定一切
-  - title: 支持按需引入s
+  - title: 支持按需引入
     details: 按需引入，减少项目体积，提高性能
   - title: TypeScript 支持
     details: 使用 TypeScript 编写，提供完整的类型支持
-  - title: 支持属性可选链调用
-    details: 传入对象太麻烦？使用可选链调用吧！
+  - title: 支持链式传参
+    details: 传入对象太麻烦？使用链式传入吧！
 ---

@@ -20,7 +20,9 @@
 
 以下示例展示了最基本的图片懒加载用法，当图片进入视口时才会加载：
 
-<BasicDemo />
+<div class="demo-container">
+  <BasicDemo />
+</div>
 
 ::: details 查看代码
 <<< @/.vitepress/components/vLazyload/BasicDemo.vue
@@ -30,7 +32,9 @@
 
 以下示例展示了如何通过配置项自定义懒加载的触发条件，设置了更大的 threshold 和 rootMargin 值：
 
-<AdvancedDemo />
+<div class="demo-container">
+  <AdvancedDemo />
+</div>
 
 ::: details 查看代码
 <<< @/.vitepress/components/vLazyload/AdvancedDemo.vue
@@ -63,3 +67,14 @@ const data = [
     }
 ]
 </script>
+
+<style>
+.demo-container {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+</style>

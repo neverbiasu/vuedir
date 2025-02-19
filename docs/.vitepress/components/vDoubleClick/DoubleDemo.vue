@@ -1,5 +1,5 @@
 <template>
-  <div v-double-click="handleDoubleClick" class="double-click-box">
+  <div v-doubleClick="handleDoubleClick" class="double-click-box">
     双击计数：{{ count }}
   </div>
 </template>

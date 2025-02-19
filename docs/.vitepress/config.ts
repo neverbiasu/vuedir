@@ -64,7 +64,10 @@ export default defineConfig({
       "/guide/": [
         {
           text: "快速开始",
-          items: [{ text: "安装", link: "/guide/" }],
+          items: [
+            { text: "安装", link: "/guide/" },
+            { text: "特性", link: "/guide/peculiarity" },
+          ],
         },
         {
           text: "开发者指南",
