@@ -126,8 +126,11 @@ const modifierProps = [
 
 :::
 
-<style>
+<style scoped>
 .demo-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 20px;
