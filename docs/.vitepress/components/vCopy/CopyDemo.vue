@@ -2,15 +2,15 @@
 import { ref } from "vue";
 import { vCopy } from "@cp-vuedir/core";
 
-const text = ref("这是一段可以直接复制的文本内容");
+const text = ref("世界上有太多孤独的人，害怕先踏出第一步。———《绿皮书》");
 </script>
 
 <template>
   <div class="demo-container">
-    <div v-copy class="copy-text" title="点击复制">
+    <p v-copy class="copy-text" title="点击复制">
       {{ text }}
-    </div>
-    <p class="demo-tip">点击上方文本区域即可复制文本内容（隐式复制）</p>
+    </p>
+    <p class="demo-tip">点击上方文本区域即可复制文本内容</p>
   </div>
 </template>
 

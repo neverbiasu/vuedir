@@ -6,7 +6,7 @@
 
 <script setup>
 const handleLongPress = () => {
-  alert("长按事件触发了！");
+  alert("我不知道将去何方，但我已在路上。———《千与千寻》");
 };
 </script>
 

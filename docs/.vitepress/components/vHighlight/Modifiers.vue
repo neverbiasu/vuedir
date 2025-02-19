@@ -3,7 +3,8 @@
     <div class="modifier-example">
       <h4>链式传参</h4>
       <div v-highlight.bgColor-red.textColor-blue.auto-true>
-        这是一段带有背景色和文本颜色的文本，但是设置了自动匹配颜色，所以文本颜色不会是蓝色的。
+        我常常对自己说，别告诉别人你不开心，勤奋点做事，没什么事便早点回家睡觉去。
+        ———《阿飞正传》
       </div>
     </div>
   </div>

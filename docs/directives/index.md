@@ -23,6 +23,12 @@ const directives = ref([
     category: '表单类'
   },
   {
+    name: "v-clearable",
+    description: "为输入框或文本域添加一个清除按钮，点击后可以快速清空内容",
+    link: "/vuedir/directives/clearable",
+    category: '表单类'
+  },
+  {
     name: "v-debounce",
     description: "防抖函数，用于减少事件触发频率",
     link: "/vuedir/directives/debounce",

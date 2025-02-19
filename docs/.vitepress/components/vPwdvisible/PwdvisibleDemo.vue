@@ -5,6 +5,7 @@
       v-pwdvisible
       placeholder="请输入密码"
       class="password-input"
+      value="19700101000000"
     />
   </div>
 </template>
@@ -23,19 +24,20 @@ import { vPwdvisible } from "@cp-vuedir/core";
 .password-input {
   width: 300px;
   padding: 8px 35px 8px 12px;
-  border: 1px solid #dcdfe6;
+  border: 1px solid var(--vp-c-divider);
   border-radius: 4px;
   font-size: 14px;
-  color: #606266;
+  color: var(--vp-c-text-1);
   transition: border-color 0.2s;
+  background-color: var(--vp-c-bg);
 }
 
 .password-input:focus {
   outline: none;
-  border-color: #409eff;
+  border-color: var(--vp-c-brand);
 }
 
 .password-input::placeholder {
-  color: #c0c4cc;
+  color: var(--vp-c-text-3);
 }
 </style>

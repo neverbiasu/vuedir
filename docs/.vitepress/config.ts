@@ -106,6 +106,7 @@ export default defineConfig({
               items: [
                 { text: "v-focus", link: "/directives/focus" },
                 { text: "v-pwdvisible", link: "/directives/pwdvisible" },
+                { text: "v-clearabel", link: "/directives/clearable" },
               ],
             },
           ],

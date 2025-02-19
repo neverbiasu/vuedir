@@ -10,6 +10,7 @@ import { vLazyload } from "./directives/vLazyload";
 import { vPwdvisible } from "./directives/vPwdvisible";
 import { vDebounce } from "./directives/vDebounce";
 import { vThrottle } from "./directives/vThrottle";
+import { vClearable } from "./directives/vClearable";
 
 export {
   vFocus,
@@ -23,6 +24,7 @@ export {
   vPwdvisible,
   vDebounce,
   vThrottle,
+  vClearable,
 };
 
 export interface CPVueDirPlugin {
@@ -42,6 +44,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("pwdvisible", vPwdvisible);
     app.directive("debounce", vDebounce);
     app.directive("throttle", vThrottle);
+    app.directive("clearable", vClearable);
   },
 };
 

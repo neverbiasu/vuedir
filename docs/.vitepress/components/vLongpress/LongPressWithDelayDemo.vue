@@ -8,7 +8,9 @@
 
 <script setup>
 const handleLongPress = () => {
-  alert("长按事件触发了！");
+  alert(
+    "年轻的时候你总想要最好的，但年华老去，你不得不选一些便宜货。———《布达佩斯大饭店》"
+  );
 };
 </script>
 

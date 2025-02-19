@@ -26,8 +26,8 @@ const handleClick = () => {
 
 .demo-button {
   padding: 8px 16px;
-  background-color: #4caf50;
-  color: white;
+  background-color: var(--vp-c-brand);
+  color: var(--vp-c-bg);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -35,17 +35,17 @@ const handleClick = () => {
 }
 
 .demo-button:hover {
-  background-color: #45a049;
+  background-color: var(--vp-c-brand-dark);
 }
 
 .result {
   margin-top: 8px;
-  color: #666;
+  color: var(--vp-c-text-2);
   font-size: 0.9em;
 }
 
 h3 {
   margin: 0 0 1rem 0;
-  color: #333;
+  color: var(--vp-c-text-1);
 }
 </style>

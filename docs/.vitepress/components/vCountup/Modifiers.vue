@@ -12,12 +12,12 @@
 
     <div class="modifier-example">
       <h4>起始值 (startVal)</h4>
-      <span v-countup.startVal-100>1000</span>
+      <span v-countup.startVal-3000>5173</span>
     </div>
 
     <div class="modifier-example">
       <h4>组合使用</h4>
-      <span v-countup.duration-3.decimals-2.startVal-100>1500.50</span>
+      <span v-countup.duration-3.decimals-2.startVal-100>5173.90</span>
     </div>
   </div>
 </template>
