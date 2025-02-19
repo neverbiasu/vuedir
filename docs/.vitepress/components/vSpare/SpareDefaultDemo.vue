@@ -18,8 +18,9 @@ import { vSpare } from "@cp-vuedir/core";
 <style scoped>
 .demo-container {
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--vp-c-divider);
   border-radius: 4px;
+  background-color: var(--vp-c-bg);
 }
 
 .demo-item {
@@ -29,7 +30,7 @@ import { vSpare } from "@cp-vuedir/core";
 .demo-image {
   max-width: 20%;
   height: auto;
-  border: 1px solid #eee;
+  border: 1px solid var(--vp-c-divider-light);
   border-radius: 4px;
 }
 </style>

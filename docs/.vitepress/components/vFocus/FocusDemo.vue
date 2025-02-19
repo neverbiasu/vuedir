@@ -11,7 +11,7 @@ const message = ref("");
       v-focus
       v-model="message"
       type="text"
-      placeholder="这个输入框将自动获得焦点"
+      placeholder="说的是一辈子！差一年，一个月，一天，一个时辰，都不算一辈子！———《霸王别姬》"
       class="demo-input"
     />
     <p class="demo-text">当前输入内容: {{ message }}</p>

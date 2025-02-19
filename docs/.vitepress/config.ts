@@ -31,6 +31,10 @@ export default defineConfig({
         icon: "github",
         link: "https://github.com/CodePaintStudio/vuedir/tree/main",
       },
+      {
+        icon: "npm",
+        link: "https://www.npmjs.com/package/@cp-vuedir/core",
+      },
     ],
     search: {
       provider: "local",
@@ -60,7 +64,10 @@ export default defineConfig({
       "/guide/": [
         {
           text: "快速开始",
-          items: [{ text: "安装", link: "/guide/" }],
+          items: [
+            { text: "安装", link: "/guide/" },
+            { text: "特性", link: "/guide/peculiarity" },
+          ],
         },
         {
           text: "开发者指南",
@@ -81,6 +88,8 @@ export default defineConfig({
                 { text: "v-copy", link: "/directives/copy" },
                 { text: "v-longpress", link: "/directives/longpress" },
                 { text: "v-doubleClick", link: "/directives/doubleclick" },
+                { text: "v-debounce", link: "/directives/debounce" },
+                { text: "v-throttle", link: "/directives/throttle" },
               ],
             },
             {
@@ -94,7 +103,11 @@ export default defineConfig({
             },
             {
               text: "表单类",
-              items: [{ text: "v-focus", link: "/directives/focus" }],
+              items: [
+                { text: "v-focus", link: "/directives/focus" },
+                { text: "v-pwdvisible", link: "/directives/pwdvisible" },
+                { text: "v-clearabel", link: "/directives/clearable" },
+              ],
             },
           ],
         },

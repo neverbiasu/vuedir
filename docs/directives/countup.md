@@ -16,7 +16,7 @@ v-countup 指令用于创建数字滚动动画效果，支持指定目标数值�
 <!-- 使用响应式数据 -->
 <span v-countup="count"></span>
 
-<!-- 使用修饰符 -->
+<!-- 链式传参 -->
 <span v-countup.duration-3.decimals-2.startVal-100>1500.50</span>
 ```
 
@@ -54,7 +54,7 @@ v-countup 指令用于创建数字滚动动画效果，支持指定目标数值�
 <<< @/.vitepress/components/vCountup/Reactive.vue
 :::
 
-### 修饰符用法
+### 链式传参
 
 <div class="demo-container">
   <Modifiers />
@@ -126,8 +126,11 @@ const modifierProps = [
 
 :::
 
-<style>
+<style scoped>
 .demo-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   gap: 20px;

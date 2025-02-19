@@ -6,12 +6,12 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const count = ref(2000)
+const count = ref(3001);
 const updateCount = () => {
-  count.value = Math.floor(Math.random() * 5000)
-}
+  count.value = Math.floor(Math.random() * 5000);
+};
 </script>
 
 <style scoped>

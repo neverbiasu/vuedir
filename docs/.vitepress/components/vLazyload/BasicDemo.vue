@@ -39,6 +39,7 @@ img {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  background-color: #f5f5f5;
+  background-color: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
 }
 </style>
