@@ -87,17 +87,27 @@ function createCountupInstance(
   const start = () => {
     if (timer !== null) clearInterval(timer);
 
-    const step = (endValue - current) / (options.duration * 60);
+    const frames = options.duration * 60; // 总帧数
+    const increment = (endValue - current) / frames; // 每帧增量
+    let frame = 0;
+
+    // 获取目标值的小数位数
+    const targetDecimals = Math.max(
+      (endValue.toString().split(".")[1] || "").length,
+      options.decimals
+    );
+
     timer = window.setInterval(() => {
-      current += step;
-      if (
-        (step > 0 && current >= endValue) ||
-        (step < 0 && current <= endValue)
-      ) {
+      frame++;
+      current = options.startVal + increment * frame;
+
+      if (frame >= frames) {
         current = endValue;
         if (timer !== null) clearInterval(timer);
       }
-      el.textContent = current.toFixed(options.decimals);
+
+      // 使用更高精度来处理小数，避免四舍五入的影响
+      el.textContent = current.toFixed(targetDecimals);
     }, 1000 / 60);
   };
 

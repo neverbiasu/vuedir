@@ -1,4 +1,3 @@
-// 默认的占位图SVG组件
 export const DefaultImage = `
 <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -8,24 +7,29 @@ export const DefaultImage = `
   fill="none"
 >
   <rect width="200" height="200" fill="#F5F5F5" />
-  <path
-    d="M86.667 100L100 86.667L113.333 100L100 113.333L86.667 100ZM100 73.333L126.667 100L100 126.667L73.333 100L100 73.333ZM100 60L140 100L100 140L60 100L100 60Z"
-    fill="#D9D9D9"
-  />
-  <text
-    x="100"
-    y="160"
-    font-family="Arial"
-    font-size="14"
-    fill="#999999"
-    text-anchor="middle"
-  >
-    图片加载中
-  </text>
+  <g transform="translate(100 90)">
+    <circle cx="0" cy="0" r="30" stroke="#E0E0E0" stroke-width="5" fill="none" />
+    <path
+      d="M0 -30 A30 30 0 0 1 30 0"
+      stroke="#4A2C7B"
+      stroke-width="5"
+      fill="none"
+      stroke-linecap="round"
+    >
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0"
+        to="360"
+        dur="1s"
+        repeatCount="indefinite"
+        calcMode="ease-in-out"
+      />
+    </path>
+  </g>
 </svg>
 `;
 
-// 将SVG转换为Data URL
 export const getDefaultImageUrl = () => {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(DefaultImage)}`;
 };

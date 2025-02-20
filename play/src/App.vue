@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import { vPwdvisible } from "@cp-vuedir/core";
+import { vCountup } from "@cp-vuedir/core";
 </script>
 
 <template>
   <div class="container">
-    <h1>VueDir Playground</h1>
-    <div>
-      <input type="password" v-pwdvisible />
-    </div>
+    <span v-countup>1222.99999</span>
   </div>
 </template>
 
