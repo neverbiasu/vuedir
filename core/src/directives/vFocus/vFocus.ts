@@ -7,4 +7,7 @@ export const vFocus: Directive = {
   updated(el) {
     el.focus();
   },
+  unmounted(el) {
+    el.blur();
+  },
 };

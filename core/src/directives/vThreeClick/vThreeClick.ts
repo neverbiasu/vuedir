@@ -1,12 +1,5 @@
 import type { Directive, DirectiveBinding } from "vue";
-
-type ThreeClickHandler = () => void;
-
-interface ThreeClickElement extends HTMLElement {
-  __threeClickHandler?: ThreeClickHandler;
-  __clickCount?: number;
-  __lastClickTime?: number;
-}
+import { ThreeClickElement, ThreeClickHandler } from "./type";
 
 export const vThreeClick: Directive = {
   mounted(el: ThreeClickElement, binding: DirectiveBinding<ThreeClickHandler>) {

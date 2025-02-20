@@ -1,9 +1,5 @@
 import type { DirectiveBinding } from "vue";
-
-interface DebounceHTMLElement extends HTMLButtonElement {
-  _debounceTimeout?: number;
-  _debounceHandler?: (event: Event) => void;
-}
+import { DebounceHTMLElement } from "./type";
 
 const DEBOUNCE_DELAY = 300;
 

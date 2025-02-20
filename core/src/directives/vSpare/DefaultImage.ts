@@ -20,7 +20,7 @@ export const DefaultImage = `
     fill="#999999"
     text-anchor="middle"
   >
-    图片加载失败
+    图片加载中
   </text>
 </svg>
 `;

@@ -1,7 +1,6 @@
 import { type Directive } from "vue";
 import { getDefaultImageUrl } from "./DefaultImage";
-
-type SpareValue = string | null | undefined;
+import type { SpareValue } from "./type";
 
 export const vSpare: Directive<HTMLImageElement, SpareValue> = {
   mounted(el, binding) {

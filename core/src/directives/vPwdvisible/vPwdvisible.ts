@@ -1,11 +1,5 @@
 import type { Directive } from "vue";
-
-interface VPwdvisibleHTMLElement extends HTMLInputElement {
-  __vPwdvisible?: {
-    toggleVisibility: () => void;
-    eyeIcon: HTMLElement;
-  };
-}
+import { VPwdvisibleHTMLElement } from "./type";
 
 import { OPEN_EYE_ICON } from "../../icons/openEyeIcon";
 import { CLOSED_EYE_ICON } from "../../icons/closedEyeIcon";

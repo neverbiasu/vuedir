@@ -1,21 +1,5 @@
 import { DirectiveBinding, ObjectDirective } from "vue";
-
-interface CountupBinding {
-  value?: number | { value: number };
-  duration?: number;
-  decimals?: number;
-  startVal?: number;
-}
-
-interface CountupInstance {
-  start: () => void;
-  update: (newEndVal: number) => void;
-  reset: () => void;
-}
-
-interface CountupHTMLElement extends HTMLElement {
-  _countupInstance?: CountupInstance;
-}
+import { CountupBinding, CountupInstance, CountupHTMLElement } from "./type";
 
 const defaultOptions = {
   duration: 2, // 计数动画时长 (秒)
