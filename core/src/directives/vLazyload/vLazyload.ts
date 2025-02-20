@@ -1,11 +1,6 @@
 import type { DirectiveBinding } from "vue";
 import { getDefaultImageUrl } from "../vSpare/DefaultImage";
-
-// 扩展 HTMLImageElement 接口以支持自定义属性
-interface LazyloadHTMLElement extends HTMLImageElement {
-  _observer?: IntersectionObserver;
-  _originalSrc?: string;
-}
+import { LazyloadHTMLElement } from "./type";
 
 // 默认配置
 const defaultOptions = {
@@ -16,14 +11,14 @@ const defaultOptions = {
 // 解析修饰符
 function parseModifiers(binding: DirectiveBinding) {
   const options = { ...defaultOptions };
-  
+
   if (binding.modifiers) {
-    Object.keys(binding.modifiers).forEach(key => {
-      const [prop, value] = key.split('-');
-      if (prop === 'threshold' && !isNaN(Number(value))) {
+    Object.keys(binding.modifiers).forEach((key) => {
+      const [prop, value] = key.split("-");
+      if (prop === "threshold" && !isNaN(Number(value))) {
         // 支持小数点的 threshold 值，如 .threshold-0.5
-        options.threshold = Number(value.replace('_', '.'));
-      } else if (prop === 'margin') {
+        options.threshold = Number(value.replace("_", "."));
+      } else if (prop === "margin") {
         options.rootMargin = `${value}px`;
       }
     });
@@ -42,7 +37,7 @@ export const vLazyload = {
 
     // 解析修饰符并合并配置
     const options = parseModifiers(binding);
-    
+
     // 合并用户传入的配置
     if (binding.value?.options) {
       Object.assign(options, binding.value.options);

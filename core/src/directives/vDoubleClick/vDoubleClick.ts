@@ -1,10 +1,5 @@
 import type { Directive, DirectiveBinding } from "vue";
-
-type DoubleClickHandler = () => void;
-
-interface DoubleClickElement extends HTMLElement {
-  __doubleClickHandler?: DoubleClickHandler;
-}
+import { DoubleClickHandler, DoubleClickElement } from "./type";
 
 export const vDoubleClick: Directive = {
   mounted(

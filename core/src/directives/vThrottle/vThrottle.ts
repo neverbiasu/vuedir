@@ -1,9 +1,5 @@
 import type { DirectiveBinding } from "vue";
-
-interface ThrottleHTMLElement extends HTMLButtonElement {
-  _throttleTimeout?: boolean;
-  _throttleHandler?: (event: Event) => void;
-}
+import { ThrottleHTMLElement } from "./type";
 
 const THROTTLE_DELAY = 300;
 

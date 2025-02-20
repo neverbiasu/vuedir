@@ -1,31 +1,21 @@
-import type { Directive, DirectiveBinding } from 'vue';
-
-interface WatermarkerOptions {
-  text?: string;
-  direction?: 'horizontal' | 'vertical' | 'diagonal';
-  fontSize?: number;
-  fontFamily?: string;
-  textColor?: string;
-  opacity?: number;
-  gap?: number;
-  zIndex?: number;
-}
+import type { Directive, DirectiveBinding } from "vue";
+import { WatermarkerOptions } from "./type";
 
 const defaultOptions: WatermarkerOptions = {
-  text: '水印文本',
-  direction: 'diagonal',
+  text: "水印文本",
+  direction: "diagonal",
   fontSize: 16,
-  fontFamily: 'Arial',
-  textColor: '#000000',
+  fontFamily: "Arial",
+  textColor: "#000000",
   opacity: 0.1,
   gap: 100,
-  zIndex: 1000
+  zIndex: 1000,
 };
 
 const createWatermark = (el: HTMLElement, options: WatermarkerOptions) => {
   const opts = { ...defaultOptions, ...options };
-  const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
   if (!ctx) return;
 
   // 设置画布大小
@@ -35,20 +25,20 @@ const createWatermark = (el: HTMLElement, options: WatermarkerOptions) => {
 
   // 设置文字样式
   ctx.font = `${opts.fontSize}px ${opts.fontFamily}`;
-  ctx.fillStyle = opts.textColor || '#000000';
+  ctx.fillStyle = opts.textColor || "#000000";
   ctx.globalAlpha = opts.opacity || 0.1;
 
   // 根据方向绘制水印
-  const text = opts.text || '水印文本';
+  const text = opts.text || "水印文本";
   const gap = opts.gap || 100;
-  
-  if (opts.direction === 'horizontal') {
+
+  if (opts.direction === "horizontal") {
     for (let y = 0; y < maxSize; y += gap) {
       for (let x = 0; x < maxSize; x += gap * 2) {
         ctx.fillText(text, x, y);
       }
     }
-  } else if (opts.direction === 'vertical') {
+  } else if (opts.direction === "vertical") {
     ctx.rotate(Math.PI / 2);
     for (let y = 0; y < maxSize; y += gap) {
       for (let x = 0; x < maxSize; x += gap * 2) {
@@ -66,7 +56,7 @@ const createWatermark = (el: HTMLElement, options: WatermarkerOptions) => {
   }
 
   // 创建水印容器
-  const watermarkDiv = document.createElement('div');
+  const watermarkDiv = document.createElement("div");
   watermarkDiv.style.cssText = `
     position: absolute;
     top: 0;
@@ -77,11 +67,11 @@ const createWatermark = (el: HTMLElement, options: WatermarkerOptions) => {
     background-repeat: repeat;
     z-index: ${opts.zIndex};
   `;
-  watermarkDiv.style.backgroundImage = `url(${canvas.toDataURL('image/png')})`;
+  watermarkDiv.style.backgroundImage = `url(${canvas.toDataURL("image/png")})`;
 
   // 设置容器定位
-  if (getComputedStyle(el).position === 'static') {
-    el.style.position = 'relative';
+  if (getComputedStyle(el).position === "static") {
+    el.style.position = "relative";
   }
 
   // 添加水印
@@ -112,5 +102,5 @@ export const vWatermarker: Directive = {
       el.removeChild((el as any).__vWatermarker);
       delete (el as any).__vWatermarker;
     }
-  }
+  },
 };

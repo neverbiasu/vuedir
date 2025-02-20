@@ -1,14 +1,5 @@
 import type { Directive } from "vue";
-
-interface VClearableHTMLElement extends HTMLElement {
-  __vClearable?: {
-    clearContent: () => void;
-    toggleIcon: () => void;
-    container: HTMLElement;
-    icon: HTMLElement;
-    input: HTMLInputElement;
-  };
-}
+import { VClearableHTMLElement } from "./type";
 
 import { CLEAR_ICON } from "../../icons/clearIcon";
 
@@ -78,9 +69,7 @@ const createClearIcon = (): HTMLElement => {
 export const vClearable: Directive = {
   mounted(el: VClearableHTMLElement) {
     const input =
-      el.tagName.toLowerCase() === "input"
-        ? el
-        : el.querySelector("input");
+      el.tagName.toLowerCase() === "input" ? el : el.querySelector("input");
 
     if (!input) {
       console.warn("[v-clearable] 指令只能用于 input 元素");
