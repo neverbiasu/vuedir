@@ -25,13 +25,12 @@ const text = ref("");
 
 .clearable-input {
   width: 100%;
-  padding: 8px 35px 8px 12px;
+  padding: 8px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 4px;
   font-size: 14px;
   color: var(--vp-c-text-1);
   background-color: var(--vp-c-bg);
-  transition: border-color 0.2s;
 }
 
 .clearable-input:focus {

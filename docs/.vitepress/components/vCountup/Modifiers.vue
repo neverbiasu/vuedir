@@ -7,7 +7,7 @@
 
     <div class="modifier-example">
       <h4>小数位数 (decimals)</h4>
-      <span v-countup.decimals-2>1500.50</span>
+      <span v-countup.decimals-2>1500.99</span>
     </div>
 
     <div class="modifier-example">
@@ -17,7 +17,7 @@
 
     <div class="modifier-example">
       <h4>组合使用</h4>
-      <span v-countup.duration-3.decimals-2.startVal-100>5173.90</span>
+      <span v-countup.duration-3.decimals-2.startVal-100>5173.99</span>
     </div>
   </div>
 </template>

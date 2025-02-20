@@ -1,141 +1,91 @@
-import type { Directive } from "vue";
-import { VClearableHTMLElement } from "./type";
-
+import type { VClearableDirective, VClearableHTMLElement } from "./type";
 import { CLEAR_ICON } from "../../icons/clearIcon";
 
-const createClearableContainer = (
-  el: HTMLElement,
-  input: HTMLElement
-): HTMLElement => {
-  const container = document.createElement("div");
-  const computedStyle = window.getComputedStyle(input);
-
-  container.style.cssText = `
-    position: relative;
-    display: inline-block;
-    width: ${el.style.width || "100%"};
-    min-width: 0;
-    margin: ${computedStyle.margin};
-  `;
-
-  input.style.margin = "0";
-  return container;
-};
-
-const createClearIcon = (): HTMLElement => {
+const createClearIcon = () => {
   const icon = document.createElement("div");
   icon.innerHTML = CLEAR_ICON;
   icon.style.cssText = `
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
-    width: 18px;
-    height: 18px;
+    display: none;
     cursor: pointer;
     color: #999;
-    transition: all 0.3s ease;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
+    transition: color 0.2s;
+    opacity: 0.8;
     padding: 2px;
-    border-radius: 50%;
-    background-color: transparent;
   `;
-
-  icon.addEventListener("mouseenter", () => {
-    icon.style.color = "#666";
-    icon.style.backgroundColor = "rgba(0, 0, 0, 0.05)";
-  });
-
-  icon.addEventListener("mouseleave", () => {
-    icon.style.color = "#999";
-    icon.style.backgroundColor = "transparent";
-  });
-
-  const svg = icon.querySelector("svg");
-  if (svg) {
-    svg.style.cssText = `
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    `;
-  }
-
+  icon.addEventListener("mouseover", () => (icon.style.color = "#666"));
+  icon.addEventListener("mouseout", () => (icon.style.color = "#999"));
   return icon;
 };
 
-export const vClearable: Directive = {
-  mounted(el: VClearableHTMLElement) {
-    const input =
-      el.tagName.toLowerCase() === "input" ? el : el.querySelector("input");
+const createContainer = (el: HTMLElement, input: HTMLInputElement) => {
+  const container = document.createElement("div");
+  container.style.cssText = `
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+  `;
+  el.replaceWith(container);
+  container.appendChild(input);
+  return container;
+};
 
-    if (!input) {
-      console.warn("[v-clearable] 指令只能用于 input 元素");
+const updateIconPosition = (input: HTMLInputElement, icon: HTMLElement) => {
+  const rect = input.getBoundingClientRect();
+  const iconSize = Math.min(rect.height * 0.8, 20);
+  icon.style.width = `${iconSize}px`;
+  icon.style.height = `${iconSize}px`;
+  icon.style.top = `${(rect.height - iconSize) / 2}px`;
+  icon.style.right = `${rect.height / 6}px`;
+};
+
+export const vClearable: VClearableDirective = {
+  mounted(el: VClearableHTMLElement) {
+    if (!(el instanceof HTMLInputElement)) {
+      console.warn("v-clearable 指令只能用于 input 元素");
       return;
     }
 
-    const container = createClearableContainer(el, input as HTMLInputElement);
+    const input = el;
+    const container = createContainer(el, input);
     const icon = createClearIcon();
-
-    const inputElement = input as HTMLInputElement;
-    inputElement.style.cssText += `
-      padding-right: 28px;
-      width: 100%;
-    `;
-
-    el.parentNode?.insertBefore(container, el);
-    container.appendChild(inputElement);
     container.appendChild(icon);
 
+    const resizeObserver = new ResizeObserver(() => {
+      updateIconPosition(input, icon);
+    });
+    resizeObserver.observe(input);
+
     const clearContent = () => {
-      inputElement.value = "";
-      inputElement.dispatchEvent(new Event("input"));
-      inputElement.dispatchEvent(new Event("change"));
-      inputElement.focus();
-      toggleIcon();
+      input.value = "";
+      input.dispatchEvent(new Event("input"));
+      icon.style.display = "none";
     };
 
     const toggleIcon = () => {
-      icon.style.display = inputElement.value ? "flex" : "none";
+      icon.style.display = input.value ? "block" : "none";
     };
 
+    input.addEventListener("input", toggleIcon);
     icon.addEventListener("click", clearContent);
-    inputElement.addEventListener("input", toggleIcon);
 
-    toggleIcon();
-
-    el.__vClearable = {
+    (el as VClearableHTMLElement).__vClearable = {
       clearContent,
       toggleIcon,
       container,
       icon,
-      input: inputElement,
+      input,
     };
-  },
-
-  updated(el: VClearableHTMLElement) {
-    el.__vClearable?.toggleIcon();
   },
 
   unmounted(el: VClearableHTMLElement) {
     if (el.__vClearable) {
-      const { clearContent, toggleIcon, container, icon, input } =
+      const { container, icon, input, clearContent, toggleIcon } =
         el.__vClearable;
-
       icon.removeEventListener("click", clearContent);
       input.removeEventListener("input", toggleIcon);
-
-      input.style.paddingRight = "";
-      input.style.width = "";
-
-      if (container.parentNode) {
-        container.parentNode.insertBefore(input, container);
-        container.parentNode.removeChild(container);
-      }
-
-      delete el.__vClearable;
+      container.replaceWith(input);
     }
   },
 };

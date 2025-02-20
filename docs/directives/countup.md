@@ -2,7 +2,7 @@
 
 ## 介绍
 
-v-countup 指令用于创建数字滚动动画效果，支持指定目标数值或使用元素内容作为目标值。
+v-countup 指令用于创建数字滚动动画效果，支持指定目标数值或使用元素内容作为目标值，支持小数位滚动。
 
 ## 使用方法
 
@@ -102,7 +102,7 @@ const modifierProps = [
     name: 'decimals',
     type: 'number',
     required: false,
-    description: '小数位数',
+    description: '小数位数，用于控制小数点后的位数',
     default: '0'
   },
   {
