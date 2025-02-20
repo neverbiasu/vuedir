@@ -23,7 +23,7 @@ import { vPwdvisible } from "@cp-vuedir/core";
 
 .password-input {
   width: 300px;
-  padding: 8px 35px 8px 12px;
+  padding: 8px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 4px;
   font-size: 14px;

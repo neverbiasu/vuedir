@@ -5,6 +5,8 @@ export interface VLongpressHTMLElement extends HTMLElement {
   __vLongpressHandler?: () => void;
   __vLongpressMousedownHandler?: (e: MouseEvent) => void;
   __vLongpressMouseupHandler?: (e: MouseEvent) => void;
+  __vLongpressTouchstartHandler?: (e: TouchEvent) => void;
+  __vLongpressTouchendHandler?: () => void;
 }
 
 export interface VLongpressOptions {

@@ -6,14 +6,17 @@ import { CLOSED_EYE_ICON } from "../../icons/closedEyeIcon";
 
 const createEyeIcon = (visible: boolean = false): HTMLElement => {
   const icon = document.createElement("div");
-  icon.style.position = "absolute";
-  icon.style.right = "10px";
-  icon.style.top = "50%";
-  icon.style.transform = "translateY(-50%)";
-  icon.style.cursor = "pointer";
-  icon.style.width = "20px";
-  icon.style.height = "20px";
   icon.innerHTML = visible ? OPEN_EYE_ICON : CLOSED_EYE_ICON;
+  icon.style.cssText = `
+    position: absolute;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s;
+    opacity: 0.8;
+    padding: 2px;
+  `;
+  icon.addEventListener("mouseover", () => (icon.style.color = "#666"));
+  icon.addEventListener("mouseout", () => (icon.style.color = "#999"));
   return icon;
 };
 
@@ -24,15 +27,31 @@ export const vPwdvisible: Directive = {
       return;
     }
 
-    el.style.position = "relative";
     const container = document.createElement("div");
-    container.style.position = "relative";
-    container.style.display = "inline-block";
-    el.parentNode?.insertBefore(container, el);
+    container.style.cssText = `
+      position: relative;
+      display: inline-block;
+      width: fit-content;
+      height: fit-content;
+    `;
+    el.replaceWith(container);
     container.appendChild(el);
 
     const eyeIcon = createEyeIcon();
     container.appendChild(eyeIcon);
+
+    const updateIconPosition = () => {
+      const rect = el.getBoundingClientRect();
+      const iconSize = Math.min(rect.height * 0.8, 20);
+      eyeIcon.style.width = `${iconSize}px`;
+      eyeIcon.style.height = `${iconSize}px`;
+      eyeIcon.style.top = `${(rect.height - iconSize) / 2}px`;
+      eyeIcon.style.right = `${rect.height / 6}px`;
+    };
+
+    const resizeObserver = new ResizeObserver(updateIconPosition);
+    resizeObserver.observe(el);
+    updateIconPosition();
 
     const toggleVisibility = () => {
       const isVisible = el.type === "text";
