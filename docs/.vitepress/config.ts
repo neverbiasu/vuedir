@@ -91,6 +91,7 @@ export default defineConfig({
                 { text: "v-threeClick", link: "/directives/threeclick" },
                 { text: "v-debounce", link: "/directives/debounce" },
                 { text: "v-throttle", link: "/directives/throttle" },
+                { text: "v-drag", link: "/directives/drag" },
               ],
             },
             {

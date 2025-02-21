@@ -77,6 +77,12 @@ const directives = ref([
     category: '交互类' 
   },
   {
+    name: "v-drag",
+    description: '创建可拖动的元素，支持设置范围、设置回掉函数',
+    link: '/vuedir/directives/drag',
+    category: '交互类'
+  },
+  {
     name: 'v-countup',
     description: '数字滚动动画效果，支持指定目标数值或使用元素内容作为目标值',
     link: '/vuedir/directives/countup',
