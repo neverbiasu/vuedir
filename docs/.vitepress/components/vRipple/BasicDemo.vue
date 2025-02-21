@@ -3,27 +3,16 @@ import { vRipple } from "@cp-vuedir/core";
 </script>
 
 <template>
-  <button
-    v-ripple="{
-      color: 'red',
-      duration: 500,
-    }"
-    class="ripple-button"
-  >
-    Click Me
-  </button>
+  <button v-ripple class="ripple-button">泛起涟漪</button>
 </template>
 
 <style scoped>
 .ripple-button {
-  position: relative;
   padding: 10px 20px;
   border: none;
   background-color: #007bff;
   color: white;
-  cursor: pointer;
   font-size: 16px;
   border-radius: 4px;
-  overflow: hidden;
 }
 </style>

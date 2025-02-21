@@ -83,6 +83,12 @@ const directives = ref([
     category: '交互类'
   },
   {
+    name: 'v-ripple',
+    description: '给目标元素添加水波纹效果，支持自定义波纹颜色和时长',
+    link: '/vuedir/directives/ripple',
+    category: '视觉类'
+  },
+  {
     name: 'v-countup',
     description: '数字滚动动画效果，支持指定目标数值或使用元素内容作为目标值',
     link: '/vuedir/directives/countup',

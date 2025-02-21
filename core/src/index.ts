@@ -14,6 +14,7 @@ import { vClearable } from "./directives/vClearable";
 import { vWatermarker } from "./directives/vWatermarker";
 import { vThreeClick } from "./directives/vThreeClick";
 import { vDrag } from "./directives/vDrag";
+import { vRipple } from "./directives/vRipple";
 
 export {
   vFocus,
@@ -31,6 +32,7 @@ export {
   vWatermarker,
   vThreeClick,
   vDrag,
+  vRipple,
 };
 
 export interface CPVueDirPlugin {
@@ -54,6 +56,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("watermarker", vWatermarker);
     app.directive("threeclick", vThreeClick);
     app.directive("drag", vDrag);
+    app.directive("ripple", vRipple);
   },
 };
 

@@ -2,7 +2,6 @@ import { Directive } from "vue";
 import { DragOptions, DragCallback } from "./type";
 import { throttle } from "../../utils/tool";
 
-// 🌟 拖拽指令
 const vDrag: Directive<HTMLElement, DragOptions> = {
   mounted(el, binding) {
     setupDrag(el, binding.value);

@@ -102,6 +102,7 @@ export default defineConfig({
                 { text: "v-countup", link: "/directives/countup" },
                 { text: "v-lazyload", link: "/directives/lazyload" },
                 { text: "v-watermarker", link: "/directives/watermarker" },
+                { text: "v-ripple", link: "/directives/ripple" },
               ],
             },
             {
