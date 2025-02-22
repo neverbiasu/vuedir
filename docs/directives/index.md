@@ -11,6 +11,11 @@ const directives = ref([
     category: '交互类'
   },
   {
+    name: 'v-emoji',
+    description: '禁止表情符号输入功能，防止在表单中用户输入表情符号',
+    link: '/vuedir/directives/emoji',
+  },
+  {
     name: 'v-focus',
     description: '自动聚焦表单元素，提升表单交互体验',
     link: '/vuedir/directives/focus',
@@ -53,6 +58,12 @@ const directives = ref([
     category: '视觉类'
   },
   {
+    name: "v-ellipsis",
+    description: '文本溢出时自动添加省略号',
+    link: '/vuedir/directives/ellipsis',
+    category: '视觉类'
+  },
+  {
     name: 'v-longpress',
     description: '长按事件功能，支持自定义长按时间',
     link: '/vuedir/directives/longpress',
@@ -81,6 +92,12 @@ const directives = ref([
     description: '创建可拖动的元素，支持设置范围、设置回掉函数',
     link: '/vuedir/directives/drag',
     category: '交互类'
+  },
+  {
+    name: 'v-ripple',
+    description: '给目标元素添加水波纹效果，支持自定义波纹颜色和时长',
+    link: '/vuedir/directives/ripple',
+    category: '视觉类'
   },
   {
     name: 'v-countup',

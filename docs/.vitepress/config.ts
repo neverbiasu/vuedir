@@ -102,6 +102,8 @@ export default defineConfig({
                 { text: "v-countup", link: "/directives/countup" },
                 { text: "v-lazyload", link: "/directives/lazyload" },
                 { text: "v-watermarker", link: "/directives/watermarker" },
+                { text: "v-ripple", link: "/directives/ripple" },
+                { text: "v-ellipsis", link: "/directives/ellipsis" },
               ],
             },
             {
@@ -110,6 +112,7 @@ export default defineConfig({
                 { text: "v-focus", link: "/directives/focus" },
                 { text: "v-pwdvisible", link: "/directives/pwdvisible" },
                 { text: "v-clearabel", link: "/directives/clearable" },
+                { text: "v-emoji", link: "/directives/emoji" },
               ],
             },
           ],
