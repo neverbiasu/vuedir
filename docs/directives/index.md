@@ -11,6 +11,11 @@ const directives = ref([
     category: '交互类'
   },
   {
+    name: 'v-emoji',
+    description: '禁止表情符号输入功能，防止在表单中用户输入表情符号',
+    link: '/vuedir/directives/emoji',
+  },
+  {
     name: 'v-focus',
     description: '自动聚焦表单元素，提升表单交互体验',
     link: '/vuedir/directives/focus',
@@ -50,6 +55,12 @@ const directives = ref([
     name: 'v-watermarker',
     description: '为元素添加水印效果，支持自定义水印文本和样式',
     link: '/vuedir/directives/watermarker',
+    category: '视觉类'
+  },
+  {
+    name: "v-ellipsis",
+    description: '文本溢出时自动添加省略号',
+    link: '/vuedir/directives/ellipsis',
     category: '视觉类'
   },
   {

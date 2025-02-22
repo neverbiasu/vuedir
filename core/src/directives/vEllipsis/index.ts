@@ -1,0 +1,1 @@
+export { vEllipsis } from "./core";

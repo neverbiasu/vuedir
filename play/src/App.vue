@@ -1,29 +1,15 @@
 <script setup lang="ts">
-import { vRipple } from "@cp-vuedir/core";
+import { vEllipsis } from "@cp-vuedir/core";
 </script>
 
 <template>
-  <button
-    v-ripple="{
-      color: 'red',
-      duration: 500,
-    }"
-    class="ripple-button"
-  >
-    Click Me
-  </button>
+  <p v-ellipsis="{ lines: 2 }">
+    人生，哪有事事如意，生活，哪有样样顺心。所以，不和别人较真，因为不值得，不和自己较真，因为伤不起，不和往事较真，因为输不起。
+  </p>
 </template>
 
 <style scoped>
-.ripple-button {
-  position: relative;
-  padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 4px;
-  overflow: hidden;
+p {
+  width: 100%;
 }
 </style>

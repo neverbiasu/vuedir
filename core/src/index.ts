@@ -15,6 +15,8 @@ import { vWatermarker } from "./directives/vWatermarker";
 import { vThreeClick } from "./directives/vThreeClick";
 import { vDrag } from "./directives/vDrag";
 import { vRipple } from "./directives/vRipple";
+import { vEmoji } from "./directives/vEmoji";
+import { vEllipsis } from "./directives/vEllipsis/core";
 
 export {
   vFocus,
@@ -33,6 +35,8 @@ export {
   vThreeClick,
   vDrag,
   vRipple,
+  vEmoji,
+  vEllipsis,
 };
 
 export interface CPVueDirPlugin {
@@ -57,6 +61,8 @@ const VueDir: CPVueDirPlugin = {
     app.directive("threeclick", vThreeClick);
     app.directive("drag", vDrag);
     app.directive("ripple", vRipple);
+    app.directive("emoji", vEmoji);
+    app.directive("ellipsis", vEllipsis);
   },
 };
 
