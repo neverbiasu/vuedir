@@ -1,0 +1,1 @@
+export { vHotkey } from "./core";

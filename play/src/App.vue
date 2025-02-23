@@ -1,15 +1,35 @@
-<script setup lang="ts">
-import { vEllipsis } from "@cp-vuedir/core";
-</script>
-
 <template>
-  <p v-ellipsis="{ lines: 2 }">
-    人生，哪有事事如意，生活，哪有样样顺心。所以，不和别人较真，因为不值得，不和自己较真，因为伤不起，不和往事较真，因为输不起。
-  </p>
+  <div v-hotkey="{ key: 'space', callback: handleSpace }">
+    Press 'Space' to trigger the callback.
+  </div>
+  <div v-hotkey="{ key: 'ctrl+enter', callback: handleCtrlEnter }">
+    Press 'Ctrl + Enter' to trigger the callback.
+  </div>
+  <div v-hotkey="{ key: 'f1', callback: handleF1 }">
+    Press 'F1' to trigger the callback.
+  </div>
+  <div v-hotkey="{ key: 'alt+shift+arrowup', callback: handleAltShiftArrowUp }">
+    Press 'Alt + Shift + ArrowUp' to trigger the callback.
+  </div>
+  <textarea name="" id=""> </textarea>
 </template>
 
-<style scoped>
-p {
-  width: 100%;
-}
-</style>
+<script lang="ts" setup>
+import { vHotkey } from "@cp-vuedir/core";
+
+const handleSpace = () => {
+  console.log("Space key pressed!");
+};
+
+const handleCtrlEnter = () => {
+  console.log("Ctrl + Enter pressed!");
+};
+
+const handleF1 = () => {
+  console.log("F1 key pressed!");
+};
+
+const handleAltShiftArrowUp = () => {
+  console.log("Alt + Shift + ArrowUp pressed!");
+};
+</script>
