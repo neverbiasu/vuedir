@@ -11,9 +11,22 @@ const directives = ref([
     category: '交互类'
   },
   {
+    name: 'v-hotkey',
+    description: '监听键盘事件，支持自定义快捷键和回掉函数',
+    link: '/vuedir/directives/hotkey',
+    category: '交互类'
+  },
+  {
     name: 'v-emoji',
     description: '禁止表情符号输入功能，防止在表单中用户输入表情符号',
     link: '/vuedir/directives/emoji',
+    category: '表单类'
+  },
+  {
+    name: "v-ellipsis",
+    description: '文本溢出时自动添加省略号，支持自定义行数',
+    link: '/vuedir/directives/ellipsis',
+    category: '视觉类'
   },
   {
     name: 'v-focus',

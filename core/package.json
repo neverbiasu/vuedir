@@ -1,13 +1,14 @@
 {
   "name": "@cp-vuedir/core",
   "type": "module",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "A lightweight collection of Vue 3 directives for building efficient applications",
   "keywords": [
     "vue",
     "directives",
     "vue3",
-    "typescript"
+    "typescript",
+    "vuedir"
   ],
   "author": "CodePaintStudio",
   "license": "MIT",
