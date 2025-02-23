@@ -91,10 +91,12 @@ const globalKeydownHandler = (event: KeyboardEvent) => {
   }
 };
 
-// 确保 `keydown` 事件只绑定一次
-if (!(window as any)._hotkeyListenerAdded) {
-  window.addEventListener("keydown", globalKeydownHandler);
-  (window as any)._hotkeyListenerAdded = true;
+// 确保 `keydown` 事件只在客户端环境下绑定一次
+if (typeof window !== 'undefined') {
+  if (!(window as any)._hotkeyListenerAdded) {
+    window.addEventListener("keydown", globalKeydownHandler);
+    (window as any)._hotkeyListenerAdded = true;
+  }
 }
 
 export const vHotkey = {
