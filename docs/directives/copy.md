@@ -8,16 +8,6 @@
 
 将 `v-copy` 指令添加到需要支持复制功能的元素上：
 
-```vue
-<template>
-  <p v-copy>这段文本将被复制</p>
-</template>
-```
-
-## 示例
-
-点击文本区域，将直接复制元素文本内容。
-
 <CopyDemo />
 
 ::: details 查看代码

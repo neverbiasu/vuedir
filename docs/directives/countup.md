@@ -4,29 +4,7 @@
 
 v-countup 指令用于创建数字滚动动画效果，支持指定目标数值或使用元素内容作为目标值，支持小数位滚动。
 
-## 使用方法
-
-```vue
-<!-- 基本使用 -->
-<span v-countup>100</span>
-
-<!-- 指定目标值 -->
-<span v-countup="1000"></span>
-
-<!-- 使用响应式数据 -->
-<span v-countup="count"></span>
-
-<!-- 链式传参 -->
-<span v-countup.duration-3.decimals-2.startVal-100>1500.50</span>
-```
-
-## 示例
-
-::: tip
-以下示例展示了 v-countup 指令的不同使用场景和修饰符的使用方法
-:::
-
-### 基础用法
+## 基础用法
 
 当不指定 value 时，会使用元素的文本内容作为目标值。
 
@@ -44,7 +22,7 @@ v-countup 指令用于创建数字滚动动画效果，支持指定目标数值�
 
 :::
 
-### 响应式用法
+## 响应式用法
 
 <div class="demo-container">
   <Reactive />
@@ -54,7 +32,7 @@ v-countup 指令用于创建数字滚动动画效果，支持指定目标数值�
 <<< @/.vitepress/components/vCountup/Reactive.vue
 :::
 
-### 链式传参
+## 链式传参
 
 <div class="demo-container">
   <Modifiers />

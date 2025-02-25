@@ -14,11 +14,9 @@
 </template>
 ```
 
-## 示例
+## 基础用法
 
-### 基础示例
-
-以下示例展示了最基本的图片懒加载用法，当图片进入视口时才会加载：
+通过 `v-lazyload` 指令，你可以轻松地实现图片的懒加载功能，只需将图片的实际路径绑定到 `data-src` 属性上即可。
 
 <div class="demo-container">
   <BasicDemo />
@@ -28,9 +26,9 @@
 <<< @/.vitepress/components/vLazyload/BasicDemo.vue
 :::
 
-### 高级配置示例
+## 扩展用法
 
-以下示例展示了如何通过配置项自定义懒加载的触发条件，设置了更大的 threshold 和 rootMargin 值：
+通过传递 `value` 参数，可以自定义图片的懒加载配置项，包括 `threshold` 和 `rootMargin`。
 
 <div class="demo-container">
   <AdvancedDemo />
@@ -40,9 +38,9 @@
 <<< @/.vitepress/components/vLazyload/AdvancedDemo.vue
 :::
 
-### 链式 chua n can
+## 链式传参
 
-以下示例展示了如何通过链式传参 `v-lazyload` 指令来实现多个图片的懒加载：
+`v-lazyload`支持链式传参，组合使用多个参数，实现更灵活的懒加载效果。
 
 <div class="demo-container">
   <Modifiers />

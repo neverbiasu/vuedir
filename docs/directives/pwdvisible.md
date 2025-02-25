@@ -8,14 +8,6 @@
 
 将 `v-pwdvisible` 指令添加到 `type="password"` 的输入框上：
 
-```vue
-<template>
-  <input type="password" v-pwdvisible placeholder="请输入密码" />
-</template>
-```
-
-## 示例
-
 <PwdvisibleDemo />
 
 ::: details 查看代码

@@ -8,24 +8,6 @@
 
 在按钮上使用 `v-throttle` 指令，并将事件处理函数作为指令的值传入：
 
-```vue
-<template>
-  <button v-throttle="handleClick">点击提交</button>
-</template>
-
-<script setup>
-const handleClick = () => {
-  console.log("节流后的点击事件");
-};
-</script>
-```
-
-## 示例
-
-### 基础示例
-
-以下示例展示了按钮的节流效果：
-
 <div class="demo-container">
   <BasicDemo />
 </div>

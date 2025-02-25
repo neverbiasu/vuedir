@@ -6,16 +6,6 @@
 
 ## 使用方法
 
-```vue
-<template>
-  <div v-watermarker="{ text: '水印文本' }">
-    <!-- 你的内容 -->
-  </div>
-</template>
-```
-
-## 示例
-
 <WatermarkerDemo />
 
 ::: details 点击查看代码

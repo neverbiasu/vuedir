@@ -17,6 +17,12 @@ const directives = ref([
     category: '交互类'
   },
   {
+    name: 'v-tooltip',
+    description: '为元素添加悬浮提示，支持自定义提示内容和位置',
+    link: '/vuedir/directives/tooltip',
+    category: '交互类'
+  },
+  {
     name: 'v-emoji',
     description: '禁止表情符号输入功能，防止在表单中用户输入表情符号',
     link: '/vuedir/directives/emoji',

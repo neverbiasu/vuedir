@@ -6,20 +6,6 @@
 
 ## 基础用法
 
-```vue
-<template>
-  <input v-clearable v-model="text" />
-</template>
-
-<script setup lang="ts">
-import { ref } from "vue";
-
-const text = ref("");
-</script>
-```
-
-## 示例
-
 <ClearableDemo />
 
 ::: details 点击查看代码
