@@ -6,19 +6,7 @@
 
 ## 使用方法
 
-```vue
-<template>
-  <div v-threeclick="handleThreeClick">点击我三次</div>
-</template>
-
-<script setup lang="ts">
-const handleThreeClick = () => {
-  console.log('触发三击事件');
-};
-</script>
-```
-
-## 示例
+在需要监听三击事件的元素上添加 `v-threeclick` 指令，并传入回调函数。
 
 <ThreeClickDemo />
 
@@ -33,14 +21,16 @@ const handleThreeClick = () => {
 ## 注意事项
 
 ::: warning 使用限制
-- 三击事件的判定时间间隔为500ms，超过此时间将重新开始计数
+
+- 三击事件的判定时间间隔为 500ms，超过此时间将重新开始计数
 - 回调函数必须是一个有效的函数
-:::
+  :::
 
 ::: tip 使用建议
+
 - 适用于需要三击触发的特殊交互场景
 - 可以用于触发一些不常用但重要的功能
-:::
+  :::
 
 <script setup>
 import ThreeClickDemo from '../.vitepress/components/vThreeClick/ThreeClickDemo.vue'

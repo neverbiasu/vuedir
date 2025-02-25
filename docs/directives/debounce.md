@@ -6,24 +6,6 @@
 
 ## 使用方法
 
-在按钮上使用 `v-debounce` 指令，并将事件处理函数作为指令的值传入：
-
-```vue
-<template>
-  <button v-debounce="handleClick">点击提交</button>
-</template>
-
-<script setup>
-const handleClick = () => {
-  console.log("防抖后的点击事件");
-};
-</script>
-```
-
-## 示例
-
-### 基础示例
-
 以下示例展示了输入框和按钮的防抖效果：
 
 <div class="demo-container">

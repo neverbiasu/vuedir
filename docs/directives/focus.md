@@ -10,25 +10,7 @@ import FocusDemo from '../.vitepress/components/vFocus/FocusDemo.vue';
 
 ## 使用方法
 
-```vue
-<script setup lang="ts">
-import { ref } from "vue";
-
-const message = ref("");
-</script>
-
-<template>
-  <div>
-    <input
-      v-focus
-      v-model="message"
-      type="text"
-      placeholder="这个输入框将自动获得焦点"
-    />
-    <p>当前输入内容: {{ message }}</p>
-  </div>
-</template>
-```
+将 `v-focus` 指令添加到需要自动聚焦的元素上：
 
 <FocusDemo />
 

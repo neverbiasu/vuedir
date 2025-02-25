@@ -4,9 +4,17 @@
 
 v-spare 指令用于处理图片加载失败的场景。当图片加载失败时，会自动切换到指定的备用图片，提升用户体验。
 
-## 使用方法
+## 基础用法
 
-### 使用网络图片作为备用图
+当不提供备用图片时，会使用默认的 SVG 图标：
+
+<SpareDefaultDemo/>
+
+::: details 查看代码
+<<< @/.vitepress/components/vSpare/SpareDefaultDemo.vue
+:::
+
+## 使用网络图片作为备用图
 
 当原始图片加载失败时，会自动切换到指定的网络备用图片：
 
@@ -16,7 +24,7 @@ v-spare 指令用于处理图片加载失败的场景。当图片加载失败时
 <<< @/.vitepress/components/vSpare/SpareNetworkDemo.vue
 :::
 
-### 使用本地图片作为备用图
+## 使用本地图片作为备用图
 
 可以使用导入的本地图片作为备用图：
 
@@ -24,16 +32,6 @@ v-spare 指令用于处理图片加载失败的场景。当图片加载失败时
 
 ::: details 查看代码
 <<< @/.vitepress/components/vSpare/SpareLocalDemo.vue
-:::
-
-### 使用默认备用图
-
-当不提供备用图片时，会使用默认的 SVG 图标：
-
-<SpareDefaultDemo/>
-
-::: details 查看代码
-<<< @/.vitepress/components/vSpare/SpareDefaultDemo.vue
 :::
 
 ## API

@@ -93,6 +93,7 @@ export default defineConfig({
                 { text: "v-throttle", link: "/directives/throttle" },
                 { text: "v-drag", link: "/directives/drag" },
                 { text: "v-hotkey", link: "/directives/hotkey" },
+                { text: "v-tooltip", link: "/directives/tooltip" },
               ],
             },
             {

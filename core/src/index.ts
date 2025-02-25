@@ -18,6 +18,7 @@ import { vRipple } from "./directives/vRipple";
 import { vEmoji } from "./directives/vEmoji";
 import { vEllipsis } from "./directives/vEllipsis/core";
 import { vHotkey } from "./directives/vHotkey";
+import { vTooltip } from "./directives/vTooltip";
 
 export {
   vFocus,
@@ -39,6 +40,7 @@ export {
   vEmoji,
   vEllipsis,
   vHotkey,
+  vTooltip,
 };
 
 export interface CPVueDirPlugin {
@@ -66,6 +68,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("emoji", vEmoji);
     app.directive("ellipsis", vEllipsis);
     app.directive("hotkey", vHotkey);
+    app.directive("tooltip", vTooltip);
   },
 };
 
