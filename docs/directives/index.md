@@ -129,6 +129,11 @@ const directives = ref([
     description: '图片懒加载功能，支持自定义加载时机',
     link: '/vuedir/directives/lazyload',
     category: '视觉类'
+  },{
+    name: 'v-autoresize',
+    description: '根据容器的大小动态调整文本的字体大小',
+    link: '/vuedir/directives/autoresize',
+    category: '视觉类'
   }
 ]);
 

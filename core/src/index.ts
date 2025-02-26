@@ -19,6 +19,7 @@ import { vEmoji } from "./directives/vEmoji";
 import { vEllipsis } from "./directives/vEllipsis/core";
 import { vHotkey } from "./directives/vHotkey";
 import { vTooltip } from "./directives/vTooltip";
+import { vAutoresize } from "./directives/vAutoresize";
 
 export {
   vFocus,
@@ -41,6 +42,7 @@ export {
   vEllipsis,
   vHotkey,
   vTooltip,
+  vAutoresize,
 };
 
 export interface CPVueDirPlugin {
@@ -69,6 +71,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("ellipsis", vEllipsis);
     app.directive("hotkey", vHotkey);
     app.directive("tooltip", vTooltip);
+    app.directive("autoresize", vAutoresize);
   },
 };
 
