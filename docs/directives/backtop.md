@@ -14,10 +14,7 @@
 
 ## 配置项
 
-| 参数             | 说明                       | 类型   | 默认值 |
-| ---------------- | -------------------------- | ------ | ------ |
-| visibilityHeight | 滚动高度达到此参数值才出现 | number | 400    |
-| duration         | 回到顶部所需时间(ms)       | number | 500    |
+<ApiTable :data="props" />
 
 ## 类型定义
 
@@ -40,23 +37,22 @@ interface BacktopOptions {
 
 :::
 
-### 自定义样式
-
-你可以自定义按钮的样式，比如：
-
-- 修改按钮的大小和形状
-- 更改背景色和悬停效果
-- 调整位置和层级
-- 添加自定义图标或文字
-
-### 性能考虑
-
-该指令已经对性能进行了优化：
-
-- 使用 RAF 实现平滑滚动
-- 合理的事件监听和解绑
-- 最小化重排和重绘
-
 <script setup>
 import BacktopDemo from '../.vitepress/components/vBacktop/BacktopDemo.vue'
+import ApiTable from '../.vitepress/components/ApiTable.vue'
+
+const props = [
+  {
+    name: 'visibilityHeight',
+    description: '滚动高度达到此参数值才出现',
+    type: 'number',
+    default: '400',
+  },
+  {
+    name: 'duration',
+    description: '回到顶部所需时间(ms)',
+    type: 'number',
+    default: '500',
+  },
+]
 </script>
