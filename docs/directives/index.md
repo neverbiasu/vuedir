@@ -77,12 +77,6 @@ const directives = ref([
     category: '视觉类'
   },
   {
-    name: "v-ellipsis",
-    description: '文本溢出时自动添加省略号',
-    link: '/vuedir/directives/ellipsis',
-    category: '视觉类'
-  },
-  {
     name: 'v-longpress',
     description: '长按事件功能，支持自定义长按时间',
     link: '/vuedir/directives/longpress',
