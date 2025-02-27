@@ -1,4 +1,5 @@
 import type { App } from "vue";
+import { vBacktop } from "./directives/vBacktop";
 import { vFocus } from "./directives/vFocus";
 import { vCopy } from "./directives/vCopy";
 import { vHighlight } from "./directives/vHighlight";
@@ -22,6 +23,7 @@ import { vTooltip } from "./directives/vTooltip";
 import { vAutoresize } from "./directives/vAutoresize";
 
 export {
+  vBacktop,
   vFocus,
   vCopy,
   vHighlight,
@@ -51,6 +53,7 @@ export interface CPVueDirPlugin {
 
 const VueDir: CPVueDirPlugin = {
   install(app: App) {
+    app.directive("backtop", vBacktop);
     app.directive("focus", vFocus);
     app.directive("copy", vCopy);
     app.directive("highlight", vHighlight);

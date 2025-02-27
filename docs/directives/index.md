@@ -5,6 +5,12 @@ import { ref, computed } from 'vue';
 
 const directives = ref([
   {
+    name: 'v-backtop',
+    description: '返回顶部指令，当页面滚动到一定高度时显示返回顶部按钮',
+    link: '/vuedir/directives/backtop',
+    category: '交互类'
+  },
+  {
     name: 'v-copy',
     description: '一键复制文本内容，支持动态文本和复制状态反馈',
     link: '/vuedir/directives/copy',
