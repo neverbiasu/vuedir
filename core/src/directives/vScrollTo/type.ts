@@ -1,9 +1,9 @@
 import type { Ref, DirectiveBinding } from "vue";
 
 export interface ScrollToOptions {
-  to?: HTMLElement | Ref<HTMLElement | null> | number; // Scroll target (HTMLElement, ref or offset number)
-  duration?: number; // Scroll duration (in ms)
-  behavior?: ScrollBehavior; // Scroll behavior (smooth or auto)
+  to?: Ref<HTMLElement | null>;
+  duration?: number;
+  behavior?: ScrollBehavior;
 }
 
 export interface ScrollToDirective {
