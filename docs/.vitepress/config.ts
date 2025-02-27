@@ -85,6 +85,7 @@ export default defineConfig({
             {
               text: "交互类",
               items: [
+                { text: "v-backtop", link: "/directives/backtop" },
                 { text: "v-copy", link: "/directives/copy" },
                 { text: "v-longpress", link: "/directives/longpress" },
                 { text: "v-doubleClick", link: "/directives/doubleclick" },
