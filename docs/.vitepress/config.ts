@@ -4,9 +4,10 @@ import { resolve } from "path";
 // https://vitepress.dev/reference/site-config
 
 export default defineConfig({
+  appearance: true,
   base: "/vuedir/",
   title: "CP-VueDir",
-  description: "Vue 3 指令集合",
+  description: "Vue 3 指令集合, 让你的 Vue 3 项目更加强大",
   lastUpdated: true,
   head: [
     ["link", { rel: "icon", href: "/vuedir/logo.jpg" }],
@@ -25,6 +26,10 @@ export default defineConfig({
     editLink: {
       pattern: "https://github.com/CodePaintStudio/vuedir/edit/main/docs/:path",
       text: "在 GitHub 上编辑此页",
+    },
+    docFooter: {
+      prev: "上一页",
+      next: "下一页",
     },
     socialLinks: [
       {
@@ -125,10 +130,6 @@ export default defineConfig({
     },
   },
   vue: {
-    template: {
-      compilerOptions: {
-        isCustomElement: () => false,
-      },
-    },
+    template: {},
   },
 });

@@ -21,6 +21,7 @@ import { vEllipsis } from "./directives/vEllipsis/core";
 import { vHotkey } from "./directives/vHotkey";
 import { vTooltip } from "./directives/vTooltip";
 import { vAutoresize } from "./directives/vAutoresize";
+import { vScrollTo } from "./directives/vScrollTo";
 
 export {
   vBacktop,
@@ -45,6 +46,7 @@ export {
   vHotkey,
   vTooltip,
   vAutoresize,
+  vScrollTo,
 };
 
 export interface CPVueDirPlugin {
@@ -75,6 +77,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("hotkey", vHotkey);
     app.directive("tooltip", vTooltip);
     app.directive("autoresize", vAutoresize);
+    app.directive("scrollto", vScrollTo);
   },
 };
 
