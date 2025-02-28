@@ -22,9 +22,10 @@ import { vHotkey } from "./directives/vHotkey";
 import { vTooltip } from "./directives/vTooltip";
 import { vAutoresize } from "./directives/vAutoresize";
 import { vScrollTo } from "./directives/vScrollTo";
-
+import { vClickout } from "./directives/vClickout";
 export {
   vBacktop,
+  vClickout,
   vFocus,
   vCopy,
   vHighlight,
