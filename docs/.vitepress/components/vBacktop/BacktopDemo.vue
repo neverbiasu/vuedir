@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { vBacktop } from "@cp-vuedir/core";
 </script>
 

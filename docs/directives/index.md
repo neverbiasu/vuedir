@@ -17,6 +17,12 @@ const directives = ref([
     category: '交互类'
   },
   {
+    name: 'v-clickout',
+    description: '点击外部处理函数，支持自定义点击外部处理函数',
+    link: '/vuedir/directives/clickout',
+    category: '交互类'
+  },
+  {
     name: 'v-hotkey',
     description: '监听键盘事件，支持自定义快捷键和回掉函数',
     link: '/vuedir/directives/hotkey',
