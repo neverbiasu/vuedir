@@ -4,9 +4,10 @@ import { resolve } from "path";
 // https://vitepress.dev/reference/site-config
 
 export default defineConfig({
+  appearance: true,
   base: "/vuedir/",
   title: "CP-VueDir",
-  description: "Vue 3 指令集合",
+  description: "Vue 3 指令集合, 让你的 Vue 3 项目更加强大",
   lastUpdated: true,
   head: [
     ["link", { rel: "icon", href: "/vuedir/logo.jpg" }],
@@ -25,6 +26,10 @@ export default defineConfig({
     editLink: {
       pattern: "https://github.com/CodePaintStudio/vuedir/edit/main/docs/:path",
       text: "在 GitHub 上编辑此页",
+    },
+    docFooter: {
+      prev: "上一页",
+      next: "下一页",
     },
     socialLinks: [
       {
@@ -88,13 +93,14 @@ export default defineConfig({
                 { text: "v-backtop", link: "/directives/backtop" },
                 { text: "v-copy", link: "/directives/copy" },
                 { text: "v-longpress", link: "/directives/longpress" },
-                { text: "v-doubleClick", link: "/directives/doubleclick" },
-                { text: "v-threeClick", link: "/directives/threeclick" },
+                { text: "v-doubleclick", link: "/directives/doubleclick" },
+                { text: "v-threeclick", link: "/directives/threeclick" },
                 { text: "v-debounce", link: "/directives/debounce" },
                 { text: "v-throttle", link: "/directives/throttle" },
                 { text: "v-drag", link: "/directives/drag" },
                 { text: "v-hotkey", link: "/directives/hotkey" },
                 { text: "v-tooltip", link: "/directives/tooltip" },
+                { text: "v-scrollto", link: "/directives/scrollto" },
               ],
             },
             {
@@ -125,10 +131,6 @@ export default defineConfig({
     },
   },
   vue: {
-    template: {
-      compilerOptions: {
-        isCustomElement: () => false,
-      },
-    },
+    template: {},
   },
 });
