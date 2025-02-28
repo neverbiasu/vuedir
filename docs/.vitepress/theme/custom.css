@@ -2,7 +2,7 @@
   --vp-c-brand: #4b2b7c;
   --vp-c-brand-light: #5d3798;
   --vp-c-brand-lighter: #6f44b4;
-  --vp-c-brand-dark: #392160;
+  --vp-c-brand-dark: #82709c;
   --vp-c-brand-darker: #271544;
 
   --vp-c-sponsor: #dd5336;
@@ -28,6 +28,7 @@
   --vp-c-text-1: #ffffff;
   --vp-c-text-2: #ebebef;
   --vp-c-text-3: #8091a5;
+  --vp-c-brand: #a6aefb;
 }
 
 .VPNav {

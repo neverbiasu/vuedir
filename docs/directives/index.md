@@ -89,6 +89,12 @@ const directives = ref([
     category: '交互类'
   },
   {
+    name: 'v-scroolto',
+    description: '滚动到指定元素，支持自定义滚动行为',
+    link: '/vuedir/directives/scrollto',
+    category: '交互类'
+  },
+  {
     name: 'v-spare',
     description: '处理图片加载失败场景，自动切换到备用图片',
     link: '/vuedir/directives/spare',

@@ -6,26 +6,18 @@
 
 请继续向下滚动页面，当滚动超过 400px 时会在右下角显示返回顶部按钮。点击按钮可以平滑滚动回顶部。
 
+- `visibilityHeight`：滚动高度达到此参数值才出现
+- `duration`：回到顶部所需时间(ms)
+
 <BacktopDemo />
 
 ::: details 点击查看代码
 <<< @/.vitepress/components/vBacktop/BacktopDemo.vue
 :::
 
-## 配置项
+## API
 
 <ApiTable :data="props" />
-
-## 类型定义
-
-```ts
-interface BacktopOptions {
-  // 显示按钮的滚动阈值
-  visibilityHeight?: number;
-  // 滚动到顶部的时间(ms)
-  duration?: number;
-}
-```
 
 ## 注意事项
 
@@ -44,15 +36,17 @@ import ApiTable from '../.vitepress/components/ApiTable.vue'
 const props = [
   {
     name: 'visibilityHeight',
-    description: '滚动高度达到此参数值才出现',
+    description: '滚动高度达到此参数值才出现，单位 px',
     type: 'number',
     default: '400',
+    required: false,
   },
   {
     name: 'duration',
-    description: '回到顶部所需时间(ms)',
+    description: '回到顶部所需时间，单位 ms',
     type: 'number',
     default: '500',
+    required: false,
   },
 ]
 </script>
