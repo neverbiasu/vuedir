@@ -1,36 +1,26 @@
 <template>
-  <div class="tooltip-demo">
-    <div class="safe-area" v-clickout="showMessage">
+  <div class="tooltip-demo" ref="demoRef">
+    <div class="safe-area" v-clickout="handleClickout">
       <h4>安全区域</h4>
       <p>点击外部区域查看效果</p>
     </div>
-
-    <Transition name="message">
-      <div v-show="isMessageVisible" class="message">点击了安全区域外部</div>
-    </Transition>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
 import { vClickout } from "@cp-vuedir/core";
+import { Message } from "@arco-design/web-vue";
 
-const isMessageVisible = ref(false);
-let messageTimer: number;
+const demoRef = ref<HTMLElement | null>(null);
 
-const showMessage = () => {
-  // 清除之前的定时器
-  if (messageTimer) {
-    clearTimeout(messageTimer);
+const handleClickout = (event: MouseEvent) => {
+  if (demoRef.value && demoRef.value.contains(event.target as Node)) {
+    Message.info({
+      content: "点击了安全区域外部",
+      duration: 2000,
+    });
   }
-
-  // 显示消息
-  isMessageVisible.value = true;
-
-  // 2秒后自动隐藏
-  messageTimer = window.setTimeout(() => {
-    isMessageVisible.value = false;
-  }, 2000);
 };
 </script>
 
