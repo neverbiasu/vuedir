@@ -20,6 +20,7 @@ import { vEllipsis } from "./directives/vEllipsis/core";
 import { vHotkey } from "./directives/vHotkey";
 import { vTooltip } from "./directives/vTooltip";
 import { vAutoresize } from "./directives/vAutoresize";
+import { vAutobox } from "./directives/vAutobox";
 
 export {
   vFocus,
@@ -43,6 +44,7 @@ export {
   vHotkey,
   vTooltip,
   vAutoresize,
+  vAutobox,
 };
 
 export interface CPVueDirPlugin {
@@ -72,6 +74,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("hotkey", vHotkey);
     app.directive("tooltip", vTooltip);
     app.directive("autoresize", vAutoresize);
+    app.directive("autobox", vAutobox);
   },
 };
 

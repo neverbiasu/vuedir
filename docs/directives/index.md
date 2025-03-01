@@ -134,6 +134,11 @@ const directives = ref([
     description: '根据容器的大小动态调整文本的字体大小',
     link: '/vuedir/directives/autoresize',
     category: '视觉类'
+  },{
+    name:'v-autobox',
+    description: '自动调整box大小以适应其内容',
+    link: '/vuedir/directives/autobox',
+    category: '视觉类'
   }
 ]);
 

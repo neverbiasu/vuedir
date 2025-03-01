@@ -107,6 +107,7 @@ export default defineConfig({
                 { text: "v-ripple", link: "/directives/ripple" },
                 { text: "v-ellipsis", link: "/directives/ellipsis" },
                 { text: "v-autoresize", link: "/directives/autoresize" },
+                {text:"v-autobox",link:"/directives/autobox"}
               ],
             },
             {
