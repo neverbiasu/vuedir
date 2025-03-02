@@ -1,0 +1,1 @@
+export { vTrim } from "./core";

@@ -30,7 +30,8 @@ const onResize = (rect: DOMRectReadOnly, box: string) => {
     align-items: center;
     justify-content: center;
     height: 80vh;
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    /* background: linear-gradient(135deg, #f5f7fa, #c3cfe2); */
+    background-color: var(--vp-c-bg-soft);
     font-family: 'Arial', sans-serif;
     padding: 20px;
 }
@@ -61,8 +62,8 @@ const onResize = (rect: DOMRectReadOnly, box: string) => {
 .hint-text {
     margin-top: 20px;
     font-size: 18px;
-    color: #333;
-    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--vp-c-text-3);
+    background-color: var(--vp-c-bg-soft);
     padding: 10px 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

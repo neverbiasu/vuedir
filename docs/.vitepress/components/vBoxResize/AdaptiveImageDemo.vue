@@ -35,7 +35,7 @@ const onResize = (rect: DOMRectReadOnly) => {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-    background-color: #f9f9f9;
+    background-color: var(--vp-c-bg-soft);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
