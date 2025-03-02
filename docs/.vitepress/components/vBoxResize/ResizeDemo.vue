@@ -1,6 +1,6 @@
 <template>
     <div class="resize-container">
-        <div v-resize="{ callback: onResize, box: 'content-box' }" class="resize-box">
+        <div v-boxresize="{ callback: onResize, box: 'content-box' }" class="resize-box">
             调整窗口大小试试
         </div>
         <p class="hint-text">当前布局：{{ layout }}</p>
@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { vResize } from '@cp-vuedir/core';
+import { vBoxResize } from '@cp-vuedir/core';
 
 const layout = ref('大屏布局'); // 当前布局状态
 

@@ -147,9 +147,9 @@ const directives = ref([
     link: '/vuedir/directives/autoresize',
     category: '视觉类'
   },{
-    name: 'v-resize',
+    name: 'v-boxresize',
     description: '监听元素的尺寸变化，并在尺寸变化时触发回调函数',
-    link: '/vuedir/directives/resize',
+    link: '/vuedir/directives/boxresize',
     category: '交互类'
   }
 ]);

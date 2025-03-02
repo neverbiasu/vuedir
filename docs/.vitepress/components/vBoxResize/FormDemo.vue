@@ -1,5 +1,5 @@
 <template>
-    <div v-resize="{ callback: onResize }" class="table-container">
+    <div v-boxresize="{ callback: onResize }" class="table-container">
         <table class="dynamic-table">
             <thead>
                 <tr>
@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { vResize } from '@cp-vuedir/core';
+import { vBoxResize } from '@cp-vuedir/core';
 
 const columnWidths = ref([100, 150, 200]); // 初始列宽
 

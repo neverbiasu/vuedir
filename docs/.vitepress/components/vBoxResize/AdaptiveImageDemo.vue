@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-resize="{ callback: onResize }" class="image-container">
+        <div v-boxresize="{ callback: onResize }" class="image-container">
             <img :src="imageUrl" :style="imageStyle" alt="自适应图片" class="responsive-image" />
             <div class="image-overlay">
                 <p class="image-text">自适应图片示例</p>
@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { vResize } from '@cp-vuedir/core';
+import { vBoxResize } from '@cp-vuedir/core';
 
 const imageUrl = 'https://picsum.photos/800/400?random=6';
 const imageStyle = ref({});

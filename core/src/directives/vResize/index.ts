@@ -1,1 +1,0 @@
-export { vResize } from './vResize';
