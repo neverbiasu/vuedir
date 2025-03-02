@@ -37,9 +37,5 @@ export default defineConfig({
       rollupTypes: true,
       insertTypesEntry: true,
     }),
-    visualizer({
-      filename: "bundle-analysis.html",
-      gzipSize: true,
-    }),
   ],
 });
