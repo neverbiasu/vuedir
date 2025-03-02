@@ -39,7 +39,7 @@ defineProps<Props>();
                 item.required ? 'required' : 'optional',
               ]"
             >
-              {{ item.required ? "必选" : "可选" }}
+              {{ item.required ? "是" : "否" }}
             </span>
           </td>
           <td class="default-column">
@@ -52,6 +52,12 @@ defineProps<Props>();
 </template>
 
 <style scoped>
+.api-table {
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+}
+
 .api-table table {
   width: 100%;
   border-collapse: collapse;
@@ -65,7 +71,11 @@ defineProps<Props>();
 .api-table td {
   text-align: left;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--vp-c-divider);
+  border: none;
+}
+
+tr {
+  border: none;
 }
 
 .api-table th {
