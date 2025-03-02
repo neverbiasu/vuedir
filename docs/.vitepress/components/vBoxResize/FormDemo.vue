@@ -48,7 +48,7 @@ const onResize = (rect: DOMRectReadOnly) => {
     overflow-x: auto;
     border: 1px solid #ddd;
     border-radius: 10px;
-    background-color: #ffffff;
+    background-color: var(--vp-c-bg-soft);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -83,7 +83,6 @@ const onResize = (rect: DOMRectReadOnly) => {
 
 /* 响应式调整 */
 @media (max-width: 600px) {
-
     .dynamic-table th,
     .dynamic-table td {
         padding: 8px;

@@ -30,8 +30,9 @@ const onResize = (rect: DOMRectReadOnly) => {
     height: 300px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* background-color: #ffffff; */
+    background-color: var(--vp-c-bg-soft);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -48,7 +49,8 @@ const onResize = (rect: DOMRectReadOnly) => {
     width: 100%;
     height: 80%;
     padding: 20px;
-    background-color: #f9f9f9;
+    /* background-color: #f9f9f9; */
+    background-color: var(--vp-c-bg);
     border-radius: 10px;
 }
 
@@ -74,7 +76,7 @@ const onResize = (rect: DOMRectReadOnly) => {
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
-    color: #333;
+    color: var(--vp-c-text-3);
     font-weight: bold;
 }
 
@@ -82,9 +84,9 @@ const onResize = (rect: DOMRectReadOnly) => {
 .scale-text {
     margin-top: 10px;
     font-size: 16px;
-    color: #333;
+    color: var(--vp-c-text-3);
     font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--vp-c-bg);
     padding: 10px 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
