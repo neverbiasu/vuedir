@@ -7,14 +7,15 @@ const containerRef = ref<HTMLElement | null>(null);
 
 <template>
   <div class="drag_box" ref="containerRef">
-    <button
+    <a-button
       v-drag="{
         range: containerRef,
       }"
-      class="drag"
+      type="primary"
+      shape="round"
     >
       Drag me
-    </button>
+    </a-button>
   </div>
 </template>
 
@@ -25,13 +26,5 @@ const containerRef = ref<HTMLElement | null>(null);
   border: 2px dashed var(--vp-c-divider);
   border-radius: 8px;
   background-color: var(--vp-c-bg);
-}
-
-.drag {
-  padding: 10px;
-  border: 2px solid var(--vp-c-dividerr);
-  color: var(--vp-c-brand);
-  border-radius: 50%;
-  background-color: var(--vp-c-sponsor);
 }
 </style>

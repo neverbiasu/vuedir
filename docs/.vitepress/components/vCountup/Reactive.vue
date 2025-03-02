@@ -1,7 +1,9 @@
 <template>
   <div class="demo-block">
     <span v-countup="count"></span>
-    <button @click="updateCount">更新数值</button>
+    <a-button type="primary" shape="round" size="large" @click="updateCount">
+      更新数值
+    </a-button>
   </div>
 </template>
 
@@ -28,18 +30,5 @@ const updateCount = () => {
   font-size: 24px;
   font-weight: bold;
   color: #2c3e50;
-}
-
-.demo-block button {
-  padding: 8px 16px;
-  background-color: #3eaf7c;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.demo-block button:hover {
-  background-color: #2c8f5d;
 }
 </style>

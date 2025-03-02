@@ -4,40 +4,38 @@ import { vTooltip, vRipple } from "@cp-vuedir/core";
 
 <template>
   <div class="container">
-    <button
-      v-ripple
-      v-tooltip="{ text: '皇上是世界上最寂寞的孩子。', position: 'right' }"
-    >
-      《末代皇帝》
-    </button>
-    <button
-      v-ripple
-      v-tooltip="{
-        text: '如果我没有刀，我就不能保护你。如果我有刀，我就不能拥抱你。',
-        position: 'top',
-        theme: 'light',
-      }"
-    >
-      《剪刀手爱德华》
-    </button>
+    <a-space>
+      <a-button
+        type="primary"
+        shape="round"
+        size="large"
+        v-ripple
+        v-tooltip="{ text: '皇上是世界上最寂寞的孩子。', position: 'right' }"
+      >
+        《末代皇帝》
+      </a-button>
+      <a-button
+        type="primary"
+        shape="round"
+        size="large"
+        v-ripple
+        v-tooltip="{
+          text: '如果我没有刀，我就不能保护你。如果我有刀，我就不能拥抱你。',
+          position: 'top',
+          theme: 'light',
+        }"
+      >
+        《剪刀手爱德华》
+      </a-button>
+    </a-space>
   </div>
 </template>
 
 <style scoped>
 .container {
-  border: 2px solid var(--vp-c-brand);
-  padding: 20px;
+  padding: 1rem;
+  border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: var(--vp-button-bg);
-  border: 1px solid var(--vp-c-brand);
-  color: var(--vp-c-text-1);
-  border-radius: 8px;
+  margin: 1rem 0;
 }
 </style>

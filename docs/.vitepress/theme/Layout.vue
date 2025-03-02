@@ -10,6 +10,11 @@ const enableTransitions = () =>
   window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
 
 provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
+  if (!isDark.value) {
+    document.body.setAttribute("arco-theme", "dark");
+  } else {
+    document.body.removeAttribute("arco-theme");
+  }
   if (!enableTransitions()) {
     isDark.value = !isDark.value;
     return;
