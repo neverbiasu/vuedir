@@ -1,6 +1,6 @@
 <template>
     <div class="chart-wrapper">
-        <div v-resize="{ callback: onResize }" class="chart-container">
+        <div v-boxresize="{ callback: onResize }" class="chart-container">
             <div v-for="(value, index) in data" :key="index" class="bar" :style="{ height: value * scale + 'px' }">
                 <span class="bar-label">{{ value }}</span>
             </div>
@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { vResize } from '@cp-vuedir/core';
+import { vBoxResize } from '@cp-vuedir/core';
 
 const data = ref([10, 20, 30, 40, 50]); // 柱状图数据
 const scale = ref(1); // 缩放比例

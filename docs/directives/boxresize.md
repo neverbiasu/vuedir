@@ -1,16 +1,16 @@
-# v-resize 指令
+# v-boxresize 指令
 
 ## 介绍
 
-`v-resize` 指令主要作用是监听元素的尺寸变化，并在尺寸变化时触发回调函数。
+`v-boxresize` 指令主要作用是监听元素的尺寸变化，并在尺寸变化时触发回调函数。
 
 ## 使用方法
 
-将 `v-resize` 指令添加到需要支持复制功能的元素上：
+将 `v-boxresize` 指令添加到需要支持复制功能的元素上：
 
 ```vue
 <template>
-  <div v-resize="{ callback: handleResize }">Resize me!</div>
+  <div v-boxresize="{ callback: handleResize, box: string }">Resize me!</div>
 </template>
 ```
 
@@ -19,7 +19,7 @@
 <ResizeDemo />
 
 ::: details 查看代码
-<<< @/.vitepress/components/vResize/ResizeDemo.vue
+<<< @/.vitepress/components/vBoxResize/ResizeDemo.vue
 :::
 
 ## 图表自适应
@@ -27,7 +27,7 @@
 <ChartDemo />
 
 ::: details 查看代码
-<<< @/.vitepress/components/vResize/ChartDemo.vue
+<<< @/.vitepress/components/vBoxResize/ChartDemo.vue
 :::
 
 ## 自适应图片
@@ -35,15 +35,15 @@
 <AdaptiveImageDemo />
 
 ::: details 查看代码
-<<< @/.vitepress/components/vResize/AdaptiveImageDemo.vue
+<<< @/.vitepress/components/vBoxResize/AdaptiveImageDemo.vue
 :::
 
-## 动态字体大小
+## 改变页面元素尺寸，自适应字体大小
 
 <FontSizeDemo />
 
 ::: details 查看代码
-<<< @/.vitepress/components/vResize/FontSizeDemo.vue
+<<< @/.vitepress/components/vBoxResize/FontSizeDemo.vue
 :::
 
 ## 表单自适应
@@ -51,7 +51,7 @@
 <FormDemo />
 
 ::: details 查看代码
-<<< @/.vitepress/components/vResize/FormDemo.vue
+<<< @/.vitepress/components/vBoxResize/FormDemo.vue
 :::
 
 ## API
@@ -59,11 +59,11 @@
 <ApiTable :data="apiTableDate" />
 
 <script setup>
-import ResizeDemo from '../.vitepress/components/vResize/ResizeDemo.vue';
-import ChartDemo from '../.vitepress/components/vResize/ChartDemo.vue';
-import AdaptiveImageDemo from '../.vitepress/components/vResize/AdaptiveImageDemo.vue';
-import FontSizeDemo from '../.vitepress/components/vResize/FontSizeDemo.vue';
-import FormDemo from '../.vitepress/components/vResize/FormDemo.vue';
+import ResizeDemo from '../.vitepress/components/vBoxResize/ResizeDemo.vue';
+import ChartDemo from '../.vitepress/components/vBoxResize/ChartDemo.vue';
+import AdaptiveImageDemo from '../.vitepress/components/vBoxResize/AdaptiveImageDemo.vue';
+import FontSizeDemo from '../.vitepress/components/vBoxResize/FontSizeDemo.vue';
+import FormDemo from '../.vitepress/components/vBoxResize/FormDemo.vue';
 import ApiTable from '../.vitepress/components/ApiTable.vue';
 
 const apiTableDate = [

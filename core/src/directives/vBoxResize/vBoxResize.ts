@@ -1,9 +1,9 @@
 import type { Directive, DirectiveBinding } from 'vue'
-import { ResizeHTMLElement, ResizeOptions } from './type'
+import { BoxResizeHTMLElement, BoxResizeOptions } from './type'
 
-export const vResize: Directive = {
-    beforeMount(el: ResizeHTMLElement, binding: DirectiveBinding) {
-        const options: ResizeOptions = binding.value;
+export const vBoxResize: Directive = {
+    beforeMount(el: BoxResizeHTMLElement, binding: DirectiveBinding) {
+        const options: BoxResizeOptions = binding.value;
         // 创建 ResizeObserver 实例
         const observer = new ResizeObserver((entries) => {
             for (const entry of entries) {
@@ -28,10 +28,10 @@ export const vResize: Directive = {
         // 将 ResizeObserver 实例绑定到元素上，以便在 unmounted 钩子中可以停止监听
         el._resizeObserver = observer;
     },
-    updated(el: ResizeHTMLElement, binding: DirectiveBinding) {
+    updated(el: BoxResizeHTMLElement, binding: DirectiveBinding) {
         // 如果回调函数发生变化，则更新 ResizeObserver 实例的回调函数
-        const newOptions: ResizeOptions = parseOptions(binding.value);
-        const oldOptions: ResizeOptions = parseOptions(binding.oldValue);
+        const newOptions: BoxResizeOptions = parseOptions(binding.value);
+        const oldOptions: BoxResizeOptions = parseOptions(binding.oldValue);
         if (newOptions.callback !== oldOptions?.callback || newOptions.box !== oldOptions?.box) {
             if (el._resizeObserver) {
                 el._resizeObserver.disconnect(); // 停止 old 监听
@@ -59,7 +59,7 @@ export const vResize: Directive = {
             el._resizeObserver = observer;
         }
     },
-    unmounted(el: ResizeHTMLElement) {
+    unmounted(el: BoxResizeHTMLElement) {
         // 停止监听元素尺寸变化
         if (el._resizeObserver) {
             el._resizeObserver.disconnect();
@@ -71,13 +71,13 @@ export const vResize: Directive = {
 /**
  * 解析绑定值，确保 options 符合预期
  */
-function parseOptions(value: unknown): ResizeOptions {
+function parseOptions(value: unknown): BoxResizeOptions {
     if (typeof value === 'function') {
         // 如果直接传递了一个函数，将其作为 callback
-        return { callback: value as (rect: DOMRectReadOnly, box: string) => void };
+        return { callback: value as ((rect: DOMRectReadOnly, box?: string) => void) | ((rect: DOMRectReadOnly, box?: string) => void)[] };
     } else if (typeof value === 'object' && value !== null) {
         // 如果传递了一个对象，确保 callback 是函数
-        const options = value as Partial<ResizeOptions>;
+        const options = value as Partial<BoxResizeOptions>;
         if (typeof options.callback === 'function') {
             return {
                 callback: options.callback,

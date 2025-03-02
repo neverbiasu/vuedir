@@ -23,7 +23,7 @@ import { vTooltip } from "./directives/vTooltip";
 import { vAutoresize } from "./directives/vAutoresize";
 import { vScrollTo } from "./directives/vScrollTo";
 import { vClickout } from "./directives/vClickout";
-import { vResize } from "./directives/vResize";
+import { vBoxResize } from "./directives/vBoxResize";
 export {
   vBacktop,
   vClickout,
@@ -49,7 +49,7 @@ export {
   vTooltip,
   vAutoresize,
   vScrollTo,
-  vResize,
+  vBoxResize,
 };
 
 export interface CPVueDirPlugin {
@@ -81,7 +81,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("tooltip", vTooltip);
     app.directive("autoresize", vAutoresize);
     app.directive("scrollto", vScrollTo);
-    app.directive("resize", vResize);
+    app.directive("boxresize", vBoxResize);
   },
 };
 

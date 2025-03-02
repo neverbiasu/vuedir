@@ -1,5 +1,5 @@
 <template>
-    <div v-resize="{ callback: onResize }" class="resize-container">
+    <div v-boxresize="{ callback: onResize }" class="resize-container">
         <p :style="{ fontSize: fontSize + 'px' }" class="dynamic-text">
             测试文本，根据容器宽度动态调整字体大小。
         </p>
@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { vResize } from '@cp-vuedir/core';
+import { vBoxResize } from '@cp-vuedir/core';
 
 const fontSize = ref(16); // 初始字体大小
 
