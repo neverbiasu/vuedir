@@ -5,19 +5,36 @@ import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   build: {
+    minify: "terser",
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       formats: ["es"],
-      fileName: "index",
+      fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["vue"],
+      external: ["vue", /lodash.*/],
       output: {
-        globals: {
-          vue: "Vue",
-        },
+        inlineDynamicImports: true,
+        generatedCode: "es2015",
+        interop: "auto",
+      },
+      treeshake: {
+        preset: "recommended",
+        moduleSideEffects: false,
       },
     },
   },
-  plugins: [vue(), dts()],
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          comments: true,
+        },
+      },
+    }),
+    dts({
+      rollupTypes: true,
+      insertTypesEntry: true,
+    }),
+  ],
 });

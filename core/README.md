@@ -1,7 +1,7 @@
 # 📡 VueDir
 
 <p align="center">
-  <img width="180" src="../docs/public/logo.jpg" alt="VueDir logo">
+  <img width="180" src="https://github.com/codepaintstudio/vuedir/blob/main/docs/public/logo.jpg" alt="VueDir logo">
 </p>
 
 <p align="center">

@@ -18,14 +18,17 @@
 :::
 
 ## 扩展用法
+#### 因为选择p标签所以img溢出了
 <AutoboxUltraDemo/>
 可以设置多个参数，来达到自定义效果:
+
+
 ::: details 查看代码
 
 <<< @/.vitepress/components/vAutobox/AutoboxUltraDemo.vue
 
 :::
-因为选择p标签所以img溢出了
+
 ## API
 
 <ApiTable :data="props" />

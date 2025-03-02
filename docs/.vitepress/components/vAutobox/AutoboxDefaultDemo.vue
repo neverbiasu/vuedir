@@ -24,7 +24,4 @@ div{
     padding: 10px;
     margin: 10px;
 }
-.demo-box1{
-    /* width: 800px; */
-}
 </style>

@@ -1,4 +1,5 @@
 import type { App } from "vue";
+import { vBacktop } from "./directives/vBacktop";
 import { vFocus } from "./directives/vFocus";
 import { vCopy } from "./directives/vCopy";
 import { vHighlight } from "./directives/vHighlight";
@@ -19,10 +20,15 @@ import { vEmoji } from "./directives/vEmoji";
 import { vEllipsis } from "./directives/vEllipsis/core";
 import { vHotkey } from "./directives/vHotkey";
 import { vTooltip } from "./directives/vTooltip";
-import { vAutoresize } from "./directives/vAutoresize";
+import { vFitfont } from "./directives/vFitfont";
+import { vScrollTo } from "./directives/vScrollTo";
+import { vClickout } from "./directives/vClickout";
+import { vBoxResize } from "./directives/vBoxResize";
 import { vAutobox } from "./directives/vAutobox";
 
 export {
+  vBacktop,
+  vClickout,
   vFocus,
   vCopy,
   vHighlight,
@@ -43,8 +49,10 @@ export {
   vEllipsis,
   vHotkey,
   vTooltip,
-  vAutoresize,
+  vFitfont,
   vAutobox,
+  vScrollTo,
+  vBoxResize,
 };
 
 export interface CPVueDirPlugin {
@@ -53,6 +61,7 @@ export interface CPVueDirPlugin {
 
 const VueDir: CPVueDirPlugin = {
   install(app: App) {
+    app.directive("backtop", vBacktop);
     app.directive("focus", vFocus);
     app.directive("copy", vCopy);
     app.directive("highlight", vHighlight);
@@ -73,8 +82,10 @@ const VueDir: CPVueDirPlugin = {
     app.directive("ellipsis", vEllipsis);
     app.directive("hotkey", vHotkey);
     app.directive("tooltip", vTooltip);
-    app.directive("autoresize", vAutoresize);
+    app.directive("fitfonte", vFitfont);
     app.directive("autobox", vAutobox);
+    app.directive("scrollto", vScrollTo);
+    app.directive("boxresize", vBoxResize);
   },
 };
 

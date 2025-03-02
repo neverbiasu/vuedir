@@ -5,9 +5,21 @@ import { ref, computed } from 'vue';
 
 const directives = ref([
   {
+    name: 'v-backtop',
+    description: '返回顶部指令，当页面滚动到一定高度时显示返回顶部按钮',
+    link: '/vuedir/directives/backtop',
+    category: '交互类'
+  },
+  {
     name: 'v-copy',
     description: '一键复制文本内容，支持动态文本和复制状态反馈',
     link: '/vuedir/directives/copy',
+    category: '交互类'
+  },
+  {
+    name: 'v-clickout',
+    description: '点击外部处理函数，支持自定义点击外部处理函数',
+    link: '/vuedir/directives/clickout',
     category: '交互类'
   },
   {
@@ -77,15 +89,15 @@ const directives = ref([
     category: '视觉类'
   },
   {
-    name: "v-ellipsis",
-    description: '文本溢出时自动添加省略号',
-    link: '/vuedir/directives/ellipsis',
-    category: '视觉类'
-  },
-  {
     name: 'v-longpress',
     description: '长按事件功能，支持自定义长按时间',
     link: '/vuedir/directives/longpress',
+    category: '交互类'
+  },
+  {
+    name: 'v-scroolto',
+    description: '滚动到指定元素，支持自定义滚动行为',
+    link: '/vuedir/directives/scrollto',
     category: '交互类'
   },
   {
@@ -104,7 +116,7 @@ const directives = ref([
     name: 'v-threeclick',
     description: '三击事件处理，支持自定义三击时间',
     link: '/vuedir/directives/threeclick',
-    category: '交互类' 
+    category: '交互类'
   },
   {
     name: "v-drag",
@@ -130,15 +142,20 @@ const directives = ref([
     link: '/vuedir/directives/lazyload',
     category: '视觉类'
   },{
-    name: 'v-autoresize',
+    name: 'v-fitfont',
     description: '根据容器的大小动态调整文本的字体大小',
-    link: '/vuedir/directives/autoresize',
+    link: '/vuedir/directives/fitfont',
     category: '视觉类'
   },{
     name:'v-autobox',
     description: '自动调整box大小以适应其内容',
     link: '/vuedir/directives/autobox',
     category: '视觉类'
+  },{
+    name: 'v-boxresize',
+    description: '监听元素的尺寸变化，并在尺寸变化时触发回调函数',
+    link: '/vuedir/directives/boxresize',
+    category: '交互类'
   }
 ]);
 

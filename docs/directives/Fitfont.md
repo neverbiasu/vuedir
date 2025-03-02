@@ -1,15 +1,15 @@
-# v-autoresize 指令
+# v-fitfont 指令
 
 ## 介绍
 
-`v-autoresize` 指令用于根据容器的宽度与高度动态调整文本的字体大小，确保内容始终适应容器
+`v-fitfont` 指令用于根据容器的宽度与高度动态调整文本的字体大小，确保内容始终适应容器
 
 ## 基础用法
 
-<AutoresizeDefaultDemo/>
+<FitfontDefaultDemo/>
 ::: details 查看代码
 
-<<< @/.vitepress/components/vAutoresize/AutoresizeDefaultDemo.vue
+<<< @/.vitepress/components/vFitfont/FitfontDefaultDemo.vue
 
 :::
 
@@ -23,10 +23,10 @@
 - `maxFontSize`：字体大小的最大值，默认为 20。
 - `ratio`：缩放比例，默认为 1。
 
-<AutoresizeUltraDemo/>
+<FitfontUltraDemo/>
 ::: details 查看代码
 
-<<< @/.vitepress/components/vAutoresize/AutoresizeUltraDemo.vue
+<<< @/.vitepress/components/vFitfont/FitfontUltraDemo.vue
 
 :::
 
@@ -39,8 +39,8 @@
 若是对字体大小不满意可以通过调整缩放比例来达到效果，缩放比例默认为 1，若缩放比例设置为 0.5，则字体大小会变为原来的一半。
 :::
 <script setup>
-import AutoresizeDefaultDemo from '../.vitepress/components/vAutoresize/AutoresizeDefaultDemo.vue'
-import AutoresizeUltraDemo from '../.vitepress/components/vAutoresize/AutoresizeUltraDemo.vue'
+import FitfontDefaultDemo from '../.vitepress/components/vFitfont/FitfontDefaultDemo.vue'
+import FitfontUltraDemo from '../.vitepress/components/vFitfont/FitfontUltraDemo.vue'
 import ApiTable from '../.vitepress/components/ApiTable.vue';
 const props = [
   {

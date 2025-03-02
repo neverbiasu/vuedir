@@ -14,11 +14,11 @@ import FocusDemo from '../.vitepress/components/vFocus/FocusDemo.vue';
 
 <FocusDemo />
 
-### 注意事项
+## 注意事项
 
 ::: warning 注意
 
-- 仅适用于可获得焦点的元素（如 `input`、`textarea` 等）
+- 该指令只能用于 `input` 或 `textarea` 元素，不可用于组件。
 
 :::
 

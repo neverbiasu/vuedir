@@ -27,9 +27,9 @@
 
 :::
 
-## 设置回掉函数
+## 设置回调函数
 
-通过给 `v-drag` 指令支持`startDrag, onDrag, endDrag`三个回掉函数，分别在拖拽开始，拖拽中，拖拽结束时触发。其中`onDrag`支持配置`throttle`节流的时间，用于性能优化。
+通过给 `v-drag` 指令支持`startDrag, onDrag, endDrag`三个回调函数，分别在拖拽开始，拖拽中，拖拽结束时触发。其中`onDrag`支持配置`throttle`节流的时间，用于性能优化。
 
 <WithEvents />
 

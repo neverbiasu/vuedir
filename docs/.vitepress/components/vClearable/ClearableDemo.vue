@@ -13,7 +13,7 @@
     <div class="demo-section">
       <h3>与 v-pwdvisible 冲突演示</h3>
       <div class="conflict-warning">
-        <p>⚠️ 不建议同时使用 v-clearable 和 v-pwdvisible 指令</p>
+        <p>不建议同时使用 v-clearable 和 v-pwdvisible 指令</p>
       </div>
       <input
         type="password"

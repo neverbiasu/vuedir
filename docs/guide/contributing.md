@@ -42,20 +42,44 @@ git commit -m "feat: add new feature"
 git push origin feat/your-feature
 ```
 
-4. 创建一个 Pull Request
+4. 在你的 fork 仓库中向源仓库创建一个 Pull Request
 5. 在 PR 描述中：
+
    - 描述你解决的问题
    - 描述你的解决方案
    - 提供相关的截图（如果适用）
    - 标注是否需要更新文档
 
+6. 等待 PR 被审查和合并
+
 ## 📋 开发清单
 
-- [ ] 代码符合项目规范
-- [ ] 添加/更新测试用例
-- [ ] 更新相关文档
-- [ ] 本地测试通过
-- [ ] 提交信息符合规范
+- 在 `core/src/directives/` 目录下添加新的指令目录，它应该包括：
+
+  - `core.ts`: 指令的核心逻辑
+  - `index.ts`: 指令的入口文件，用于导出指令
+  - `type.ts`: 指令的类型定义
+  - 如果存在`svg`图标，需要在`core/src/icons`目录下添加
+
+- 在 `core/src/index.ts` 中导出新的指令
+
+- 在 `play/src/App.vue` 中测试新的指令
+
+- 在 `docs/.vitepress/config.ts` 中添加新的指令到导航栏
+- 在 `docs/directives/index.md` 中添加新的指令到`指令集预览`
+- 在 `docs/directives/` 目录下添加新的指令文档, 文档格式如下：
+
+  - 介绍
+  - 基础用法
+  - 其他用法 1
+  - 其他用法 2
+  - 其他用法...
+  - API
+  - 注意事项
+
+- 在 `docs/.vitepress/components/` 目录下给新的指令添加一个或者多个示例组件
+
+- 完善文档
 
 ## 🤝 行为准则
 
@@ -81,7 +105,7 @@ git push origin feat/your-feature
 
 <table>
   <tbody>
-    <tr><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/minorcell" title="minorcell"><img src="https://avatars.githubusercontent.com/u/120795714?v=4" width="100px;" alt="minorcell" style="border-radius: 9999px;" /></a></td>
+    <tr><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/minorcell" title="minorcell"><img src="https://avatars.githubusercontent.com/u/120795714?v=4" width="100px;" alt="minorcell" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/KindSeven" title="KindSeven"><img src="https://avatars.githubusercontent.com/u/121385437?v=4" width="100px;" alt="KindSeven" style="border-radius: 9999px;" /></a></td>
     </tr>
 
   </tbody>
