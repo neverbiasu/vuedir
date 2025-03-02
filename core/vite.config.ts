@@ -1,40 +1,23 @@
-import { defineConfig } from "vite";
 import { resolve } from "path";
 import dts from "vite-plugin-dts";
 import vue from "@vitejs/plugin-vue";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   build: {
-    minify: "terser",
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       formats: ["es"],
-      fileName: (format) => `index.${format}.js`,
+      fileName: "index",
     },
     rollupOptions: {
-      external: ["vue", /lodash.*/],
+      external: ["vue"],
       output: {
-        inlineDynamicImports: true,
-        generatedCode: "es2015",
-        interop: "auto",
-      },
-      treeshake: {
-        preset: "recommended",
-        moduleSideEffects: false,
+        globals: {
+          vue: "Vue",
+        },
       },
     },
   },
-  plugins: [
-    vue({
-      template: {
-        compilerOptions: {
-          comments: true,
-        },
-      },
-    }),
-    dts({
-      rollupTypes: true,
-      insertTypesEntry: true,
-    }),
-  ],
+  plugins: [vue(), dts()],
 });

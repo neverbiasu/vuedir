@@ -23,7 +23,7 @@ const createContainer = (el: HTMLElement, input: HTMLInputElement) => {
   container.style.cssText = `
     position: relative;
     display: inline-block;
-    width: fit-content;
+    width: 100%;
     height: fit-content;
   `;
   el.replaceWith(container);

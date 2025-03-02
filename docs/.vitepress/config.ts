@@ -125,6 +125,7 @@ export default defineConfig({
                 { text: "v-pwdvisible", link: "/directives/pwdvisible" },
                 { text: "v-clearabel", link: "/directives/clearable" },
                 { text: "v-emoji", link: "/directives/emoji" },
+                { text: "v-trim", link: "/directives/trim" },
               ],
             },
           ],
