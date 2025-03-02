@@ -1,7 +1,13 @@
 <template>
-  <div class="throttle-demo">
-    <h3>按钮节流示例</h3>
-    <button v-throttle="handleClick" class="demo-button">点击按钮</button>
+  <div class="container">
+    <a-button
+      v-throttle="handleClick"
+      shape="round"
+      long
+      size="large"
+      type="primary"
+      >点击按钮</a-button
+    >
     <div class="result">点击次数：{{ clickCount }}</div>
   </div>
 </template>
