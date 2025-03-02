@@ -13,5 +13,5 @@ export default {
     app.use(VueDir);
     app.use(ArcoVue);
   },
-  Layout: Layout,
+  Layout,
 };

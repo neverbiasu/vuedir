@@ -14,6 +14,9 @@ hero:
     - theme: alt
       text: 查看指令集
       link: /directives/
+    - theme: alt
+      text: Github
+      link: "https://github.com/codepaintstudio/vuedir"
 features:
   - title: 足够丰富
     icon: 🎲
