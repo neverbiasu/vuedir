@@ -15,8 +15,9 @@ const text = ref(
 <style scoped>
 .text-box {
   width: 100%;
-  background-color: var(--vp-c-brand);
-  color: white;
+  border: 1px solid var(--vp-c-text-1);
+  color: var(--vp-c-text-1);
   margin-bottom: 20px;
+  border-radius: 8px;
 }
 </style>

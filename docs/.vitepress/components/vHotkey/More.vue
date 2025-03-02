@@ -1,41 +1,42 @@
 <template>
-  <div class="container">
-    <h2>🎯 多键组合快捷键监听</h2>
-    <p>尝试按：</p>
+  <a-card title="尝试按下多个按键">
     <ul>
-      <li><kbd>Ctrl</kbd> + <kbd>Enter</kbd> → 提交</li>
-      <li><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>ArrowUp</kbd> → 上移</li>
-      <li>
-        <kbd>Cmd</kbd> + <kbd>S</kbd> / <kbd>Ctrl</kbd> + <kbd>S</kbd> → 保存
+      <li
+        v-hotkey="{
+          key: 'shift+space',
+          callback: handleMore,
+        }"
+      >
+        按下：<kbd>shift</kbd> + <kbd>space</kbd>
+      </li>
+      <li
+        v-hotkey="{
+          key: 'ctrl+alt+delete',
+          callback: handleCtrlAltDelete,
+        }"
+      >
+        按下：<kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>delete</kbd>
       </li>
     </ul>
-  </div>
+  </a-card>
 </template>
 
 <script lang="ts" setup>
 import { vHotkey } from "@cp-vuedir/core";
+import { Notification } from "@arco-design/web-vue";
 
-const handleSubmit = () => alert("🚀 提交成功！");
-const handleMoveUp = () => alert("⬆️ 元素已上移！");
-const handleSave = (event: Event) => {
-  event.preventDefault(); // 阻止浏览器默认保存行为
-  alert("✅ 自定义保存操作！");
-};
+const handleMore = () => Notification.success("你按下了shift+space");
+const handleCtrlAltDelete = () =>
+  Notification.success("你按下了ctrl+alt+delete");
 </script>
 
 <style scoped>
-.container {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  margin-top: 50px;
-}
 ul {
   list-style: none;
   padding: 0;
 }
 li {
   background: #f1f1f1;
-  display: inline-block;
   padding: 10px;
   margin: 5px;
   border-radius: 6px;

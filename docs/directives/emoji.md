@@ -16,6 +16,14 @@
 
 :::
 
+## 注意事项
+
+::: warning 注意
+
+- 该指令只能用于 `input` 或 `textarea` 元素，不可用于组件。
+
+:::
+
 <script setup>
 import BasicDemo from "../.vitepress/components/vEmoji/BasicDemo.vue"
 </script>

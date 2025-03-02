@@ -3,13 +3,18 @@ import { useData } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import { nextTick, provide } from "vue";
 
-const { isDark } = useData();
+const { isDark, frontmatter } = useData();
 
 const enableTransitions = () =>
   "startViewTransition" in document &&
   window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
 
 provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
+  if (!isDark.value) {
+    document.body.setAttribute("arco-theme", "dark");
+  } else {
+    document.body.removeAttribute("arco-theme");
+  }
   if (!enableTransitions()) {
     isDark.value = !isDark.value;
     return;
@@ -31,8 +36,8 @@ provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
   document.documentElement.animate(
     { clipPath: isDark.value ? clipPath.reverse() : clipPath },
     {
-      duration: 300,
-      easing: "ease-in",
+      duration: 1000,
+      easing: "ease-in-out",
       pseudoElement: `::view-transition-${isDark.value ? "old" : "new"}(root)`,
     }
   );

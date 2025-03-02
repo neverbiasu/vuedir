@@ -1,16 +1,20 @@
 <template>
   <div class="container">
-    <button v-longpress="{ event: handleLongPress, delay: 1000 }">
-      按住我1秒
-    </button>
+    <a-button
+      type="primary"
+      shape="round"
+      long
+      size="large"
+      v-longpress="{ event: handleLongPress, delay: 1000 }"
+      >按住我1秒</a-button
+    >
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { Notification } from "@arco-design/web-vue";
 const handleLongPress = () => {
-  alert(
-    "年轻的时候你总想要最好的，但年华老去，你不得不选一些便宜货。———《布达佩斯大饭店》"
-  );
+  Notification.success("你长按了按钮1秒");
 };
 </script>
 
@@ -20,19 +24,5 @@ const handleLongPress = () => {
   border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
   margin: 1rem 0;
-}
-button {
-  background-color: var(--vp-c-brand);
-  color: var(--vp-c-bg);
-  border: 1px solid var(--vp-c-brand-dark);
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s, border-color 0.2s;
-}
-button:hover {
-  background-color: var(--vp-c-brand-dark);
-  border-color: var(--vp-c-brand-darker);
 }
 </style>

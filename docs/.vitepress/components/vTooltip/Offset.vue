@@ -4,7 +4,10 @@ import { vTooltip, vRipple } from "@cp-vuedir/core";
 
 <template>
   <div class="container">
-    <button
+    <a-button
+      type="primary"
+      shape="round"
+      size="large"
       v-ripple="{
         color: '#10b981',
       }"
@@ -15,25 +18,15 @@ import { vTooltip, vRipple } from "@cp-vuedir/core";
       }"
     >
       《春光乍泄》
-    </button>
+    </a-button>
   </div>
 </template>
 
 <style scoped>
 .container {
-  border: 2px solid var(--vp-c-brand);
-  padding: 20px;
+  padding: 1rem;
+  border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: var(--vp-button-bg);
-  border: 1px solid var(--vp-c-brand);
-  color: var(--vp-c-text-1);
-  border-radius: 8px;
+  margin: 1rem 0;
 }
 </style>
