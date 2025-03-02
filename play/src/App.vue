@@ -29,15 +29,15 @@
     调整窗口大小试试（border-box）
   </div> -->
 
-  <div v-resize="{ callback: onResize }" style="width: 100%; height: 300px; overflow: hidden;">
+  <div v-boxresize="{ callback: onResize }" style="width: 100%; height: 300px; overflow: hidden;">
     <img :src="imageUrl" :style="imageStyle" alt="自适应图片" />
   </div>
 
-  <div v-resize="{ callback: onResize8, box: 'border-box' }" style="width: 100%; height: 300px; overflow: hidden;">
+  <div v-boxresize="{ callback: onResize8, box: 'border-box' }" style="width: 100%; height: 300px; overflow: hidden;">
     <p :style="{ fontSize: fontSize + 'px' }">动态调整字体大小</p>
   </div>
 
-  <div v-resize="{ callback: onResize9 }" style="width: 100%; overflow-x: auto;">
+  <div v-boxresize="{ callback: onResize9 }" style="width: 100%; overflow-x: auto;">
     <table style="width: 100%; border: 5px solid black;">
       <thead>
         <tr>
@@ -56,7 +56,7 @@
     </table>
   </div>
 
-  <div v-resize="{ callback: onResize7 }" style="width: 100%; height: 300px; border: 1px solid #000;">
+  <div v-boxresize="{ callback: onResize7 }" style="width: 100%; height: 300px; border: 1px solid #000;">
     <div class="chart-container">
       <div v-for="(value, index) in data" :key="index" class="bar" :style="{ height: value * scale + 'px' }"></div>
     </div>
@@ -65,7 +65,7 @@
 
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
-import { vScrollTo, vResize } from "@cp-vuedir/core";
+import { vScrollTo, vBoxResize } from "@cp-vuedir/core";
 
 const data = ref([10, 20, 30, 40, 50]); // 柱状图数据
 const scale = ref(1); // 缩放比例
