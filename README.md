@@ -44,7 +44,7 @@ app.mount("#app");
 
 ## 📖 Documentation
 
-Visit our [official documentation](https://codepaintstudio.github.io/vuedir/) for more information.
+Visit our [official documentation](https://vuedir.feashow.cn/) for more information.
 
 ## 🤝 Contributing
 
