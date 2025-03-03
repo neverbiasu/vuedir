@@ -7,154 +7,160 @@ const directives = ref([
   {
     name: 'v-backtop',
     description: '返回顶部指令，当页面滚动到一定高度时显示返回顶部按钮',
-    link: '/vuedir/directives/backtop',
+    link: '/directives/backtop',
     category: '交互类'
   },
   {
     name: 'v-copy',
     description: '一键复制文本内容，支持动态文本和复制状态反馈',
-    link: '/vuedir/directives/copy',
+    link: '/directives/copy',
     category: '交互类'
   },
   {
     name: 'v-clickout',
     description: '点击外部处理函数，支持自定义点击外部处理函数',
-    link: '/vuedir/directives/clickout',
+    link: '/directives/clickout',
     category: '交互类'
   },
   {
     name: 'v-hotkey',
     description: '监听键盘事件，支持自定义快捷键和回掉函数',
-    link: '/vuedir/directives/hotkey',
+    link: '/directives/hotkey',
     category: '交互类'
   },
   {
     name: 'v-tooltip',
     description: '为元素添加悬浮提示，支持自定义提示内容和位置',
-    link: '/vuedir/directives/tooltip',
+    link: '/directives/tooltip',
     category: '交互类'
   },
   {
     name: 'v-emoji',
     description: '禁止表情符号输入功能，防止在表单中用户输入表情符号',
-    link: '/vuedir/directives/emoji',
+    link: '/directives/emoji',
     category: '表单类'
+  },
+  {
+    name: "v-trim",
+    description: "去除输入框首尾空格，防止用户输入空格",
+    link: "/directives/trim",
+    category: "表单类"
   },
   {
     name: "v-ellipsis",
     description: '文本溢出时自动添加省略号，支持自定义行数',
-    link: '/vuedir/directives/ellipsis',
+    link: '/directives/ellipsis',
     category: '视觉类'
   },
   {
     name: 'v-focus',
     description: '自动聚焦表单元素，提升表单交互体验',
-    link: '/vuedir/directives/focus',
+    link: '/directives/focus',
     category: '表单类'
   },
   {
     name: "v-pwdvisible",
     description: "密码可见性切换功能",
-    link: "/vuedir/directives/pwdvisible",
+    link: "/directives/pwdvisible",
     category: '表单类'
   },
   {
     name: "v-clearable",
     description: "为输入框或文本域添加一个清除按钮，点击后可以快速清空内容",
-    link: "/vuedir/directives/clearable",
+    link: "/directives/clearable",
     category: '表单类'
   },
   {
     name: "v-debounce",
     description: "防抖函数，用于减少事件触发频率",
-    link: "/vuedir/directives/debounce",
+    link: "/directives/debounce",
     category: '交互类'
   },
   {
     name: "v-throttle",
     description: "节流函数，用于控制事件触发频率",
-    link: "/vuedir/directives/throttle",
+    link: "/directives/throttle",
     category: '交互类'
   },
   {
     name: 'v-highlight',
     description: '灵活的文本高亮效果，支持多种颜色格式和自动对比度',
-    link: '/vuedir/directives/highlight',
+    link: '/directives/highlight',
     category: '视觉类'
   },
   {
     name: 'v-watermarker',
     description: '为元素添加水印效果，支持自定义水印文本和样式',
-    link: '/vuedir/directives/watermarker',
+    link: '/directives/watermarker',
     category: '视觉类'
   },
   {
     name: 'v-longpress',
     description: '长按事件功能，支持自定义长按时间',
-    link: '/vuedir/directives/longpress',
+    link: '/directives/longpress',
     category: '交互类'
   },
   {
     name: 'v-scroolto',
     description: '滚动到指定元素，支持自定义滚动行为',
-    link: '/vuedir/directives/scrollto',
+    link: '/directives/scrollto',
     category: '交互类'
   },
   {
     name: 'v-spare',
     description: '处理图片加载失败场景，自动切换到备用图片',
-    link: '/vuedir/directives/spare',
+    link: '/directives/spare',
     category: '视觉类'
   },
   {
     name: 'v-doubleclick',
     description: '双击事件处理，提供更丰富的交互方式',
-    link: '/vuedir/directives/doubleclick',
+    link: '/directives/doubleclick',
     category: '交互类'
   },
   {
     name: 'v-threeclick',
     description: '三击事件处理，支持自定义三击时间',
-    link: '/vuedir/directives/threeclick',
+    link: '/directives/threeclick',
     category: '交互类'
   },
   {
     name: "v-drag",
     description: '创建可拖动的元素，支持设置范围、设置回掉函数',
-    link: '/vuedir/directives/drag',
+    link: '/directives/drag',
     category: '交互类'
   },
   {
     name: 'v-ripple',
     description: '给目标元素添加水波纹效果，支持自定义波纹颜色和时长',
-    link: '/vuedir/directives/ripple',
+    link: '/directives/ripple',
     category: '视觉类'
   },
   {
     name: 'v-countup',
     description: '数字滚动动画效果，支持指定目标数值或使用元素内容作为目标值',
-    link: '/vuedir/directives/countup',
+    link: '/directives/countup',
     category: '视觉类'
   },
   {
     name: 'v-lazyload',
     description: '图片懒加载功能，支持自定义加载时机',
-    link: '/vuedir/directives/lazyload',
+    link: '/directives/lazyload',
     category: '视觉类'
   },{
     name: 'v-fitfont',
     description: '根据容器的大小动态调整文本的字体大小',
-    link: '/vuedir/directives/fitfont',
+    link: '/directives/fitfont',
     category: '视觉类'
   },{
     name:'v-autobox',
     description: '自动调整box大小以适应其内容',
-    link: '/vuedir/directives/autobox',
+    link: '/directives/autobox',
     category: '视觉类'
   },{
     name: 'v-boxresize',
     description: '监听元素的尺寸变化，并在尺寸变化时触发回调函数',
-    link: '/vuedir/directives/boxresize',
+    link: '/directives/boxresize',
     category: '交互类'
   }
 ]);
