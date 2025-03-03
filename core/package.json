@@ -1,7 +1,7 @@
 {
   "name": "@cp-vuedir/core",
   "type": "module",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A lightweight collection of Vue 3 directives for building efficient applications",
   "keywords": [
     "vue",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "git+https://github.com/codepaintstudio/vuedir/issues"
   },
-  "homepage": "https://codepaintstudio.github.io/vuedir/",
+  "homepage": "https://vuedir.feashow.cn/",
   "files": [
     "dist"
   ],
