@@ -5,7 +5,7 @@ import { resolve } from "path";
 
 export default defineConfig({
   appearance: true,
-  base: "/vuedir/",
+  base: "/",
   title: "CP-VueDir",
   description: "Vue 3 指令集合, 让你的 Vue 3 项目更加强大",
   lastUpdated: true,
@@ -116,7 +116,7 @@ export default defineConfig({
                 { text: "v-ripple", link: "/directives/ripple" },
                 { text: "v-ellipsis", link: "/directives/ellipsis" },
                 { text: "v-fitfont", link: "/directives/fitfont" },
-                {text:"v-autobox",link:"/directives/autobox"}
+                { text: "v-autobox", link: "/directives/autobox" },
               ],
             },
             {
