@@ -142,9 +142,14 @@ const directives = ref([
     link: '/vuedir/directives/lazyload',
     category: '视觉类'
   },{
-    name: 'v-autoresize',
+    name: 'v-fitfont',
     description: '根据容器的大小动态调整文本的字体大小',
-    link: '/vuedir/directives/autoresize',
+    link: '/vuedir/directives/fitfont',
+    category: '视觉类'
+  },{
+    name:'v-autobox',
+    description: '自动调整box大小以适应其内容',
+    link: '/vuedir/directives/autobox',
     category: '视觉类'
   },{
     name: 'v-boxresize',

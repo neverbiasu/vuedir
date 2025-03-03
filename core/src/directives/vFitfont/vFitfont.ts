@@ -1,9 +1,9 @@
 import type { Directive } from "vue";
-import type { VAutoresizeHTMLElement } from "./type";
+import type { VFitfontHTMLElement } from "./type";
 import type { DirectiveBinding } from "vue";
 
-export const vAutoresize: Directive = {
-  mounted(el: VAutoresizeHTMLElement, binding:DirectiveBinding) {
+export const vFitfont: Directive = {
+  mounted(el: VFitfontHTMLElement, binding:DirectiveBinding) {
     const options = binding.value || {};
     const minFontSize = options.minFontSize || 8; //最小字体大小
     const maxFontSize = options.maxFontSize || 20; //最大字体大小
@@ -25,7 +25,7 @@ export const vAutoresize: Directive = {
     window.addEventListener("resize", resizeText);
     el._resizeText = resizeText;
   },
-  unmounted(el: VAutoresizeHTMLElement) {
+  unmounted(el: VFitfontHTMLElement) {
     if (el._resizeText) {
       window.removeEventListener("resize", el._resizeText);
     }

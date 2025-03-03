@@ -20,11 +20,13 @@ import { vEmoji } from "./directives/vEmoji";
 import { vEllipsis } from "./directives/vEllipsis/core";
 import { vHotkey } from "./directives/vHotkey";
 import { vTooltip } from "./directives/vTooltip";
-import { vAutoresize } from "./directives/vAutoresize";
+import { vFitfont } from "./directives/vFitfont";
 import { vScrollTo } from "./directives/vScrollTo";
 import { vClickout } from "./directives/vClickout";
 import { vBoxResize } from "./directives/vBoxResize";
+import { vAutobox } from "./directives/vAutobox";
 import { vTrim } from "./directives/vTrim";
+
 export {
   vBacktop,
   vClickout,
@@ -48,7 +50,8 @@ export {
   vEllipsis,
   vHotkey,
   vTooltip,
-  vAutoresize,
+  vFitfont,
+  vAutobox,
   vScrollTo,
   vBoxResize,
   vTrim,
@@ -81,7 +84,8 @@ const VueDir: CPVueDirPlugin = {
     app.directive("ellipsis", vEllipsis);
     app.directive("hotkey", vHotkey);
     app.directive("tooltip", vTooltip);
-    app.directive("autoresize", vAutoresize);
+    app.directive("fitfonte", vFitfont);
+    app.directive("autobox", vAutobox);
     app.directive("scrollto", vScrollTo);
     app.directive("boxresize", vBoxResize);
     app.directive("trim", vTrim);

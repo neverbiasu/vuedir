@@ -1,1 +1,0 @@
-export {vAutoresize} from './vAutoresize'

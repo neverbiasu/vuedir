@@ -115,7 +115,8 @@ export default defineConfig({
                 { text: "v-watermarker", link: "/directives/watermarker" },
                 { text: "v-ripple", link: "/directives/ripple" },
                 { text: "v-ellipsis", link: "/directives/ellipsis" },
-                { text: "v-autoresize", link: "/directives/autoresize" },
+                { text: "v-fitfont", link: "/directives/fitfont" },
+                {text:"v-autobox",link:"/directives/autobox"}
               ],
             },
             {
