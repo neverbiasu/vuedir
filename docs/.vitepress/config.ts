@@ -127,6 +127,7 @@ export default defineConfig({
                 { text: "v-clearabel", link: "/directives/clearable" },
                 { text: "v-emoji", link: "/directives/emoji" },
                 { text: "v-trim", link: "/directives/trim" },
+                { text: "v-verify", link: "/directives/verify" },
               ],
             },
           ],
