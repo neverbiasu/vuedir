@@ -27,6 +27,7 @@ import { vBoxResize } from "./directives/vBoxResize";
 import { vAutobox } from "./directives/vAutobox";
 import { vTrim } from "./directives/vTrim";
 import { vVerify } from "./directives/vVerify";
+import { vDraggableSort } from "./directives/vDraggableSort";
 
 export {
   vBacktop,
@@ -57,6 +58,7 @@ export {
   vBoxResize,
   vTrim,
   vVerify,
+  vDraggableSort,
 };
 
 export interface CPVueDirPlugin {
@@ -92,6 +94,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("boxresize", vBoxResize);
     app.directive("trim", vTrim);
     app.directive("verify", vVerify);
+    app.directive("draggablesort", vDraggableSort);
   },
 };
 
