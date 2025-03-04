@@ -82,7 +82,7 @@ const apiTableDate = [
 
 ::: warning 注意
 
-- 该指令只能用于 `form` 元素，不可用于组件。
+- 该指令只能用于 `form` 标签。
 - `v-verify` 支持 `submit` 和 `blur` 两种触发方式，默认为 `submit` 和 `blur` ，`blur` 事件触发时，只会校验当前获得焦点的元素，不会校验整个表单。
 - `v-verify` 目前每个校验规则只有以下属性：`required`: 是否必填。`min`: 最小长度。`max`: 最大长度。`pattern`: 正则表达式。`message`: 自定义错误提示信息。`asyncValidator`: 异步校验函数。
 - 校验结果会通过 `validate` 事件传递回组件。事件详情包含 `isValid`（是否校验通过）和 `errors`（错误信息）。
