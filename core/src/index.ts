@@ -26,6 +26,7 @@ import { vClickout } from "./directives/vClickout";
 import { vBoxResize } from "./directives/vBoxResize";
 import { vAutobox } from "./directives/vAutobox";
 import { vTrim } from "./directives/vTrim";
+import { vVerify } from "./directives/vVerify";
 
 export {
   vBacktop,
@@ -55,6 +56,7 @@ export {
   vScrollTo,
   vBoxResize,
   vTrim,
+  vVerify,
 };
 
 export interface CPVueDirPlugin {
@@ -89,6 +91,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("scrollto", vScrollTo);
     app.directive("boxresize", vBoxResize);
     app.directive("trim", vTrim);
+    app.directive("verify", vVerify);
   },
 };
 
