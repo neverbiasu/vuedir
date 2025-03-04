@@ -1,43 +1,34 @@
 <template>
-    <a-form :model="formDate" v-verify="{ ...rules, delay: delay }" @submit="handleSubmit" @validate="handleValidate"
-        :layout="'vertical'" class="custom-form">
+    <form :model="formDate" v-verify="{ ...rules, delay: delay }" @submit="handleSubmit" @validate="handleValidate"
+        class="custom-form">
         <!-- 用户名 -->
-        <a-form-item label="用户名" field="username" :label-col-props="{ span: 24 }" :wrapper-col-props="{ span: 24 }">
-            <a-input name="username" v-model="formDate.username" placeholder="请输入用户名" allow-clear
-                :style="{ width: '100%' }" />
-        </a-form-item>
+        <div class="form-item">
+            <label for="username">用户名</label>
+            <input type="text" id="username" name="username" v-model="formDate.username" placeholder="请输入用户名">
+            <div class="error-message"></div>
+        </div>
 
         <!-- 密码 -->
-        <a-form-item label="密码" field="password" :label-col-props="{ span: 24 }" :wrapper-col-props="{ span: 24 }">
-            <a-input-password name="password" v-model="formDate.password" placeholder="请输入密码" allow-clear
-                :style="{ width: '100%' }" />
-        </a-form-item>
+        <div class="form-item">
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password" v-model="formDate.password" placeholder="请输入密码">
+            <div class="error-message"></div>
+        </div>
 
         <!-- 确认密码 -->
-        <a-form-item label="确认密码" field="confirmPassword" :label-col-props="{ span: 24 }"
-            :wrapper-col-props="{ span: 24 }">
-            <a-input-password name="confirmPassword" v-model="formDate.confirmPassword" placeholder="请再次输入密码"
-                allow-clear :style="{ width: '100%' }" />
-        </a-form-item>
-
-        <!-- 邮箱 -->
-        <a-form-item label="邮箱" field="email" :label-col-props="{ span: 24 }" :wrapper-col-props="{ span: 24 }">
-            <a-input name="email" v-model="formDate.email" placeholder="请输入邮箱" allow-clear :style="{ width: '100%' }" />
-        </a-form-item>
-
-        <!-- 手机号 -->
-        <a-form-item label="手机号" field="phone" :label-col-props="{ span: 24 }" :wrapper-col-props="{ span: 24 }">
-            <a-input name="phone" v-model="formDate.phone" placeholder="请输入手机号" allow-clear
-                :style="{ width: '100%' }" />
-        </a-form-item>
+        <div class="form-item">
+            <label for="confirmPassword">确认密码</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" v-model="formDate.confirmPassword"
+                placeholder="请再次输入密码">
+            <div class="error-message"></div>
+        </div>
 
         <!-- 提交按钮 -->
-        <a-form-item :wrapper-col-props="{ span: 24 }">
-            <a-button type="primary" html-type="submit" :loading="isSubmitting" :style="{ width: '100%' }">
-                提交
-            </a-button>
-        </a-form-item>
-    </a-form>
+        <div class="form-item">
+            <button type="submit" :disabled="isSubmitting">提交</button>
+        </div>
+    </form>
+
 </template>
 
 <script lang="ts" setup>
@@ -49,16 +40,13 @@ const formDate = reactive({
     username: '',
     password: '',
     confirmPassword: '',
-    email: '',
-    phone: '',
 });
 
 const isSubmitting = ref(false); // 提交按钮的加载状态
 const hasErrors = ref(false); // 是否有错误
-
 const formErrors = ref({}); // 表单错误信息
-
 const delay = ref(1000); // 延迟校验时间
+
 // 校验规则
 const rules = {
     username: [
@@ -86,14 +74,6 @@ const rules = {
             },
         },
     ],
-    email: [
-        { required: true, message: '邮箱不能为空' },
-        { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: '请输入有效的邮箱地址' },
-    ],
-    phone: [
-        { required: true, message: '手机号不能为空' },
-        { pattern: /^1[3-9]\d{9}$/, message: '请输入有效的手机号' },
-    ],
 };
 
 // 处理校验结果
@@ -104,7 +84,8 @@ const handleValidate = (event: CustomEvent) => {
 };
 
 // 提交表单
-const handleSubmit = () => {
+const handleSubmit = (e: Event) => {
+    e.preventDefault();
     isSubmitting.value = true; // 显示加载状态
     // 模拟提交逻辑
     setTimeout(() => {
@@ -130,27 +111,45 @@ const handleSubmit = () => {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.custom-form .arco-form-item {
+.form-item {
     margin-bottom: 16px;
 }
 
-.custom-form .arco-form-item:last-child {
+.form-item:last-child {
     margin-bottom: 0;
 }
 
-.custom-form .arco-input,
-.custom-form .arco-input-password {
+.form-item label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.form-item input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.custom-form .arco-btn {
-    border-radius: 4px;
-    font-weight: 500;
-}
-
-.custom-form .arco-form-item-message {
+.form-item .error-message {
     color: #f53f3f;
     font-size: 12px;
     margin-top: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 </style>
