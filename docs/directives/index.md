@@ -167,7 +167,12 @@ const directives = ref([
     description: '表单验证功能，支持自定义验证规则和错误提示',
     link: '/directives/verify',
     category: '表单类'
-  },
+  },{
+    name:'v-draggablesort',
+    description: '拖拽元素来重新排序列表，并且在拖拽完成后更新数据',
+    link: '/directives/draggablesort',
+    category: '交互类'
+  }
 ]);
 
 const categories = {
