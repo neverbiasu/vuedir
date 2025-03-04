@@ -136,3 +136,5 @@ dist
 .pnp.*
 
 bundle-analysis.html
+
+.DS_Store
