@@ -26,33 +26,44 @@ const validateField = (value: string, rules: ValidationRule[], field: string): P
 // 显示错误提示
 const showError = (input: HTMLInputElement, error: string, delay: any) => {
     setTimeout(() => {
-        const formItem = input.closest('.arco-form-item');
+        // 获取input元素最近的form-item元素
+        const formItem = input.closest('.form-item');
         if (formItem) {
             removeError(input); // 移除之前的错误提示
             const errorElement = document.createElement('div');
-            errorElement.className = 'arco-form-item-message';
+            errorElement.className = 'error-message';
             errorElement.textContent = error;
+
+            errorElement.style.color = '#f53f3f'; // 错误消息文字颜色
+            errorElement.style.fontSize = '12px'; // 错误消息字体大小
+            errorElement.style.marginTop = '4px'; // 错误消息上边距
+
             formItem.appendChild(errorElement);
         }
-    }, delay)
+    }, delay);
 };
 
 const showErrorBlur = (input: HTMLInputElement, error: string) => {
-    const formItem = input.closest('.arco-form-item');
+    const formItem = input.closest('.form-item');
     if (formItem) {
         removeError(input); // 移除之前的错误提示
         const errorElement = document.createElement('div');
-        errorElement.className = 'arco-form-item-message';
+        errorElement.className = 'error-message';
         errorElement.textContent = error;
+
+        errorElement.style.color = '#f53f3f'; // 错误消息文字颜色
+        errorElement.style.fontSize = '12px'; // 错误消息字体大小
+        errorElement.style.marginTop = '4px'; // 错误消息上边距
+
         formItem.appendChild(errorElement);
     }
 };
 
 // 移除错误提示
 const removeError = (input: HTMLInputElement) => {
-    const formItem = input.closest('.arco-form-item');
+    const formItem = input.closest('.form-item');
     if (formItem) {
-        const existingError = formItem.querySelector('.arco-form-item-message');
+        const existingError = formItem.querySelector('.error-message');
         if (existingError) {
             existingError.remove();
         }
@@ -106,6 +117,7 @@ export const vVerify: Directive = {
 
         // 失焦时的校验逻辑
         const validateOnBlur = async (e: Event) => {
+            e.preventDefault(); // 阻止表单默认提交行为
             const input = e.target as HTMLInputElement;
             const field = input.name;
             const value = input.value.trim();
@@ -154,7 +166,6 @@ export const vVerify: Directive = {
     },
     updated(el: ValidationHTMLElement, binding: DirectiveBinding<ValidationRules>) {
         // 当 binding.value（校验规则）发生变化时，更新规则
-        console.log('指令更新：校验规则已更改');
         el._rules = binding.value; // 保存新的规则
     },
     unmounted(el: ValidationHTMLElement) {
@@ -169,6 +180,5 @@ export const vVerify: Directive = {
             });
             delete el._validateOnBlur; // 清理引用
         }
-        console.log('指令已卸载');
     },
 };
