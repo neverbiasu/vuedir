@@ -13,7 +13,7 @@ const mainConfig = {
     {
       file: "dist/index.js",
       format: "es",
-      sourcemap: true,
+      sourcemap: false,
     },
   ],
   external: ["vue"],
@@ -31,13 +31,11 @@ const mainConfig = {
       declarationDir: "dist",
     }),
   ],
-  // 排除输出目录，避免 watch 监听到生成的文件
   watch: {
     exclude: "dist/**",
   },
 };
 
-// 如果不是 watch 模式，再进行 dts 的打包
 const dtsConfig = !isWatch && {
   input: "dist/index.d.ts",
   output: [{ file: "dist/index.d.ts", format: "es" }],
