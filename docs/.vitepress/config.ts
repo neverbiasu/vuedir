@@ -117,6 +117,7 @@ export default defineConfig({
                 { text: "v-ellipsis", link: "/directives/ellipsis" },
                 { text: "v-fitfont", link: "/directives/fitfont" },
                 { text: "v-autobox", link: "/directives/autobox" },
+                { text: "v-draggablesort", link: "/directives/draggablesort" },
               ],
             },
             {
