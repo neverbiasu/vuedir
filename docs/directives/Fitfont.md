@@ -35,9 +35,11 @@
 <ApiTable :data="props" />
 
 ## 注意事项
+
 ::: warning 注意
 若是对字体大小不满意可以通过调整缩放比例来达到效果，缩放比例默认为 1，若缩放比例设置为 0.5，则字体大小会变为原来的一半。
 :::
+
 <script setup>
 import FitfontDefaultDemo from '../.vitepress/components/vFitfont/FitfontDefaultDemo.vue'
 import FitfontUltraDemo from '../.vitepress/components/vFitfont/FitfontUltraDemo.vue'
