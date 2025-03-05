@@ -1,1 +1,1 @@
-export { vHighlight } from "./vHighlight";
+export { vHighlight } from "./core";
