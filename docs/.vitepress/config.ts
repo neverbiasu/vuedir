@@ -130,6 +130,7 @@ export default defineConfig({
                 { text: "v-emoji", link: "/directives/emoji" },
                 { text: "v-trim", link: "/directives/trim" },
                 { text: "v-verify", link: "/directives/verify" },
+                { text: "v-autoinputtype", link: "/directives/autoinputtype" },
               ],
             },
           ],
