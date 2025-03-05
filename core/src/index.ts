@@ -30,6 +30,7 @@ import { vVerify } from "./directives/vVerify";
 import { vDraggableSort } from "./directives/vDraggableSort";
 import { vTop } from "./directives/vTop";
 import { vAutoInputType } from "./directives/vAutoInputType";
+import { vFullScreen } from "./directives/vFullScreen";
 
 export {
   vBacktop,
@@ -63,6 +64,7 @@ export {
   vDraggableSort,
   vTop,
   vAutoInputType,
+  vFullScreen,
 };
 
 export interface CPVueDirPlugin {
@@ -101,6 +103,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive("draggablesort", vDraggableSort);
     app.directive("top", vTop);
     app.directive("autoinputtype", vAutoInputType);
+    app.directive("fullscreen", vFullScreen);
   },
 };
 

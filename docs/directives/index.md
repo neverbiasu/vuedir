@@ -177,6 +177,11 @@ const directives = ref([
     description: '根据输入内容自动切换输入框类型，例如在输入邮箱时自动切换到邮箱输入框',
     link: '/directives/autoinputtype',
     category: '表单类'
+  },{
+    name: 'v-fullscreen',
+    description: '点击元素全屏显示，再次点击退出全屏',
+    link: '/directives/fullscreen',
+    category: '交互类'
   },
 ]);
 
