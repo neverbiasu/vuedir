@@ -1,9 +1,5 @@
-<script setup lang="ts">
-import { vTop } from "@cp-vuedir/core";
-</script>
+<template></template>
 
-<template>
-  <div v-top>我就是那 z-index 之王！</div>
-</template>
+<script setup lang="ts"></script>
 
 <style scoped></style>

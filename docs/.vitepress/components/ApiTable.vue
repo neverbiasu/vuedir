@@ -2,15 +2,15 @@
 // Props definition remains unchanged
 interface Props {
   data: {
-    name: string;
-    description: string;
-    type: string;
-    required?: boolean;
-    default?: string;
-  }[];
+    name: string
+    description: string
+    type: string
+    required?: boolean
+    default?: string
+  }[]
 }
 
-defineProps<Props>();
+defineProps<Props>()
 </script>
 
 <template>
@@ -33,17 +33,12 @@ defineProps<Props>();
             <code>{{ item.type }}</code>
           </td>
           <td>
-            <span
-              :class="[
-                'required-badge',
-                item.required ? 'required' : 'optional',
-              ]"
-            >
-              {{ item.required ? "是" : "否" }}
+            <span :class="['required-badge', item.required ? 'required' : 'optional']">
+              {{ item.required ? '是' : '否' }}
             </span>
           </td>
           <td class="default-column">
-            <span>{{ item.default || "-" }}</span>
+            <span>{{ item.default || '-' }}</span>
           </td>
         </tr>
       </tbody>

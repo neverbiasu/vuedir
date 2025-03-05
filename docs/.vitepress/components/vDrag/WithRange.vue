@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { vDrag } from "@cp-vuedir/core";
+import { ref } from 'vue'
+import { vDrag } from '@cp-vuedir/core'
 
-const containerRef = ref<HTMLElement | null>(null);
+const containerRef = ref<HTMLElement | null>(null)
 </script>
 
 <template>
   <div class="drag_box" ref="containerRef">
     <a-button
       v-drag="{
-        range: containerRef,
+        range: containerRef
       }"
       type="primary"
       shape="round"

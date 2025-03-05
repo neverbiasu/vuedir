@@ -10,10 +10,10 @@
 
 ```vue
 <template>
-    <!-- 基础用法 -->
-    <input v-autoinputtype placeholder="自动切换输入类型" />
-    <!-- 自定义规则 -->
-    <input v-autoinputtype="customRules" placeholder="自定义规则" />
+  <!-- 基础用法 -->
+  <input v-autoinputtype placeholder="自动切换输入类型" />
+  <!-- 自定义规则 -->
+  <input v-autoinputtype="customRules" placeholder="自定义规则" />
 </template>
 ```
 

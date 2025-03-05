@@ -1,1 +1,1 @@
-export { vAutoInputType } from './vAutoInputType';
+export { vAutoInputType } from './vAutoInputType'
