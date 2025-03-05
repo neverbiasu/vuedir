@@ -4,6 +4,37 @@
 
 ## 📝 代码规范
 
+### Prettier 代码格式化
+
+本项目使用 Prettier 来保持一致的代码风格。配置文件位于项目根目录的 `.prettierrc`：
+
+这些配置确保了：
+
+- 不使用分号 (`semi: false`)
+- 使用空格而不是制表符 (`useTabs: false`)
+- 缩进使用2个空格 (`tabWidth: 2`)
+- 使用单引号 (`singleQuote: true`)
+- 行长度限制为120个字符 (`printWidth: 120`)
+- 不使用尾随逗号 (`trailingComma: "none"`)
+
+格式化你的代码：
+
+```bash
+# 格式化所有文件
+pnpm format
+
+# 检查代码格式是否符合规范
+pnpm format:check
+```
+
+**编辑器设置**
+
+我们建议在你的编辑器中安装 Prettier 插件，并启用保存时自动格式化：
+
+- **VS Code**: 安装 [Prettier 扩展](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)，并在设置中配置prettier配置文件路径。
+- **WebStorm/IntelliJ**: 在设置中启用 Prettier 集成，配置 Prettier 包路径为项目中的 `node_modules/.bin/prettier`
+- **其他编辑器**: 请参考 [Prettier 编辑器集成文档](https://prettier.io/docs/en/editors.html)
+
 ### 命名规范
 
 - 文件名：使用 kebab-case（例如：`v-focus.ts`）
