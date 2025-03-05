@@ -29,6 +29,8 @@ Install with pnpm (recommended):
 pnpm add @cp-vuedir/core
 ```
 
+> Note: Make sure you have [pnpm installed](https://pnpm.io/installation) before running this command.
+
 ## 🚀 Usage
 
 Register VueDir in your Vue application:
@@ -49,6 +51,23 @@ Visit our [official documentation](https://vuedir.feashow.cn/) for more informat
 ## 🤝 Contributing
 
 We welcome all forms of contributions! Please check our [Contributing Guide](./CONTRIBUTING.md) to learn how to get involved.
+
+### Development Setup
+
+```bash
+# Make sure you have pnpm installed (https://pnpm.io/installation)
+npm install -g pnpm
+
+# Clone the repo
+git clone https://github.com/CodePaintStudio/vuedir
+cd vuedir
+
+# Install dependencies
+pnpm install
+
+# Start development environment
+pnpm dev
+```
 
 ## 📄 License
 

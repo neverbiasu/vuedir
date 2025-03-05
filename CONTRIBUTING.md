@@ -2,6 +2,31 @@
 
 感谢你考虑为 VueDir 做出贡献！在提交你的贡献之前，请花点时间阅读以下指南。
 
+## 🛠️ 环境准备
+
+### pnpm 安装
+
+本项目**仅支持使用 pnpm** 作为包管理工具。请确保你已经安装了最新版本的 pnpm：
+
+```bash
+# 使用 npm 安装
+npm install -g pnpm
+
+# 使用 Homebrew 安装 (macOS)
+brew install pnpm
+
+# 使用 Scoop 安装 (Windows)
+scoop install pnpm
+
+# 使用 Chocolatey 安装 (Windows)
+choco install pnpm
+
+# 使用官方安装脚本 (Linux/macOS)
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+
+更多安装方式请参考 [pnpm 官方安装指南](https://pnpm.io/zh/installation)。
+
 ## 🌟 开发流程
 
 1. Fork 这个仓库
