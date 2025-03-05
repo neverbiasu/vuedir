@@ -24,7 +24,7 @@ const directives = ref([
   },
   {
     name: 'v-hotkey',
-    description: '监听键盘事件，支持自定义快捷键和回掉函数',
+    description: '监听键盘事件，支持自定义多个快捷键和回掉函数',
     link: '/directives/hotkey',
     category: '交互类'
   },

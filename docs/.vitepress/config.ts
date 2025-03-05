@@ -118,6 +118,7 @@ export default defineConfig({
                 { text: "v-fitfont", link: "/directives/fitfont" },
                 { text: "v-autobox", link: "/directives/autobox" },
                 { text: "v-draggablesort", link: "/directives/draggablesort" },
+                { text: "v-top", link: "/directives/top" },
               ],
             },
             {
