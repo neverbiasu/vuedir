@@ -2,11 +2,9 @@
   <div class="drag_box" ref="containerRef">
     <a-button
       v-drag="{
-        range: containerRef,
         startDrag: startDragFn,
         onDrag: {
-          event: onDargFn,
-          throttle: 100
+          event: onDargFn
         },
         endDrag: endDragFn
       }"

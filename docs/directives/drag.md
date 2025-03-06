@@ -16,7 +16,7 @@
 
 ## 设置回调函数
 
-通过给 `v-drag` 指令支持`startDrag, onDrag, endDrag`三个回调函数，分别在拖拽开始，拖拽中，拖拽结束时触发。其中`onDrag`支持配置`throttle`节流的时间，用于性能优化。
+通过给 `v-drag` 指令支持`startDrag, onDrag, endDrag`三个回调函数，分别在拖拽开始，拖拽中，拖拽结束时触发。
 
 <WithEvents />
 
@@ -148,7 +148,7 @@ const data = [
     },
     {
         name: "onDrag",
-        type: "Object<event: Function, throttle?: Number>",
+        type: "Function",
         default: "null",
         description: "拖拽中触发的回掉函数",
         required: false,
