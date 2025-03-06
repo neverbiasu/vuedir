@@ -90,84 +90,69 @@ export default defineConfig({
             {
               text: '交互类',
               items: [
-                { text: 'v-backtop', link: '/directives/backtop' },
-                { text: 'v-clickout', link: '/directives/clickout' },
-                { text: 'v-copy', link: '/directives/copy' },
-                { text: 'v-longpress', link: '/directives/longpress' },
-                { text: 'v-doubleclick', link: '/directives/doubleclick' },
-                { text: 'v-threeclick', link: '/directives/threeclick' },
-                { text: 'v-debounce', link: '/directives/debounce' },
-                { text: 'v-throttle', link: '/directives/throttle' },
-                { text: 'v-drag', link: '/directives/drag' },
-                { text: 'v-hotkey', link: '/directives/hotkey' },
-                { text: 'v-tooltip', link: '/directives/tooltip' },
-                { text: 'v-scrollto', link: '/directives/scrollto' },
-                { text: 'v-boxresize', link: '/directives/boxresize' },
-                { text: 'v-fullscreen', link: '/directives/fullscreen' }
+                { text: 'backtop', link: '/directives/backtop' },
+                { text: 'clickout', link: '/directives/clickout' },
+                { text: 'copy', link: '/directives/copy' },
+                { text: 'doubleclick', link: '/directives/doubleclick' },
+                { text: 'debounce', link: '/directives/debounce' },
+                { text: 'drag', link: '/directives/drag' },
+                { text: 'draggablesort', link: '/directives/draggablesort' },
+                { text: 'fullscreen', link: '/directives/fullscreen' },
+                { text: 'hotkey', link: '/directives/hotkey' },
+                { text: 'infinitescroll', link: '/directives/infinitescroll' },
+                { text: 'longpress', link: '/directives/longpress' },
+                { text: 'mousefollow', link: '/directives/mousefollow' },
+                { text: 'scrollto', link: '/directives/scrollto' },
+                { text: 'threeclick', link: '/directives/threeclick' },
+                { text: 'throttle', link: '/directives/throttle' },
+                { text: 'tooltip', link: '/directives/tooltip' }
               ]
-            },
-            {
-              text: '表单类',
-              items: [
-                { text: 'v-focus', link: '/directives/focus' },
-                { text: 'v-pwdvisible', link: '/directives/pwdvisible' },
-                { text: "v-backtop", link: "/directives/backtop" },
-                { text: "v-clickout", link: "/directives/clickout" },
-                { text: "v-copy", link: "/directives/copy" },
-                { text: "v-longpress", link: "/directives/longpress" },
-                { text: "v-doubleclick", link: "/directives/doubleclick" },
-                { text: "v-threeclick", link: "/directives/threeclick" },
-                { text: "v-debounce", link: "/directives/debounce" },
-                { text: "v-throttle", link: "/directives/throttle" },
-                { text: "v-drag", link: "/directives/drag" },
-                { text: "v-hotkey", link: "/directives/hotkey" },
-                { text: "v-tooltip", link: "/directives/tooltip" },
-                { text: "v-scrollto", link: "/directives/scrollto" },
-                { text: "v-boxresize", link: "/directives/boxresize" },
-                { text: "v-preload", link: "/directives/preload" },
-              ],
             },
             {
               text: '视觉类',
               items: [
-                { text: 'v-highlight', link: '/directives/highlight' },
-                { text: 'v-spare', link: '/directives/spare' },
-                { text: 'v-countup', link: '/directives/countup' },
-                { text: 'v-lazyload', link: '/directives/lazyload' },
-                { text: 'v-watermarker', link: '/directives/watermarker' },
-                { text: 'v-ripple', link: '/directives/ripple' },
-                { text: 'v-ellipsis', link: '/directives/ellipsis' },
-                { text: 'v-fitfont', link: '/directives/fitfont' },
-                { text: 'v-autobox', link: '/directives/autobox' },
-                { text: 'v-draggablesort', link: '/directives/draggablesort' },
-                { text: 'v-top', link: '/directives/top' },
-                { text: 'v-mousefollow', link: '/directives/mousefollow' },
-                { text: 'v-infinitescroll', link: '/directives/infinitescroll' },
-                { text: 'v-marquee', link: '/directives/marquee' },
+                { text: 'autobox', link: '/directives/autobox' },
+                { text: 'boxresize', link: '/directives/boxresize' },
+                { text: 'countup', link: '/directives/countup' },
+                { text: 'ellipsis', link: '/directives/ellipsis' },
+                { text: 'fitfont', link: '/directives/fitfont' },
+                { text: 'highlight', link: '/directives/highlight' },
+                { text: 'marquee', link: '/directives/marquee' },
+                { text: 'ripple', link: '/directives/ripple' },
+                { text: 'top', link: '/directives/top' },
+                { text: 'watermarker', link: '/directives/watermarker' }
               ]
             },
             {
               text: '表单类',
               items: [
-                { text: 'v-focus', link: '/directives/focus' },
-                { text: 'v-pwdvisible', link: '/directives/pwdvisible' },
-                { text: 'v-clearabel', link: '/directives/clearable' },
-                { text: 'v-emoji', link: '/directives/emoji' },
-                { text: 'v-trim', link: '/directives/trim' },
-                { text: 'v-verify', link: '/directives/verify' },
-                { text: 'v-autoinputtype', link: '/directives/autoinputtype' }
+                { text: 'autoinputtype', link: '/directives/autoinputtype' },
+                { text: 'clearabel', link: '/directives/clearable' },
+                { text: 'emoji', link: '/directives/emoji' },
+                { text: 'focus', link: '/directives/focus' },
+                { text: 'pwdvisible', link: '/directives/pwdvisible' },
+                { text: 'trim', link: '/directives/trim' },
+                { text: 'verify', link: '/directives/verify' }
+              ]
+            },
+            {
+              text: '性能优化类',
+              items: [
+                { text: 'lazyload', link: '/directives/lazyload' },
+                { text: 'preload', link: '/directives/preload' },
+                { text: 'spare', link: '/directives/spare' }
               ]
             }
           ]
         }
+      ],
+      '/demo/': [
+        {
+          text: '演示',
+          items: [{ text: '预加载演示', link: '/demo/preload-demo' }]
+        }
       ]
-    },
-    "/demo/": [
-      {
-        text: "演示",
-        items: [{ text: "预加载演示", link: "/demo/preload-demo" }],
-      },
-    ],
+    }
   },
   vue: {
     template: {}
