@@ -69,7 +69,6 @@ export const vClearable: VClearableDirective = {
 
     input.addEventListener('input', toggleIcon)
     icon.addEventListener('click', clearContent)
-
     ;(el as VClearableHTMLElement).__vClearable = {
       clearContent,
       toggleIcon,

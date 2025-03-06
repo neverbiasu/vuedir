@@ -10,9 +10,7 @@
 
 ```vue
 <template>
-  <button v-fullscreen>
-    切换全屏状态
-  </button>
+  <button v-fullscreen>切换全屏状态</button>
 </template>
 ```
 

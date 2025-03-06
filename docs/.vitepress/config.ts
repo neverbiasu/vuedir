@@ -141,7 +141,8 @@ export default defineConfig({
                 { text: 'v-autobox', link: '/directives/autobox' },
                 { text: 'v-draggablesort', link: '/directives/draggablesort' },
                 { text: 'v-top', link: '/directives/top' },
-                { text: 'v-mousefollow', link: '/directives/mousefollow' }
+                { text: 'v-mousefollow', link: '/directives/mousefollow' },
+                { text: 'v-infinitescroll', link: '/directives/infinitescroll' }
               ]
             },
             {
@@ -163,7 +164,7 @@ export default defineConfig({
     "/demo/": [
       {
         text: "演示",
-          items: [{ text: "预加载演示", link: "/demo/preload-demo" }],
+        items: [{ text: "预加载演示", link: "/demo/preload-demo" }],
       },
     ],
   },

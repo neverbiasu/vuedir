@@ -47,7 +47,6 @@ const vTop: Directive = {
       attributes: true,
       attributeFilter: ['style']
     })
-
     ;(el as any)._vTopObserver = observer
   },
   unmounted(el: HTMLElement) {

@@ -1,5 +1,5 @@
 <template>
-  <div v-draggablesort="{ items: list, onUpdate, storageKey: 'my-draggable-list' }" class="draggable-container">
+  <div v-draggable-sort="{ items: list, onUpdate, storageKey: 'my-draggable-list' }" class="draggable-container">
     <div v-for="item in list" :key="item.id" data-draggable class="draggable-item">
       {{ item.text }}
     </div>

@@ -1,6 +1,5 @@
 <template>
-  <!-- 最简单的使用方式 -->
-  <div v-infinite-scroll="scrollOptions" class="scroll-container">
+  <div v-infinitescroll="scrollOptions" class="scroll-container">
     <div v-for="n in count" :key="n" class="scroll-item">项目 {{ n }}</div>
   </div>
 </template>
@@ -8,13 +7,14 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { vInfiniteScroll } from '@cp-vuedir/core'
+import { Message } from '@arco-design/web-vue'
 
 const count = ref(20)
 
 // 最简单的加载方法
 const loadMore = () => {
   count.value += 10
-  console.log('加载了10条新数据')
+  Message.success('加载更多数据中')
 }
 
 // 无限滚动配置
@@ -30,7 +30,6 @@ const scrollOptions = {
   height: 400px;
   overflow-y: auto;
   padding: 16px;
-  background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -39,7 +38,7 @@ const scrollOptions = {
 .scroll-item {
   padding: 12px 16px;
   margin: 8px 0;
-  background: white;
+  background: var(--vp-c-bg-soft);
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
@@ -47,6 +46,7 @@ const scrollOptions = {
   color: #334155;
   font-size: 14px;
   line-height: 1.5;
+  cursor: pointer;
 }
 
 .scroll-item:hover {
@@ -66,7 +66,7 @@ const scrollOptions = {
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: black;
   border-radius: 4px;
 }
 
