@@ -32,6 +32,7 @@ import { vTop } from './directives/vTop'
 import { vAutoInputType } from './directives/vAutoInputType'
 import { vFullScreen } from './directives/vFullScreen'
 import { vPreload } from './directives/vPreload'
+import { vMouseFollow } from './directives/vMouseFollow'
 export {
   vBacktop,
   vClickout,
@@ -66,6 +67,7 @@ export {
   vAutoInputType,
   vFullScreen,
   vPreload,
+  vMouseFollow,
 }
 
 export interface CPVueDirPlugin {
@@ -108,6 +110,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('autoinputtype', vAutoInputType)
     app.directive('fullscreen', vFullScreen)
     app.directive('preload', vPreload)
+    app.directive('mousefollow', vMouseFollow)
   }
 }
 
