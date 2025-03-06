@@ -31,7 +31,7 @@ import { vDraggableSort } from './directives/vDraggableSort'
 import { vTop } from './directives/vTop'
 import { vAutoInputType } from './directives/vAutoInputType'
 import { vFullScreen } from './directives/vFullScreen'
-
+import { vPreload } from './directives/vPreload'
 export {
   vBacktop,
   vClickout,
@@ -65,6 +65,7 @@ export {
   vTop,
   vAutoInputType,
   vFullScreen,
+  vPreload,
 }
 
 export interface CPVueDirPlugin {
@@ -79,6 +80,8 @@ const VueDir: CPVueDirPlugin = {
     app.directive('highlight', vHighlight)
     app.directive('longpress', vLongpress)
     app.directive('doubleclick', vDoubleClick)
+    app.directive('clickout', vClickout)
+    
     app.directive('spare', vSpare)
     app.directive('countup', vCountup)
     app.directive('lazyload', vLazyload)
@@ -104,6 +107,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('top', vTop)
     app.directive('autoinputtype', vAutoInputType)
     app.directive('fullscreen', vFullScreen)
+    app.directive('preload', vPreload)
   }
 }
 
