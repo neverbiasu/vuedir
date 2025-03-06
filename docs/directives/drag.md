@@ -133,10 +133,11 @@ export default {
 ## 注意事项
 
 ::: warning 注意
+
 - 请在配置`onDrag`时，请同时配置`throttle`节流的时间，这将用于限制`event`执行的频率。虽然`throttle`是个可选项，但如果不设置，默认不限制频率，在拖拽时会一直执行，这可能会导致性能问题，从而导致页面崩溃。
 - 使用列表拖拽功能时，请确保列表项有唯一的 key，这对于排序后的渲染很重要。
 - 拖拽把手选择器应该指向元素内的有效子元素，否则拖拽功能将无法正常工作。
-:::
+  :::
 
 <script setup>
 import BasicDemo from "../.vitepress/components/vDrag/BasicDemo.vue"

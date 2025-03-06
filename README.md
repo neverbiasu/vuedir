@@ -36,12 +36,12 @@ pnpm add @cp-vuedir/core
 Register VueDir in your Vue application:
 
 ```ts
-import { createApp } from "vue";
-import VueDir from "@cp-vuedir/core";
+import { createApp } from 'vue'
+import VueDir from '@cp-vuedir/core'
 
-const app = createApp(App);
-app.use(VueDir);
-app.mount("#app");
+const app = createApp(App)
+app.use(VueDir)
+app.mount('#app')
 ```
 
 ## 📖 Documentation
@@ -68,6 +68,20 @@ pnpm install
 # Start development environment
 pnpm dev
 ```
+
+### Code Formatting
+
+This project uses Prettier for code formatting. You can format your code by running:
+
+```bash
+# Format all files
+pnpm format
+
+# Check if files are correctly formatted
+pnpm format:check
+```
+
+The Prettier configuration is defined in `.prettierrc` at the project root.
 
 ## 📄 License
 

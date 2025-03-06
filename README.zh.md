@@ -36,12 +36,12 @@ pnpm add @cp-vuedir/core
 在你的 Vue 应用中注册 VueDir：
 
 ```ts
-import { createApp } from "vue";
-import VueDir from "@cp-vuedir/core";
+import { createApp } from 'vue'
+import VueDir from '@cp-vuedir/core'
 
-const app = createApp(App);
-app.use(VueDir);
-app.mount("#app");
+const app = createApp(App)
+app.use(VueDir)
+app.mount('#app')
 ```
 
 ## 📖 文档
@@ -68,6 +68,20 @@ pnpm install
 # 启动开发环境
 pnpm dev
 ```
+
+### 代码格式化
+
+本项目使用 Prettier 进行代码格式化。你可以通过运行以下命令来格式化代码：
+
+```bash
+# 格式化所有文件
+pnpm format
+
+# 检查文件是否已正确格式化
+pnpm format:check
+```
+
+Prettier 的配置定义在项目根目录的 `.prettierrc` 文件中。
 
 ## 📄 许可证
 

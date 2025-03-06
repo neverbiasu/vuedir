@@ -15,7 +15,7 @@
             text: '水平方向',
             direction: 'horizontal',
             fontSize: 14,
-            opacity: 0.15,
+            opacity: 0.15
           }"
           class="watermark-box"
         >
@@ -27,7 +27,7 @@
             text: '垂直方向',
             direction: 'vertical',
             fontSize: 14,
-            opacity: 0.3,
+            opacity: 0.3
           }"
           class="watermark-box"
         >
@@ -39,7 +39,7 @@
             text: '对角线方向',
             direction: 'diagonal',
             fontSize: 14,
-            opacity: 0.4,
+            opacity: 0.4
           }"
           class="watermark-box"
         >
@@ -57,7 +57,7 @@
           fontFamily: 'Arial',
           textColor: '#ff0000',
           opacity: 0.5,
-          gap: 120,
+          gap: 120
         }"
         class="watermark-box"
       >
@@ -68,7 +68,7 @@
 </template>
 
 <script setup>
-import { vWatermarker } from "@cp-vuedir/core";
+import { vWatermarker } from '@cp-vuedir/core'
 </script>
 
 <style scoped>
