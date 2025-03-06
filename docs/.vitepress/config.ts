@@ -107,6 +107,27 @@ export default defineConfig({
               ]
             },
             {
+              text: '表单类',
+              items: [
+                { text: 'v-focus', link: '/directives/focus' },
+                { text: 'v-pwdvisible', link: '/directives/pwdvisible' },
+                { text: "v-backtop", link: "/directives/backtop" },
+                { text: "v-clickout", link: "/directives/clickout" },
+                { text: "v-copy", link: "/directives/copy" },
+                { text: "v-longpress", link: "/directives/longpress" },
+                { text: "v-doubleclick", link: "/directives/doubleclick" },
+                { text: "v-threeclick", link: "/directives/threeclick" },
+                { text: "v-debounce", link: "/directives/debounce" },
+                { text: "v-throttle", link: "/directives/throttle" },
+                { text: "v-drag", link: "/directives/drag" },
+                { text: "v-hotkey", link: "/directives/hotkey" },
+                { text: "v-tooltip", link: "/directives/tooltip" },
+                { text: "v-scrollto", link: "/directives/scrollto" },
+                { text: "v-boxresize", link: "/directives/boxresize" },
+                { text: "v-preload", link: "/directives/preload" },
+              ],
+            },
+            {
               text: '视觉类',
               items: [
                 { text: 'v-highlight', link: '/directives/highlight' },
@@ -120,6 +141,7 @@ export default defineConfig({
                 { text: 'v-autobox', link: '/directives/autobox' },
                 { text: 'v-draggablesort', link: '/directives/draggablesort' },
                 { text: 'v-top', link: '/directives/top' },
+                { text: 'v-mousefollow', link: '/directives/mousefollow' },
                 { text: 'v-infinite-scroll', link: '/directives/infinitescroll' }
               ]
             },
@@ -138,7 +160,13 @@ export default defineConfig({
           ]
         }
       ]
-    }
+    },
+    "/demo/": [
+      {
+        text: "演示",
+          items: [{ text: "预加载演示", link: "/demo/preload-demo" }],
+      },
+    ],
   },
   vue: {
     template: {}

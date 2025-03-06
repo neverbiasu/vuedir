@@ -35,6 +35,13 @@ const directives = ref([
     category: '交互类'
   },
   {
+    name: 'v-preload',
+    description: '预加载指令，支持页面预加载和资源预加载',
+    link: '/directives/preload',
+    category: '交互类'
+  },
+  
+  {
     name: 'v-emoji',
     description: '禁止表情符号输入功能，防止在表单中用户输入表情符号',
     link: '/directives/emoji',
@@ -186,6 +193,12 @@ const directives = ref([
     name: 'v-infinite-scroll',
     description: '实现无限滚动功能，当滚动到底部时触发加载更多数据',
     link: '/directives/infinitescroll',
+    category: '视觉类'
+  },
+  {
+    name: 'v-mousefollow',
+    description: '鼠标跟随指令，支持自定义跟随元素和位置',
+    link: '/directives/mousefollow',
     category: '视觉类'
   },
 ]);
