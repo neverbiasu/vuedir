@@ -183,6 +183,11 @@ const directives = ref([
     "name": "top",
     "description": "永远使得元素图层最高！",
     "category": "视觉类"
+  },
+  {
+    name: "desaturate",
+    description: "一键开启网页灰色素调，至远方",
+    category: "视觉类"
   }
 ])
 

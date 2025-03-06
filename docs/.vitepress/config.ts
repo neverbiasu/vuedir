@@ -114,6 +114,7 @@ export default defineConfig({
                 { text: 'autobox', link: '/directives/autobox' },
                 { text: 'boxresize', link: '/directives/boxresize' },
                 { text: 'countup', link: '/directives/countup' },
+                { text: 'desaturate', link: '/directives/desaturate' },
                 { text: 'ellipsis', link: '/directives/ellipsis' },
                 { text: 'fitfont', link: '/directives/fitfont' },
                 { text: 'highlight', link: '/directives/highlight' },
