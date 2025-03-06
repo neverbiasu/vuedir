@@ -1,16 +1,16 @@
-# v-infinite-scroll 指令
+# v-infinitescroll 指令
 
 ## 介绍
 
-`v-infinite-scroll` 指令用于实现无限滚动功能，当滚动到底部时触发加载更多数据。
+`v-infinitescroll` 指令用于实现无限滚动功能，当滚动到底部时触发加载更多数据。
 
 ## 使用方法
 
-将 `v-infinite-scroll` 指令添加到页面数据请求过多,滚动到容器底部,再次加载：
+将 `v-infinitescroll` 指令添加到页面数据请求过多,滚动到容器底部,再次加载：
 
 ```vue
 <template>
-  <div v-infinite-scroll="scrollOptions" class="scroll-container">
+  <div v-infinitescroll="scrollOptions" class="scroll-container">
     <div v-for="n in count" :key="n" class="scroll-item">项目 {{ n }}</div>
   </div>
 </template>

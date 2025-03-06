@@ -1,5 +1,5 @@
 <template>
-  <div v-infinite-scroll="scrollOptions" class="scroll-container">
+  <div v-infinitescroll="scrollOptions" class="scroll-container">
     <div v-for="n in count" :key="n" class="scroll-item">项目 {{ n }}</div>
   </div>
 </template>
