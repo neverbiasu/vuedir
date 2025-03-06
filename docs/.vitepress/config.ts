@@ -90,7 +90,6 @@ export default defineConfig({
             {
               text: '交互类',
               items: [
-<<<<<<< HEAD
                 { text: 'v-backtop', link: '/directives/backtop' },
                 { text: 'v-clickout', link: '/directives/clickout' },
                 { text: 'v-copy', link: '/directives/copy' },
@@ -106,7 +105,12 @@ export default defineConfig({
                 { text: 'v-boxresize', link: '/directives/boxresize' },
                 { text: 'v-fullscreen', link: '/directives/fullscreen' }
               ]
-=======
+            },
+            {
+              text: '表单类',
+              items: [
+                { text: 'v-focus', link: '/directives/focus' },
+                { text: 'v-pwdvisible', link: '/directives/pwdvisible' },
                 { text: "v-backtop", link: "/directives/backtop" },
                 { text: "v-clickout", link: "/directives/clickout" },
                 { text: "v-copy", link: "/directives/copy" },
@@ -122,7 +126,6 @@ export default defineConfig({
                 { text: "v-boxresize", link: "/directives/boxresize" },
                 { text: "v-preload", link: "/directives/preload" },
               ],
->>>>>>> b2e96b6 (feat: Add v-preload directive for resource and page preloading)
             },
             {
               text: '视觉类',
@@ -137,13 +140,13 @@ export default defineConfig({
                 { text: 'v-fitfont', link: '/directives/fitfont' },
                 { text: 'v-autobox', link: '/directives/autobox' },
                 { text: 'v-draggablesort', link: '/directives/draggablesort' },
-                { text: 'v-top', link: '/directives/top' }
+                { text: 'v-top', link: '/directives/top' },
+                { text: 'v-mousefollow', link: '/directives/mousefollow' }
               ]
             },
             {
               text: '表单类',
               items: [
-<<<<<<< HEAD
                 { text: 'v-focus', link: '/directives/focus' },
                 { text: 'v-pwdvisible', link: '/directives/pwdvisible' },
                 { text: 'v-clearabel', link: '/directives/clearable' },
@@ -156,27 +159,13 @@ export default defineConfig({
           ]
         }
       ]
-    }
-=======
-                { text: "v-focus", link: "/directives/focus" },
-                { text: "v-pwdvisible", link: "/directives/pwdvisible" },
-                { text: "v-clearabel", link: "/directives/clearable" },
-                { text: "v-emoji", link: "/directives/emoji" },
-                { text: "v-trim", link: "/directives/trim" },
-                { text: "v-verify", link: "/directives/verify" },
-              ],
-            },
-          ],
-        },
-      ],
-      "/demo/": [
-        {
-          text: "演示",
-          items: [{ text: "预加载演示", link: "/demo/preload-demo" }],
-        },
-      ],
     },
->>>>>>> b2e96b6 (feat: Add v-preload directive for resource and page preloading)
+    "/demo/": [
+      {
+        text: "演示",
+          items: [{ text: "预加载演示", link: "/demo/preload-demo" }],
+      },
+    ],
   },
   vue: {
     template: {}
