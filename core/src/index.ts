@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { App } from 'vue'
 import { vBacktop } from './directives/vBacktop'
 import { vFocus } from './directives/vFocus'
@@ -32,6 +33,40 @@ import { vTop } from './directives/vTop'
 import { vAutoInputType } from './directives/vAutoInputType'
 import { vFullScreen } from './directives/vFullScreen'
 
+=======
+import type { App } from "vue";
+import { vBacktop } from "./directives/vBacktop";
+import { vFocus } from "./directives/vFocus";
+import { vCopy } from "./directives/vCopy";
+import { vHighlight } from "./directives/vHighlight";
+import { vLongpress } from "./directives/vLongpress";
+import { vDoubleClick } from "./directives/vDoubleClick";
+import { vSpare } from "./directives/vSpare";
+import { vCountup } from "./directives/vCountup";
+import { vLazyload } from "./directives/vLazyload";
+import { vPwdvisible } from "./directives/vPwdvisible";
+import { vDebounce } from "./directives/vDebounce";
+import { vThrottle } from "./directives/vThrottle";
+import { vClearable } from "./directives/vClearable";
+import { vWatermarker } from "./directives/vWatermarker";
+import { vThreeClick } from "./directives/vThreeClick";
+import { vDrag } from "./directives/vDrag";
+import { vRipple } from "./directives/vRipple";
+import { vEmoji } from "./directives/vEmoji";
+import { vEllipsis } from "./directives/vEllipsis/core";
+import { vHotkey } from "./directives/vHotkey";
+import { vTooltip } from "./directives/vTooltip";
+import { vFitfont } from "./directives/vFitfont";
+import { vScrollTo } from "./directives/vScrollTo";
+import { vClickout } from "./directives/vClickout";
+import { vBoxResize } from "./directives/vBoxResize";
+import { vAutobox } from "./directives/vAutobox";
+import { vTrim } from "./directives/vTrim";
+import { vVerify } from "./directives/vVerify";
+import { vDraggableSort } from "./directives/vDraggableSort";
+import { vTop } from "./directives/vTop";
+import { vPreload } from "./directives/vPreload";
+>>>>>>> b2e96b6 (feat: Add v-preload directive for resource and page preloading)
 export {
   vBacktop,
   vClickout,
@@ -63,9 +98,14 @@ export {
   vVerify,
   vDraggableSort,
   vTop,
+<<<<<<< HEAD
   vAutoInputType,
   vFullScreen,
 }
+=======
+  vPreload,
+};
+>>>>>>> b2e96b6 (feat: Add v-preload directive for resource and page preloading)
 
 export interface CPVueDirPlugin {
   install(app: App): void
