@@ -102,7 +102,8 @@ export default defineConfig({
                 { text: 'v-hotkey', link: '/directives/hotkey' },
                 { text: 'v-tooltip', link: '/directives/tooltip' },
                 { text: 'v-scrollto', link: '/directives/scrollto' },
-                { text: 'v-boxresize', link: '/directives/boxresize' }
+                { text: 'v-boxresize', link: '/directives/boxresize' },
+                { text: 'v-fullscreen', link: '/directives/fullscreen' }
               ]
             },
             {
