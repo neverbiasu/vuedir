@@ -1,101 +1,121 @@
 <template>
-  <!-- 最简单的使用方式 -->
-  <div v-infinite-scroll="scrollOptions" class="scroll-container">
-    <div v-for="n in count" :key="n" class="scroll-item">项目 {{ n }}</div>
+  <div v-marquee="{
+    direction: 'y',
+    speed: 30,
+    onStart: handleStart,
+    onScroll: handleScroll,
+    onComplete: handleComplete
+  }" class="marquee-container">
+    <div class="marquee-content">
+      <div class="news-item">
+        🚀 Vue 3.4 版本正式发布！性能提升20%，新增 Composition API 优化
+        🌟 TypeScript 5.0 新特性：装饰器改进、模块解析增强
+        🎉 前端框架趋势报告：Vue 使用率持续上升，React 保持领先
+        💡 WebAssembly 2.0 草案发布，带来多线程和垃圾回收支持
+        🛠 Vite 4.0 更新：构建速度再提升，插件生态更加完善
+      </div>
+      <!-- <div class="news-item">
+        🌟 TypeScript 5.0 新特性：装饰器改进、模块解析增强
+      </div>
+      <div class="news-item">
+        🎉 前端框架趋势报告：Vue 使用率持续上升，React 保持领先
+      </div>
+      <div class="news-item">
+        💡 WebAssembly 2.0 草案发布，带来多线程和垃圾回收支持
+      </div>
+      <div class="news-item">
+        🛠 Vite 4.0 更新：构建速度再提升，插件生态更加完善
+      </div> -->
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { vInfiniteScroll } from '@cp-vuedir/core'
+import { vMarquee } from '@cp-vuedir/core'
 
-const count = ref(20)
-
-// 最简单的加载方法
-const loadMore = () => {
-  count.value += 10
-  console.log('加载了10条新数据')
+// 回调函数
+const handleStart = () => {
+  // console.log('🎬 滚动开始')
 }
 
-// 无限滚动配置
-const scrollOptions = {
-  handler: loadMore,
-  distance: 50,
-  throttle: 1000
+const handleScroll = (progress: number) => {
+  // console.log(`📊 滚动进度: ${Math.round(progress * 100)}%`)
+}
+
+const handleComplete = () => {
+  // console.log('✅ 单次滚动完成')
 }
 </script>
 
 <style scoped>
-.scroll-container {
-  height: 400px;
-  overflow-y: auto;
-  padding: 16px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+.marquee-container {
+  width: 350px;
+  /* 设置高度 */
+  height: 50px;
+  padding: 15px;
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
 }
 
-.scroll-item {
-  padding: 12px 16px;
-  margin: 8px 0;
+.marquee-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.marquee-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.news-item {
+  padding: 12px 15px;
   background: white;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: #334155;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: 'Helvetica Neue', sans-serif;
   font-size: 14px;
+  color: #2c3e50;
   line-height: 1.5;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
 }
 
-.scroll-item:hover {
-  transform: translateX(4px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  background: #f1f5f9;
+.news-item:hover {
+  transform: translateX(5px);
 }
 
-/* 美化滚动条 */
-.scroll-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.scroll-container::-webkit-scrollbar-track {
-  background: #f1f5f9;
-  border-radius: 4px;
-}
-
-.scroll-container::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
-
-.scroll-container::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* 加载提示动画 */
-.loading-dots::after {
+.news-item::before {
   content: '';
   display: inline-block;
-  animation: dotFlashing 1s infinite linear;
+  width: 6px;
+  height: 6px;
+  background: #42b983;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-@keyframes dotFlashing {
-  0% {
-    content: '.';
-  }
+.news-item:nth-child(odd) {
+  background: #f8f9fa;
+}
 
-  33% {
-    content: '..';
-  }
+.news-item:nth-child(2)::before {
+  background: #ff6b6b;
+}
 
-  66% {
-    content: '...';
-  }
+.news-item:nth-child(3)::before {
+  background: #4ecdc4;
+}
 
-  100% {
-    content: '.';
-  }
+.news-item:nth-child(4)::before {
+  background: #ff9f43;
+}
+
+.news-item:nth-child(5)::before {
+  background: #a55eea;
 }
 </style>
