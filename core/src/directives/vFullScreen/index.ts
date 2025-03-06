@@ -1,1 +1,1 @@
-export { vFullScreen } from './core';
+export { vFullScreen } from './core'

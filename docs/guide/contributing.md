@@ -12,9 +12,9 @@
 
 - 不使用分号 (`semi: false`)
 - 使用空格而不是制表符 (`useTabs: false`)
-- 缩进使用2个空格 (`tabWidth: 2`)
+- 缩进使用 2 个空格 (`tabWidth: 2`)
 - 使用单引号 (`singleQuote: true`)
-- 行长度限制为120个字符 (`printWidth: 120`)
+- 行长度限制为 120 个字符 (`printWidth: 120`)
 - 不使用尾随逗号 (`trailingComma: "none"`)
 
 格式化你的代码：
@@ -31,7 +31,7 @@ pnpm format:check
 
 我们建议在你的编辑器中安装 Prettier 插件，并启用保存时自动格式化：
 
-- **VS Code**: 安装 [Prettier 扩展](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)，并在设置中配置prettier配置文件路径。
+- **VS Code**: 安装 [Prettier 扩展](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)，并在设置中配置 prettier 配置文件路径。
 - **WebStorm/IntelliJ**: 在设置中启用 Prettier 集成，配置 Prettier 包路径为项目中的 `node_modules/.bin/prettier`
 - **其他编辑器**: 请参考 [Prettier 编辑器集成文档](https://prettier.io/docs/en/editors.html)
 

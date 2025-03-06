@@ -16,6 +16,7 @@ export interface DraggableHTMLElement extends HTMLElement {
   }
   // 可拖拽状态
   _draggableState?: DragState
+  _dataItem: any //  元素绑定的数据
 }
 
 export interface DragState {
@@ -23,7 +24,7 @@ export interface DragState {
   el: HTMLElement //  当前拖拽的元素
   options: DraggableOptions //  可拖拽选项
   clone: HTMLElement | null //  克隆的元素
-  placeholder: HTMLElement | null //  占位符元素
+  // placeholder: HTMLElement | null //  占位符元素
   startY: number //  起始Y坐标
   startIndex: number //  起始索引
   originalElement: HTMLElement | null //  原始元素
