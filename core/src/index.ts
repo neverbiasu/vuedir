@@ -31,6 +31,7 @@ import { vDraggableSort } from './directives/vDraggableSort'
 import { vTop } from './directives/vTop'
 import { vAutoInputType } from './directives/vAutoInputType'
 import { vFullScreen } from './directives/vFullScreen'
+import { vInfiniteScroll } from './directives/vInfiniteScroll'
 
 export {
   vBacktop,
@@ -65,6 +66,7 @@ export {
   vTop,
   vAutoInputType,
   vFullScreen,
+  vInfiniteScroll
 }
 
 export interface CPVueDirPlugin {
@@ -104,6 +106,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('top', vTop)
     app.directive('autoinputtype', vAutoInputType)
     app.directive('fullscreen', vFullScreen)
+    app.directive('infinitescroll', vInfiniteScroll)
   }
 }
 

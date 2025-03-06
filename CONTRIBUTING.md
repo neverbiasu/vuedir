@@ -83,7 +83,7 @@ pnpm format:check
 
 我们建议在你的编辑器中安装 Prettier 插件，并启用保存时自动格式化：
 
-- **VS Code**: 安装 [Prettier 扩展](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)，并在设置中配置prettier配置文件路径。
+- **VS Code**: 安装 [Prettier 扩展](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)，并在设置中配置 prettier 配置文件路径。
 - **WebStorm/IntelliJ**: 在设置中启用 Prettier 集成
 
 ### 命名规范

@@ -182,6 +182,11 @@ const directives = ref([
     description: '点击元素全屏显示，再次点击退出全屏',
     link: '/directives/fullscreen',
     category: '交互类'
+  },{
+    name: 'v-infinite-scroll',
+    description: '实现无限滚动功能，当滚动到底部时触发加载更多数据',
+    link: '/directives/infinitescroll',
+    category: '视觉类'
   },
 ]);
 
