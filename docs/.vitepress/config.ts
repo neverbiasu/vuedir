@@ -142,7 +142,8 @@ export default defineConfig({
                 { text: 'v-draggablesort', link: '/directives/draggablesort' },
                 { text: 'v-top', link: '/directives/top' },
                 { text: 'v-mousefollow', link: '/directives/mousefollow' },
-                { text: 'v-infinitescroll', link: '/directives/infinitescroll' }
+                { text: 'v-infinitescroll', link: '/directives/infinitescroll' },
+                { text: 'v-marquee', link: '/directives/marquee' },
               ]
             },
             {

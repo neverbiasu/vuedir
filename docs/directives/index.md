@@ -194,13 +194,17 @@ const directives = ref([
     description: '实现无限滚动功能，当滚动到底部时触发加载更多数据',
     link: '/directives/infinitescroll',
     category: '视觉类'
-  },
-  {
+  },{
     name: 'v-mousefollow',
     description: '鼠标跟随指令，支持自定义跟随元素和位置',
     link: '/directives/mousefollow',
     category: '视觉类'
-  },
+  },{
+    name: 'v-marquee',
+    description: '实现文本滚动效果，支持自定义滚动速度和方向',
+    link: '/directives/marquee',
+    category: '视觉类'
+  }
 ]);
 
 const categories = {
