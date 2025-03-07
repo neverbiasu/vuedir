@@ -2,10 +2,8 @@
   <div class="demo-container">
     <div v-mousefollow class="cursor-dot"></div>
     <div v-mousefollow class="cursor-circle"></div>
-    
-    <div class="content">
-      在此区域内移动鼠标查看效果
-    </div>
+
+    <div class="content">在此区域内移动鼠标查看效果</div>
   </div>
 </template>
 
@@ -46,4 +44,4 @@
   width: 60px;
   height: 60px;
 }
-</style> 
+</style>

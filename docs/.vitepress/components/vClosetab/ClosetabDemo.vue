@@ -3,11 +3,12 @@ import { vClosetab } from '@cp-vuedir/core'
 </script>
 
 <template>
-  <p v-closetab class="close-tab-button">Close Tab</p>
+  <button v-closetab class="close-tab-button">Close Tab</button>
 </template>
 
 <style scoped>
 .close-tab-button {
+  width: 100%;
   padding: 10px 20px;
   font-size: 16px;
   font-weight: 600;

@@ -1,1 +1,1 @@
-export { vPreload } from "./vPreload";
+export { vPreload } from './vPreload'

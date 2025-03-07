@@ -188,7 +188,12 @@ const directives = ref([
     name: "desaturate",
     description: "一键开启网页灰色素调，至远方",
     category: "视觉类"
-  }
+  },
+  {
+    "name": "closetab",
+    "description": "关闭当前浏览器标签页",
+    "category": "交互类"
+  },
 ])
 
 const groupedDirectives = computed(() => {

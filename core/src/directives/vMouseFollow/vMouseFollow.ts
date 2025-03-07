@@ -6,15 +6,13 @@ const DEFAULT_Z_INDEX = 999999 // 默认z-index值
 export const vMouseFollow: MouseFollowDirective = {
   mounted(el: MouseFollowHTMLElement, binding: DirectiveBinding<MouseFollowOptions | boolean | undefined>) {
     // 解析配置
-    const options: MouseFollowOptions = typeof binding.value === 'object' 
-      ? binding.value 
-      : {}
-    
+    const options: MouseFollowOptions = typeof binding.value === 'object' ? binding.value : {}
+
     // 设置元素的初始样式
     el.style.position = 'fixed'
     el.style.pointerEvents = 'none'
     el.style.zIndex = String(options.zIndex || DEFAULT_Z_INDEX)
-    
+
     // 处理鼠标样式
     if (options.hideCursor) {
       // 保存原始cursor样式
@@ -22,16 +20,16 @@ export const vMouseFollow: MouseFollowDirective = {
       // 隐藏鼠标
       document.body.style.cursor = 'none'
     }
-    
+
     // 鼠标移动处理函数
     const handler = (event: MouseEvent) => {
       const { clientX, clientY } = event
       const { width, height } = el.getBoundingClientRect()
-      
+
       // 计算元素位置,使其中心点跟随鼠标
       const x = clientX - width / 2
       const y = clientY - height / 2
-      
+
       // 设置元素位置
       el.style.left = `${x}px`
       el.style.top = `${y}px`
@@ -48,11 +46,11 @@ export const vMouseFollow: MouseFollowDirective = {
       document.removeEventListener('mousemove', el.__mousemoveHandler)
       delete el.__mousemoveHandler
     }
-    
+
     // 恢复原始鼠标样式
     if (el.__originalCursor !== undefined) {
       document.body.style.cursor = el.__originalCursor
       delete el.__originalCursor
     }
   }
-} 
+}
