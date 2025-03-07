@@ -12,18 +12,18 @@
 <<< @/.vitepress/components/vMouseFollow/MouseFollowDemo.vue
 :::
 
-## 进阶用法
-
-结合其他样式和动画效果，创建更丰富的鼠标跟随效果。
-
-<MouseFollowAdvancedDemo />
-
-::: details 查看代码
-<<< @/.vitepress/components/vMouseFollow/MouseFollowAdvancedDemo.vue
-:::
-
 ## API
 
+### 指令值
+
+v-mousefollow 指令可以接收一个配置对象或布尔值作为参数：
+
+```typescript
+interface MouseFollowOptions {
+  hideCursor?: boolean  // 是否隐藏原始鼠标
+  zIndex?: number      // 自定义 z-index
+}
+```
 <ApiTable :data="apiData" />
 
 ## 注意事项
@@ -37,16 +37,27 @@
 
 <script setup>
 import MouseFollowDemo from '../.vitepress/components/vMouseFollow/MouseFollowDemo.vue'
-import MouseFollowAdvancedDemo from '../.vitepress/components/vMouseFollow/MouseFollowAdvancedDemo.vue'
 import ApiTable from '../.vitepress/components/ApiTable.vue'
 
 const apiData = [
   {
     name: 'v-mousefollow',
-    description: '使元素跟随鼠标移动',
-    type: 'boolean',
+    description: '使元素跟随鼠标移动,可传入配置对象',
+    type: 'boolean | MouseFollowOptions',
     default: '-',
     required: false
+  },
+  {
+    name: 'hideCursor',
+    description: '是否隐藏原始鼠标',
+    type: 'boolean',
+    default: 'false'
+  },
+  {
+    name: 'zIndex',
+    description: '跟随元素的z-index值',
+    type: 'number',
+    default: '999999'
   }
 ]
-</script> 
+</script>

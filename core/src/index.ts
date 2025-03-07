@@ -35,6 +35,7 @@ import { vPreload } from './directives/vPreload'
 import { vMouseFollow } from './directives/vMouseFollow'
 import { vInfiniteScroll } from './directives/vInfiniteScroll'
 import { vMarquee } from './directives/vMarquee'
+import { vDesaturate } from './directives/vDesaturate'
 
 export {
   vBacktop,
@@ -72,7 +73,8 @@ export {
   vPreload,
   vMouseFollow,
   vInfiniteScroll,
-  vMarquee
+  vMarquee,
+  vDesaturate
 }
 
 export interface CPVueDirPlugin {
@@ -88,7 +90,6 @@ const VueDir: CPVueDirPlugin = {
     app.directive('longpress', vLongpress)
     app.directive('doubleclick', vDoubleClick)
     app.directive('clickout', vClickout)
-
     app.directive('spare', vSpare)
     app.directive('countup', vCountup)
     app.directive('lazyload', vLazyload)
@@ -118,6 +119,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('mousefollow', vMouseFollow)
     app.directive('infinitescroll', vInfiniteScroll)
     app.directive('marquee', vMarquee)
+    app.directive('desaturate', vDesaturate)
   }
 }
 

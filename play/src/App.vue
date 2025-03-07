@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { vDesaturate } from '@cp-vuedir/core'
+import { ref } from 'vue'
+
+const isOn = ref(true)
+</script>
+
 <template>
   <div class="marquee-container">
     <div v-marquee="{
@@ -9,6 +16,9 @@
     }" class="marquee-content">
       <span class="marquee-text">🚀 你的滚动内容 🎉</span>
     </div>
+  <div class="container">
+    你好
+    <button v-desaturate="{ isOn: isOn }" @click="isOn = !isOn">纪念模式开启</button>
   </div>
 </template>
 
@@ -64,5 +74,9 @@ const handleComplete = () => {
   to {
     text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7), 0 0 12px rgba(255, 255, 255, 0.7);
   }
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: green;
 }
 </style>
