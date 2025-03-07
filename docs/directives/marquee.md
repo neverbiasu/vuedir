@@ -2,7 +2,7 @@
 
 ## 介绍
 
-`v-marquee` 指令用于进行文本滚动，支持x，y滚动、滚动速度，滚动开始、滚动中、滚动完回调函数。
+`v-marquee` 指令用于进行文本滚动，支持 x，y 滚动、滚动速度，滚动开始、滚动中、滚动完回调函数。
 
 ## 基础方法
 
@@ -10,13 +10,15 @@
 
 ```vue
 <template>
-  <div v-marquee="{
-    direction: 'y',
-    speed: 30,
-    onStart: handleStart,
-    onScroll: handleScroll,
-    onComplete: handleComplete
-  }">
+  <div
+    v-marquee="{
+      direction: 'y',
+      speed: 30,
+      onStart: handleStart,
+      onScroll: handleScroll,
+      onComplete: handleComplete
+    }"
+  >
     <div class="marquee-content">
       <div>这是一段需要滚动的文本</div>
     </div>
@@ -24,7 +26,7 @@
 </template>
 ```
 
-## 基本用法（y轴滚动）
+## 基本用法（y 轴滚动）
 
 <MarqueeYDemo />
 
@@ -32,7 +34,7 @@
 <<< @/.vitepress/components/vMarquee/MarqueeYDemo.vue
 :::
 
-## 基本用法（x轴滚动）
+## 基本用法（x 轴滚动）
 
 <MarqueeXDemo />
 

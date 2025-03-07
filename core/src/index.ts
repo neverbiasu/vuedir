@@ -36,6 +36,7 @@ import { vMouseFollow } from './directives/vMouseFollow'
 import { vInfiniteScroll } from './directives/vInfiniteScroll'
 import { vMarquee } from './directives/vMarquee'
 import { vDesaturate } from './directives/vDesaturate'
+import { vClosetab } from './directives/vClosetab'
 
 export {
   vBacktop,
@@ -74,7 +75,8 @@ export {
   vMouseFollow,
   vInfiniteScroll,
   vMarquee,
-  vDesaturate
+  vDesaturate,
+  vClosetab
 }
 
 export interface CPVueDirPlugin {
@@ -120,6 +122,7 @@ const VueDir: CPVueDirPlugin = {
     app.directive('infinitescroll', vInfiniteScroll)
     app.directive('marquee', vMarquee)
     app.directive('desaturate', vDesaturate)
+    app.directive('closetab', vClosetab)
   }
 }
 

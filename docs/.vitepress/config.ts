@@ -105,7 +105,8 @@ export default defineConfig({
                 { text: 'scrollto', link: '/directives/scrollto' },
                 { text: 'threeclick', link: '/directives/threeclick' },
                 { text: 'throttle', link: '/directives/throttle' },
-                { text: 'tooltip', link: '/directives/tooltip' }
+                { text: 'tooltip', link: '/directives/tooltip' },
+                { text: 'closetab', link: '/directives/closetab' }
               ]
             },
             {

@@ -10,4 +10,4 @@ export interface MouseFollowHTMLElement extends HTMLElement {
   __originalCursor?: string // 保存原始的cursor样式
 }
 
-export type MouseFollowDirective = Directive<MouseFollowHTMLElement, MouseFollowOptions | boolean | undefined> 
+export type MouseFollowDirective = Directive<MouseFollowHTMLElement, MouseFollowOptions | boolean | undefined>

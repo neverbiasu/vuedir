@@ -11,18 +11,13 @@
       >
         预加载外部图片
       </a>
-      <a
-        v-preload
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      >
-        预加载外部样式
-      </a>
+      <a v-preload href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> 预加载外部样式 </a>
     </div>
   </div>
 </template>
 
 <script setup>
-import { vPreload } from "@cp-vuedir/core";
+import { vPreload } from '@cp-vuedir/core'
 </script>
 <style scoped>
 .preload-demo {
