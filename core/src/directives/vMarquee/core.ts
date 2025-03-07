@@ -1,139 +1,106 @@
 import type { Directive, DirectiveBinding } from 'vue'
-import { MarqueeDirection, MarqueeCallback, MarqueeElement, MarqueeOptions, MarqueeScrollCallback } from './type'
+import { nextTick } from 'vue'
+import { MarqueeElement, MarqueeOptions } from './type'
 
 export const vMarquee: Directive = {
-    mounted(el: MarqueeElement, binding: DirectiveBinding<MarqueeOptions>) {
-        const options: MarqueeOptions = binding.value || {}
-        const {
-            direction = 'x',
-            speed = 50,
-            onStart,
-            onScroll,
-            onComplete
-        } = options
+  mounted(el: MarqueeElement, binding: DirectiveBinding<MarqueeOptions>) {
+    nextTick(() => {
+      const options = binding.value || {}
+      const { direction = 'x', speed = 50, onStart, onUpdate, onComplete } = options
 
-        // 创建内容包裹元素
-        const wrapper = document.createElement('div')
-        wrapper.style.display = 'inline-block'
+      const parent = el.parentElement
+      if (!parent) return
 
-        // 将原始内容移动到包裹元素中
-        while (el.firstChild) {
-            wrapper.appendChild(el.firstChild)
-        }
-        el.appendChild(wrapper)
+      // 设置必要样式
+      el.style.position = 'absolute'
+      el.style.whiteSpace = 'nowrap'
 
-        // 设置容器样式
-        el.style.overflow = 'hidden'
+      const updateAnimation = () => {
+        // 清除旧动画
+        el._marqueeAnimation?.cancel()
+
+        let parentSize, elSize
         if (direction === 'x') {
-            el.style.whiteSpace = 'nowrap'
+          parentSize = parent.offsetWidth
+          elSize = el.offsetWidth
+        } else {
+          parentSize = parent.offsetHeight
+          elSize = el.offsetHeight
         }
 
-        // 计算滚动距离
-        const containerSize = direction === 'x' ? el.clientWidth : el.clientHeight
-        const contentSize = direction === 'x' ? wrapper.scrollWidth : wrapper.scrollHeight
-        const distance = contentSize - containerSize
+        // 计算动画参数
+        const startTranslate = direction === 'x' ? parentSize : parentSize
+        const endTranslate = direction === 'x' ? -elSize : -elSize
+        const totalDistance = parentSize + elSize
+        const duration = totalDistance / speed
 
-        const distanceNumber = Number(distance)
+        // 设置初始位置（强制重置到起点）
+        el.style.transform = direction === 'x' ? `translateX(${startTranslate}px)` : `translateY(${startTranslate}px)`
 
-        if (distanceNumber <= 0) return // 如果内容小于容器，则不进行滚动
+        // 创建动画
+        const keyframes = [
+          {
+            transform: direction === 'x' ? `translateX(${startTranslate}px)` : `translateY(${startTranslate}px)`
+          },
+          {
+            transform: direction === 'x' ? `translateX(${endTranslate}px)` : `translateY(${endTranslate}px)`
+          }
+        ]
 
-        const duration = (distanceNumber / speed) * 1000 // 转化为毫秒
+        const animationOptions: KeyframeAnimationOptions = {
+          duration: duration * 1000,
+          easing: 'linear',
+          fill: 'forwards'
+        }
 
-        const animate = (timestamp: number) => {
-            if (!el._marquee?.isMounted) return
+        const animation = el.animate(keyframes, animationOptions)
+        el._marqueeAnimation = animation
 
-            const marqueeData = el._marquee
-            if (!marqueeData.startTime) {
-                marqueeData.startTime = timestamp
-                onStart?.()
+        // 事件处理
+        animation.onfinish = () => {
+          onComplete?.()
+          // 动画完成后重新启动
+          updateAnimation()
+        }
+
+        animation.oncancel = () => {
+          // 重置到初始位置
+          el.style.transform = direction === 'x' ? `translateX(${parentSize}px)` : `translateY(${parentSize}px)`
+        }
+
+        // 进度更新
+        if (onUpdate) {
+          let lastTime = 0
+          const updateProgress = () => {
+            const currentTime = animation.currentTime ?? 0
+            const progress = Math.min((currentTime as number) / (animationOptions.duration! as number), 1)
+            if (currentTime !== lastTime) {
+              onUpdate(progress)
+              lastTime = currentTime as number
             }
-
-            const elapsed = timestamp - marqueeData.startTime
-            const progress = Math.min(elapsed / duration, 1)
-
-            // 更新位置
-            // const translateValue = -progress * distanceNumber
-            // wrapper.style.transform = `translate${direction.toUpperCase()}(${translateValue}px)`
-
-            // 计算位移值（支持往返）
-            const currentProgress = marqueeData.isReversed ? 1 - progress : progress
-            const translateValue = -currentProgress * distanceNumber
-            wrapper.style.transform = `translate${direction.toUpperCase()}(${translateValue}px)`
-
-            // 触发滚动中回调
-            onScroll?.(progress)
-
             if (progress < 1) {
-                marqueeData.rafId = requestAnimationFrame(animate)
-            } else {
-                // 滚动完成
-                onComplete?.()
-
-                // 重置位置并重新开始
-                // wrapper.style.transform = `translateX(0)`
-                // void wrapper.offsetWidth // 强制重绘
-
-                // 切换滚动方向
-                marqueeData.isReversed = !marqueeData.isReversed
-                marqueeData.startTime = null
-
-                // 准备下一次动画
-                marqueeData.rafId = requestAnimationFrame(animate)
-                onStart?.()
+              requestAnimationFrame(updateProgress)
             }
+          }
+          requestAnimationFrame(updateProgress)
         }
 
-        // 保存状态，以便在组件销毁时清理
-        el._marquee = {
-            wrapper,
-            options,
-            rafId: requestAnimationFrame(animate),
-            startTime: null,
-            isMounted: true,
-            isReversed: false,
-            distance
-        }
-    },
-    updated(el: MarqueeElement, binding: DirectiveBinding<MarqueeOptions>) {
-        if (el._marquee) {
-            // 保留当前滚动状态
-            const wasReversed = el._marquee.isReversed
-            const currentProgress = el._marquee.startTime
-                ? (performance.now() - el._marquee.startTime) / ((el._marquee.distance / el._marquee.options.speed!) * 1000)
-                : 0
+        onStart?.()
+      }
 
-            // 清理旧状态
-            cancelAnimationFrame(el._marquee.rafId || 0)
-            el._marquee.isMounted = false
+      // 初始化动画
+      updateAnimation()
 
-            // 恢复原始内容
-            const wrapper = el._marquee.wrapper
-            while (wrapper.firstChild) {
-                el.appendChild(wrapper.firstChild)
-            }
-            wrapper.remove()
-
-            // 重新初始化
-            this.mounted(el, binding)
-
-            // 恢复滚动状态
-            if (el._marquee) {
-                el._marquee.isReversed = wasReversed
-                el._marquee.startTime = performance.now() - currentProgress * ((el._marquee.distance / el._marquee.options.speed!) * 1000)
-            }
-        }
-    },
-    unmounted(el: MarqueeElement) {
-        // 清理状态
-        if (el._marquee) {
-            cancelAnimationFrame(el._marquee.rafId || 0)
-            el._marquee.isMounted = false
-            const wrapper = el._marquee.wrapper
-            while (wrapper.firstChild) {
-                el.appendChild(wrapper.firstChild)
-            }
-            wrapper.remove()
-            delete el._marquee
-        }
-    }
+      // 监听父容器尺寸变化
+      const resizeObserver = new ResizeObserver(() => {
+        updateAnimation()
+      })
+      resizeObserver.observe(parent)
+      el._marqueeResizeObserver = resizeObserver
+    })
+  },
+  beforeUnmount(el: MarqueeElement) {
+    el._marqueeAnimation?.cancel()
+    el._marqueeResizeObserver?.disconnect()
+  }
 }
