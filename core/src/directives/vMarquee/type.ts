@@ -8,7 +8,7 @@ export interface MarqueeOptions {
     direction?: MarqueeDirection
     speed?: number
     onStart?: MarqueeCallback
-    onScroll?: MarqueeScrollCallback
+    onUpdate?: MarqueeScrollCallback
     onComplete?: MarqueeCallback
 }
 
@@ -22,4 +22,6 @@ export interface MarqueeElement extends HTMLElement {
         isReversed: boolean
         distance: number
     }
+    _marqueeAnimation?: Animation
+    _marqueeResizeObserver?: ResizeObserver
 }

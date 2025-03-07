@@ -61,12 +61,12 @@ const scrollOptions = {
 }
 
 .scroll-container::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: var(--vp-c-bg);
   border-radius: 4px;
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
-  background: black;
+  background: var(--vp-button-bg);
   border-radius: 4px;
 }
 
