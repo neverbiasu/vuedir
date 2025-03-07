@@ -12,6 +12,7 @@ const isOn = ref(true)
   </div>
 </template>
 
+
 <style scoped>
 .container {
   width: 100vw;
