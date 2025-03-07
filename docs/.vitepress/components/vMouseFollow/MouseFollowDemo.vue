@@ -1,6 +1,6 @@
 <template>
   <div class="demo-container">
-    <div v-mousefollow class="follower">
+    <div v-mousefollow="{ hideCursor: true, zIndex: 10 }" class="follower">
       基础跟随效果
     </div>
   </div>
