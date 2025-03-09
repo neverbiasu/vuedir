@@ -1,29 +1,46 @@
-name: Documentation Deploy
+name: Deploy Documentation to GitHub Pages
 
 on:
+  # 运行于针对默认分支的推送
   push:
-    branches: [main]
+    branches: ["main"]
     paths:
       - 'docs/**'
       - 'README.md'
       - 'README.zh.md'
 
+  # 允许从 Actions 选项卡手动运行这个工作流
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 权限以允许部署到 GitHub Pages
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# 只允许一个并发部署
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy-docs:
+  # 构建工作
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
-
+          
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
@@ -46,17 +63,17 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # 添加 jsdom 依赖用于浏览器环境mock
+      # 添加 jsdom 依赖用于浏览器环境模拟
       - name: Install jsdom
         run: pnpm add -D jsdom
 
-      # 创建浏览器环境mock文件
+      # 创建浏览器环境模拟文件
       - name: Create browser environment mock
         run: |
           cat > browser-env-mock.js << 'EOL'
           const { JSDOM } = require('jsdom');
           const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>', {
-            url: 'https://your-project-url.github.io/',
+            url: 'https://codepaintstudio.github.io/vuedir/',
             referrer: 'https://github.com/',
             contentType: 'text/html',
             includeNodeLocations: true,
@@ -106,12 +123,28 @@ jobs:
       - name: Build core library
         run: pnpm build:core
 
-      # 使用环境mock构建文档
+      # 使用环境模拟构建文档
       - name: Build docs with browser environment
         run: NODE_OPTIONS='--require=./browser-env-mock.js' pnpm --filter docs build
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      # 添加 .nojekyll 文件，禁止 GitHub Pages 使用 Jekyll 处理
+      - name: Add .nojekyll file
+        run: touch docs/.vitepress/dist/.nojekyll
+
+      # 上传构建产物
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: docs/.vitepress/dist
-          branch: gh-pages
+          path: docs/.vitepress/dist
+
+  # 部署工作
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
