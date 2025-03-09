@@ -1,7 +1,7 @@
-name: Deploy Documentation to GitHub Pages
+name: Deploy Documentation to GitHub Pages with Jekyll
 
 on:
-  # 运行于针对默认分支的推送
+  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
     paths:
@@ -9,135 +9,40 @@ on:
       - 'README.md'
       - 'README.zh.md'
 
-  # 允许从 Actions 选项卡手动运行这个工作流
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 权限以允许部署到 GitHub Pages
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 只允许一个并发部署
+# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # 构建工作
+  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
         with:
-          node-version: 18
-          
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install
-
-      # 添加 jsdom 依赖用于浏览器环境模拟
-      - name: Install jsdom
-        run: pnpm add -D jsdom
-
-      # 创建浏览器环境模拟文件
-      - name: Create browser environment mock
-        run: |
-          cat > browser-env-mock.js << 'EOL'
-          const { JSDOM } = require('jsdom');
-          const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>', {
-            url: 'https://codepaintstudio.github.io/vuedir/',
-            referrer: 'https://github.com/',
-            contentType: 'text/html',
-            includeNodeLocations: true,
-            storageQuota: 10000000,
-            pretendToBeVisual: true
-          });
-
-          // 模拟全局对象
-          global.window = dom.window;
-          global.document = dom.window.document;
-          global.navigator = dom.window.navigator;
-          global.location = dom.window.location;
-          global.history = dom.window.history;
-          global.HTMLElement = dom.window.HTMLElement;
-          global.localStorage = dom.window.localStorage;
-          global.sessionStorage = dom.window.sessionStorage;
-          global.getComputedStyle = dom.window.getComputedStyle;
-
-          // 模拟 window 对象的尺寸属性
-          global.window.innerWidth = 1920;
-          global.window.innerHeight = 1080;
-
-          // 模拟一些常用的浏览器 API
-          global.window.scrollTo = () => {};
-          global.window.matchMedia = query => ({
-            matches: false,
-            media: query,
-            onchange: null,
-            addListener: () => {},
-            removeListener: () => {},
-            addEventListener: () => {},
-            removeEventListener: () => {},
-            dispatchEvent: () => true,
-          });
-
-          // 模拟 ResizeObserver
-          global.window.ResizeObserver = class ResizeObserver {
-            constructor(callback) { this.callback = callback; }
-            observe() {}
-            unobserve() {}
-            disconnect() {}
-          };
-
-          console.log('Browser environment mock setup complete');
-          EOL
-
-      - name: Build core library
-        run: pnpm build:core
-
-      # 使用环境模拟构建文档
-      - name: Build docs with browser environment
-        run: NODE_OPTIONS='--require=./browser-env-mock.js' pnpm --filter docs build
-
-      # 添加 .nojekyll 文件，禁止 GitHub Pages 使用 Jekyll 处理
-      - name: Add .nojekyll file
-        run: touch docs/.vitepress/dist/.nojekyll
-
-      # 上传构建产物
-      - name: Upload Pages artifact
+          source: ./docs
+          destination: ./_site
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: ./_site
 
-  # 部署工作
+  # Deployment job
   deploy:
     environment:
       name: github-pages
