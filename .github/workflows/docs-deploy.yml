@@ -1,4 +1,4 @@
-name: Documentation Deploy
+name: Documentation Deploy with Jekyll
 
 on:
   push:
@@ -8,110 +8,47 @@ on:
       - 'README.md'
       - 'README.zh.md'
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy-docs:
+  # Build job
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+          
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
         with:
-          node-version: 18
+          source: ./docs
+          destination: ./_site
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 8
-          run_install: false
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Install dependencies
-        run: pnpm install
-
-      # 添加 jsdom 依赖用于浏览器环境mock
-      - name: Install jsdom
-        run: pnpm add -D jsdom
-
-      # 创建浏览器环境mock文件
-      - name: Create browser environment mock
-        run: |
-          cat > browser-env-mock.js << 'EOL'
-          const { JSDOM } = require('jsdom');
-          const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>', {
-            url: 'https://your-project-url.github.io/',
-            referrer: 'https://github.com/',
-            contentType: 'text/html',
-            includeNodeLocations: true,
-            storageQuota: 10000000,
-            pretendToBeVisual: true
-          });
-
-          // 模拟全局对象
-          global.window = dom.window;
-          global.document = dom.window.document;
-          global.navigator = dom.window.navigator;
-          global.location = dom.window.location;
-          global.history = dom.window.history;
-          global.HTMLElement = dom.window.HTMLElement;
-          global.localStorage = dom.window.localStorage;
-          global.sessionStorage = dom.window.sessionStorage;
-          global.getComputedStyle = dom.window.getComputedStyle;
-
-          // 模拟 window 对象的尺寸属性
-          global.window.innerWidth = 1920;
-          global.window.innerHeight = 1080;
-
-          // 模拟一些常用的浏览器 API
-          global.window.scrollTo = () => {};
-          global.window.matchMedia = query => ({
-            matches: false,
-            media: query,
-            onchange: null,
-            addListener: () => {},
-            removeListener: () => {},
-            addEventListener: () => {},
-            removeEventListener: () => {},
-            dispatchEvent: () => true,
-          });
-
-          // 模拟 ResizeObserver
-          global.window.ResizeObserver = class ResizeObserver {
-            constructor(callback) { this.callback = callback; }
-            observe() {}
-            unobserve() {}
-            disconnect() {}
-          };
-
-          console.log('Browser environment mock setup complete');
-          EOL
-
-      - name: Build core library
-        run: pnpm build:core
-
-      # 使用环境mock构建文档
-      - name: Build docs with browser environment
-        run: NODE_OPTIONS='--require=./browser-env-mock.js' pnpm --filter docs build
-
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: docs/.vitepress/dist
-          branch: gh-pages
+        id: deployment
+        uses: actions/deploy-pages@v4
