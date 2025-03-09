@@ -44,6 +44,27 @@ app.use(VueDir)
 app.mount('#app')
 ```
 
+Or import individual directives:
+
+```ts
+import { createApp } from 'vue'
+import { vFocus, vDrag } from '@cp-vuedir/core'
+
+const app = createApp(App)
+app.directive('focus', vFocus)
+app.directive('drag', vDrag)
+app.mount('#app')
+```
+
+## 📋 Available Directives
+
+| Category | Directives |
+|----------|------------|
+| **Interaction** | `v-drag`, `v-backtop`, `v-clickout`, `v-doubleclick`, `v-hotkey`, `v-longpress`, `v-threeclick`, `v-tooltip`, `v-throttle`, `v-debounce`, `v-scrollto` |
+| **Visual** | `v-ripple`, `v-highlight`, `v-ellipsis`, `v-countup`, `v-watermarker`, `v-fitfont`, `v-autobox`, `v-boxresize`, `v-top`, `v-marquee`, `v-desaturate` |
+| **Form** | `v-focus`, `v-pwdvisible`, `v-emoji`, `v-trim`, `v-clearable`, `v-autoinputtype`, `v-verify` |
+| **Performance** | `v-lazyload`, `v-preload`, `v-spare` |
+
 ## 📖 Documentation
 
 Visit our [official documentation](https://vuedir.feashow.cn/) for more information.
