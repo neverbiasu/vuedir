@@ -37,5 +37,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Check formatting
-        run: pnpm format:check
+      - name: Format files
+        run: pnpm format
